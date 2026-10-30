@@ -38,4 +38,6 @@ class BlenderTests(unittest.TestCase):
    self.assertEqual({o['name'] for o in data['meshes']},{'Base','Upright'})
  def test_long_box_projected_framing(self):
   self.run_blender('--python-exit-code','1','--python',ROOT/'tests/framing_fixture.py','--',SCRIPTS/'white_preview.py')
+ def test_overlap_actual_scene(self):
+  self.run_blender('--python-exit-code','1','--python',ROOT/'tests/overlap_scene_fixture.py','--',SCRIPTS/'overlap_audit.py')
 if __name__=='__main__':unittest.main()

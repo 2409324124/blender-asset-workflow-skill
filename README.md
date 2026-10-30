@@ -1,8 +1,8 @@
-# Blender Asset Workflow — v0.2 private review draft
+# Blender Asset Workflow — v0.3 private review draft
 
 A compact, project-independent skill for low-poly hard-surface modeling and modular scene assembly with Blender. Native geometry first, cheap white previews next, visual and export checks before presentation.
 
-**Status:** private repository review draft; not installed or publicly released. No license has been selected or granted by this draft. The frozen v0.1 package completed one independent fresh-context functional test; v0.2 contains narrow post-test helper corrections and has not had another independent modeling test.
+**Status:** private repository review draft; not installed or publicly released. No license has been selected or granted by this draft. The frozen v0.1 package completed one independent fresh-context functional test; v0.2 contains narrow post-test helper corrections; v0.3 adds a runnable neutral example and conservative overlap review. Neither is represented as another independent modeling test.
 
 Read [`skills/blender-asset-workflow/SKILL.md`](skills/blender-asset-workflow/SKILL.md). This folder is the portable skill package; repository showcase and tests are not required inputs. Requires Blender 4.3-compatible Python; the optional guard requires POSIX Python 3. No external plugins or online services are required.
 
@@ -28,3 +28,13 @@ The selected historical screenshot appears above at the owner's request. Underly
 
 ## Validation
 Helper regression tests use newly created neutral primitive geometry, not historical models. See `tests/RESULTS.md` for observed results and limits. Capability claims remain limited to tested behavior, not every Blender task.
+
+## Runnable minimal shop and overlap review
+
+```sh
+python3 examples/minimal-shop/run_example.py --output ./runs/shop-001
+```
+
+[Example instructions](examples/minimal-shop/README.md) describe Linux/Blender prerequisites, adjustable resource caps, non-overwriting outputs, native/GLB checks, overall white preview, roof-off top view, and furniture close-up. The example starts from an empty scene with original neutral geometry. It does not reuse the historical showcase models.
+
+[Overlap review guidance](skills/blender-asset-workflow/references/overlap-checks.md) distinguishes conservative AABB candidates, normal/near contacts, and exact named exceptions with reasons. It does **not** claim actual mesh penetration detection or safe/code-compliant layout. Test cases cover detectable candidates, explicit joints, touching bounds, separated objects, and invalid policies.
