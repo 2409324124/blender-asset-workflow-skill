@@ -6,7 +6,7 @@ A compact, project-independent skill for low-poly hard-surface modeling and modu
 
 **Locked main image:** the owner-selected RIVET tire-and-repair shop scene, with its small truck, tire stacks and fenced yard. This exact screenshot is the main visual showcase; the historical street and original white-model test evidence remain separately identified below. Selecting a showcase image is not itself a new QA verdict.
 
-**Status:** private repository review draft; not installed or publicly released. No license has been selected or granted by this draft. The frozen v0.1 package completed one independent fresh-context functional test; v0.2 contains narrow post-test helper corrections; v0.3 adds a runnable neutral example and conservative overlap review. Neither is represented as another independent modeling test.
+**Status:** private repository review draft; not installed or publicly released. Repository-maintained code, skill instructions and accompanying text use **GPL-3.0-only**; showcase images are separately scoped and are not covered by that grant. See [license scope](LICENSING.md) and the full [LICENSE](LICENSE). The frozen v0.1 package completed one independent fresh-context functional test; v0.2 contains narrow post-test helper corrections; v0.3 adds a runnable neutral example and conservative overlap review. Neither is represented as another independent modeling test.
 
 Read [`skills/blender-asset-workflow/SKILL.md`](skills/blender-asset-workflow/SKILL.md). This folder is the portable skill package; repository showcase and tests are not required inputs. Requires Blender 4.3-compatible Python; the optional guard requires POSIX Python 3. No external plugins or online services are required.
 
@@ -87,3 +87,7 @@ python3 examples/minimal-shop/run_example.py --output ./runs/shop-001
 [Example instructions](examples/minimal-shop/README.md) describe Linux/Blender prerequisites, adjustable resource caps, non-overwriting outputs, native/GLB checks, overall white preview, roof-off top view, and furniture close-up. The example starts from an empty scene with original neutral geometry. It does not reuse the historical showcase models.
 
 [Overlap review guidance](skills/blender-asset-workflow/references/overlap-checks.md) distinguishes conservative AABB candidates, normal/near contacts, and exact named exceptions with reasons. It does **not** claim actual mesh penetration detection or safe/code-compliant layout. Test cases cover detectable candidates, explicit joints, touching bounds, separated objects, and invalid policies.
+
+## License
+
+Code, skills and accompanying text: **GPL-3.0-only** (not “or later”). Showcase images and external/third-party material have separate boundaries; generated outputs are not automatically GPL merely because the tools produced them. See [LICENSING.md](LICENSING.md) and [PROVENANCE.md](PROVENANCE.md). The repository remains private; this license selection is not a public-release instruction.
