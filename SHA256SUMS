@@ -1,8 +1,9 @@
 81e271d4422393e3d29464a347e947c574d2868f63a51389a969d69a611a01a9  ./.gitignore
-d0688e7533e5b9329b7b4ee8cecc66068ea9d891d6a9fc6ef19f3f6030ae0a73  ./PROVENANCE.md
-b24d5d2b3f85acf155de1fd8b6807574e1c0d1dc219807d9032fb8af602f5f61  ./README.md
+8bf46e80dac1bbd62bb531e7cfd6c4aca548de39d9c99bb0b1b04d468ad5a8f0  ./PROVENANCE.md
+c106e155fdd577f163fbabe388c8b7f7b13c417249f190da84ca6801163ef361  ./README.md
 d2b53973af8a117a0073f023c10fcbf9e19ae6b9538006497b0ab4022a5d7b8f  ./docs/showcase/gunstore-street.png
 edaa797596830d658203426023ec804e04fff1a8246b7e464daaa0fd564c7a40  ./docs/showcase/morvi-white-v01.png
+d479ad1391323838a7ca2228a08fcd64e850b8df8ed40a78059afab03776f0db  ./docs/showcase/rivet-locked-main.png
 5fc350c318228524627e5dd41e159d13bde0eb3587bdda8dc9f6d22c8cca74ad  ./examples/minimal-shop/README.md
 514fa182453bf34e06a673eac1b29b560a80e833ffa1ee9c895e9c1ad10edc34  ./examples/minimal-shop/build.py
 d8b2aeb735eac15d7a2cec61664ae51218f585e19fd2cbfe3cba9322cb7d3063  ./examples/minimal-shop/run_example.py

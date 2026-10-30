@@ -2,6 +2,10 @@
 
 A compact, project-independent skill for low-poly hard-surface modeling and modular scene assembly with Blender. Native geometry first, cheap white previews next, visual and export checks before presentation.
 
+![RIVET tire and repair shop — owner-selected main showcase](docs/showcase/rivet-locked-main.png)
+
+**Locked main image:** the owner-selected RIVET tire-and-repair shop scene, with its small truck, tire stacks and fenced yard. This exact screenshot is the main visual showcase; the historical street and original white-model test evidence remain separately identified below. Selecting a showcase image is not itself a new QA verdict.
+
 **Status:** private repository review draft; not installed or publicly released. No license has been selected or granted by this draft. The frozen v0.1 package completed one independent fresh-context functional test; v0.2 contains narrow post-test helper corrections; v0.3 adds a runnable neutral example and conservative overlap review. Neither is represented as another independent modeling test.
 
 Read [`skills/blender-asset-workflow/SKILL.md`](skills/blender-asset-workflow/SKILL.md). This folder is the portable skill package; repository showcase and tests are not required inputs. Requires Blender 4.3-compatible Python; the optional guard requires POSIX Python 3. No external plugins or online services are required.
