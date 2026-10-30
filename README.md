@@ -6,6 +6,12 @@ A compact, project-independent skill for low-poly hard-surface modeling and modu
 
 Read [`skills/blender-asset-workflow/SKILL.md`](skills/blender-asset-workflow/SKILL.md). This folder is the portable skill package; repository showcase and tests are not required inputs. Requires Blender 4.3-compatible Python; the optional guard requires POSIX Python 3. No external plugins or online services are required.
 
+## Historical gun shop and street showcase
+
+![Earlier NIGHT SHIFT gun shop and neighboring storefronts](docs/showcase/gunstore-street.png)
+
+This user-selected screenshot depicts the earlier gun-shop and four-store street project that motivated this workflow. It is historical project work, **not an output of the independent generic-skill cold test**. The owner authorized this image for this private repository; future public redistribution requires a separate rights review. Only the screenshot is included, not the earlier project's models or source code.
+
 ## First independent test — frozen v0.1
 
 ![Original fictional café, white geometry preview](docs/showcase/morvi-white-v01.png)
@@ -18,7 +24,7 @@ v0.2 corrects empty-import isolation, nonfinite resource limits, descendant-term
 
 ## Historical scene
 
-The earlier street showcase and its underlying historical project assets are not included in this private review repository, pending a separate provenance/licensing audit. The original MORVI white preview above is the included demonstration.
+The selected historical screenshot appears above at the owner's request. Underlying historical models and project source are not included. MORVI remains the separate original white-preview functional-test example; it is not the main visual showcase.
 
 ## Validation
 Helper regression tests use newly created neutral primitive geometry, not historical models. See `tests/RESULTS.md` for observed results and limits. Capability claims remain limited to tested behavior, not every Blender task.

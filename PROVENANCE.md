@@ -4,7 +4,7 @@ This private review copy was authorized for the owner’s GitHub account. It is 
 
 - Workflow concepts extracted from user-provided `blender-svg-refinement` and `cad-vehicle-motion-skills` source snapshots: preserving accepted baselines, semantic reference calibration, articulation, actual-file verification. Domain-specific executable assets and game integrations are not copied.
 - New helper code and neutral regression fixture authored for this draft. Upstream ownership and permission to publish extracted material still need confirmation.
-- Historical street imagery and historical project assets are excluded pending their separate source-rights audit.
+- `docs/showcase/gunstore-street.png`: earlier user-selected four-store street screenshot including the NIGHT SHIFT gun shop. The owner explicitly authorized its use in this private README. It is historical project work, not the independent cold-test output. Only this image is included; historical models and source code remain excluded. Text/EXIF/time metadata were removed without changing decoded pixels. Public redistribution and any underlying asset-license obligations still require separate review.
 
 - `docs/showcase/morvi-white-v01.png`: final white preview of the independent frozen-v0.1 functional test. The tester reports original procedural geometry and fictional branding, with no external models, textures or real-company logos. This is private review documentation, not a trademark-clearance claim or license grant. No café model or builder is embedded in the portable skill.
 
