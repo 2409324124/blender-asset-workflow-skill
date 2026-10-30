@@ -1,10 +1,55 @@
-# Blender Asset Workflow — v0.3 private review draft
+# Blender Asset Workflow — v0.4 private review draft
 
 A compact, project-independent skill for low-poly hard-surface modeling and modular scene assembly with Blender. Native geometry first, cheap white previews next, visual and export checks before presentation.
 
 **Status:** private repository review draft; not installed or publicly released. No license has been selected or granted by this draft. The frozen v0.1 package completed one independent fresh-context functional test; v0.2 contains narrow post-test helper corrections; v0.3 adds a runnable neutral example and conservative overlap review. Neither is represented as another independent modeling test.
 
 Read [`skills/blender-asset-workflow/SKILL.md`](skills/blender-asset-workflow/SKILL.md). This folder is the portable skill package; repository showcase and tests are not required inputs. Requires Blender 4.3-compatible Python; the optional guard requires POSIX Python 3. No external plugins or online services are required.
+
+## What this workflow emphasizes
+
+**Independent QA and the numeric-pitfall table are core, not optional finishing touches.** The normal workflow is automatic: build → freeze saved artifacts → independent reviewer inspects actual pixels and reimports exports → bounded repairs → re-review → delivery. There is no routine “wait for the user to approve the next modeling stage” gate. A distinct reviewer must actually run; if the host cannot provide one, report self-check only rather than inventing independence. Platform permission prompts and authorization boundaries still apply.
+
+- [Independent QA execution protocol](skills/blender-asset-workflow/references/independent-qa.md): builder/reviewer context separation, evidence handoff, saved-artifact checks, verdicts and bounded repair/stop conditions.
+- [Numeric and evidence traps](skills/blender-asset-workflow/references/numeric-pitfalls.md): why source hashes, AABB results, polygon counts, exporter seams and “fresh process” checks can mislead.
+
+### Platform limits
+
+**Live RSS memory limiting works only on Linux.** It is sampled process-group monitoring, not a hard memory sandbox. The optional `guarded_run.py` timeout/process-group cleanup requires POSIX (Linux tested; macOS not tested); requesting its RSS limit on another platform fails clearly. The bounded minimal-shop runner currently requires Linux. Windows is not supported by that runner or POSIX guard. The Blender modeling guidance itself is not an assertion that every helper is cross-platform.
+
+## Installation and first run
+
+Requirements: an agent host that supports directory-based skills, Python 3, and Blender 4.3-compatible CLI. Blender 4.3.2 is the tested version. Git is needed only to clone; private-repository access must already be authorized. No external Blender plug-in or asset download is required.
+
+```sh
+git clone https://github.com/2409324124/blender-asset-workflow-skill.git
+cd blender-asset-workflow-skill
+blender --version
+python3 --version
+```
+
+### Codex directory installation (Bash on Linux/macOS)
+
+Codex's skill installer convention is `$CODEX_HOME/skills`, defaulting to `~/.codex/skills`. Copy only the portable skill folder; repository examples are run from the checkout. The commands below refuse to replace an existing skill:
+
+```sh
+dest="${CODEX_HOME:-$HOME/.codex}/skills/blender-asset-workflow"
+if [ -e "$dest" ]; then printf '%s\n' "Already installed: $dest; review before updating."; exit 1; fi
+mkdir -p "$(dirname "$dest")"
+cp -R skills/blender-asset-workflow "$dest"
+test -f "$dest/SKILL.md" && test -f "$dest/references/independent-qa.md"
+```
+
+On the next host turn, verify that `blender-asset-workflow` is discoverable and ask the host to read its `SKILL.md`. The filesystem check alone does not prove host discovery. If a different host/version uses another skills directory, follow that host's installation documentation and copy the same folder there; no universal one-click installer is claimed. This repository does not install itself.
+
+Run the example from the repository checkout on Linux (check available RAM first; choose a fresh output directory):
+
+```sh
+python3 examples/minimal-shop/run_example.py --output ./runs/shop-001 --max-rss-mib 2048
+python3 -m unittest discover -s tests -p 'test_*.py' -v
+```
+
+Open the resulting BLEND/GLB and PNGs. The runner's data checks and preview generation are **not independent visual QA**; the agent host must actually arrange the separate review described above. Change the cap for your machine; 2048 MiB is an example, not a universal safe allocation.
 
 ## Historical gun shop and street showcase
 

@@ -1,13 +1,15 @@
 81e271d4422393e3d29464a347e947c574d2868f63a51389a969d69a611a01a9  ./.gitignore
 d0688e7533e5b9329b7b4ee8cecc66068ea9d891d6a9fc6ef19f3f6030ae0a73  ./PROVENANCE.md
-94fc0c87fd096c0a59e51cafcc123bae5a06a1576a9bdb1facf44b98bb785fbb  ./README.md
+b24d5d2b3f85acf155de1fd8b6807574e1c0d1dc219807d9032fb8af602f5f61  ./README.md
 d2b53973af8a117a0073f023c10fcbf9e19ae6b9538006497b0ab4022a5d7b8f  ./docs/showcase/gunstore-street.png
 edaa797596830d658203426023ec804e04fff1a8246b7e464daaa0fd564c7a40  ./docs/showcase/morvi-white-v01.png
 5fc350c318228524627e5dd41e159d13bde0eb3587bdda8dc9f6d22c8cca74ad  ./examples/minimal-shop/README.md
 514fa182453bf34e06a673eac1b29b560a80e833ffa1ee9c895e9c1ad10edc34  ./examples/minimal-shop/build.py
 d8b2aeb735eac15d7a2cec61664ae51218f585e19fd2cbfe3cba9322cb7d3063  ./examples/minimal-shop/run_example.py
-379429142712dd62a0cacb763cc4f6210454feae922545097454cb636f305db4  ./skills/blender-asset-workflow/SKILL.md
+2b8649fbbde85675566e5305c94b1f27560a085012a5ee62ed1d0e8d072a32ec  ./skills/blender-asset-workflow/SKILL.md
 073cda67b871405255e85876ba6c7c9c986abd927ab42cf550f23189ad59b2f6  ./skills/blender-asset-workflow/references/assembly.md
+62648c1fff4729c1b5cc77494dfbab96e5ff21c4cb0eca9c5a005045050e897f  ./skills/blender-asset-workflow/references/independent-qa.md
+42c816dd234505d7903c39cbfb2b0b5a4ba2f1fe8fbabece7dbfa7799deb3acc  ./skills/blender-asset-workflow/references/numeric-pitfalls.md
 5c8dd1a42e733798af34d021150ac5214f3298aa59ac9b813f8b507b4389ee35  ./skills/blender-asset-workflow/references/overlap-checks.md
 cfea205543cedcbf0aafcca185b6874f143cf9236f668b9438b518ff9dd3f85e  ./skills/blender-asset-workflow/references/revisions.md
 a38814c6fbe4d226876f11295061e8504c66fd65a947e1621a4779b52712f359  ./skills/blender-asset-workflow/references/runtime.md
@@ -16,7 +18,7 @@ a38814c6fbe4d226876f11295061e8504c66fd65a947e1621a4779b52712f359  ./skills/blend
 44dead68e15ef2a5a9a34d6d650c71565ba6cb7ff4c0a36a6600fc7e5aeddd28  ./skills/blender-asset-workflow/scripts/inspect_scene.py
 b6c9677cbec9ebb675d4e7a27abcc2973940386c13a1474e7bf1c00ee52f5b25  ./skills/blender-asset-workflow/scripts/overlap_audit.py
 6c9661f0b66b5599aa0c4613f733f15bd43c6c621d1b732401b33cd91b80ea88  ./skills/blender-asset-workflow/scripts/white_preview.py
-f2a8b39075385c6c5f7fd62224e86cb616ae27c981470f31fb5105b8f1f708ae  ./tests/RESULTS.md
+767efe7d57fe50e6710595f19a2ea079cccbfc40f31e457a7cdb1e2045421d6e  ./tests/RESULTS.md
 9dd3bbdb06458248e6e4ebda6eabca89cccec84aca4a3a87d5835e3fb0cd2fe2  ./tests/framing_fixture.py
 42d81d01722fdf668aceb7835107a4d0d6468c5755aad838c5f04c8fea5107eb  ./tests/hidden_scene_fixture.py
 ee00f7e5135d2200acbb024c039b097a43be04bbf7dab441ba5461192b8d2d94  ./tests/make_fixture.py

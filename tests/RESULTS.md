@@ -47,3 +47,13 @@ Release-copy hygiene: removed PNG text/EXIF/time ancillary metadata from the loc
 - native-inspect-resources: 1.408 s; sampled group peak RSS 214.22 MiB; exited.
 
 Independent v0.3 review: 17 tests passed in 20.386 seconds; fresh example produced 45 meshes / 540 native and GLB triangles with zero world-bound difference. Reviewer viewed all three PNGs and verified 0 candidates / 50 contacts / 15 precise joint exemptions, positive counterexamples, and rejection of repeated output paths, NaN limits and an invalid Blender executable. No blocking defect found. These are local independent checks, not hosted CI.
+
+# v0.4 independent-review protocol and numeric-traps restoration — 2026-10-30
+
+Source audit: the earlier `blender-svg-refinement` verification reference contains an explicit numeric/tool-pitfall table and independent reviewer evidence requirements. Comparing the frozen generic v0.1 entrypoint with v0.3 shows these were not later deleted from this new repository: the initial generalization compressed them too far instead of retaining an explicit core protocol/table. v0.4 restores project-independent versions and expands the generic evidence traps.
+
+Documentation changes only: independent builder/reviewer context and evidence contract; actual pixel/native/export review; honest self-check fallback; automatic bounded repair/re-review without routine user approval gates; real external permission boundaries; installation/discovery verification; prominent Linux-only sampled RSS and POSIX timeout distinctions. No competitor-superiority claim.
+
+Validation: skill structural validator passed; 16 relative Markdown targets resolved; copied the portable skill into an isolated temporary skills directory and verified entrypoint/review/traps references without installing into a user's host. Existing 17 regression tests rerun successfully; test timing is recorded below. This verifies package structure/copy commands, not discovery in every host/version. No new scene is embedded as a prescribed test answer.
+
+Observed v0.4 regression run: 17 tests passed in 18.134 seconds (Linux / Blender 4.3.2).
