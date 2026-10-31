@@ -1,29 +1,21 @@
-# Blender Asset Workflow — v0.4 private review draft
+# Blender Asset Workflow
 
-A compact, project-independent skill for low-poly hard-surface modeling and modular scene assembly with Blender. Native geometry first, cheap white previews next, visual and export checks before presentation.
+A Blender skill for low-poly hard-surface assets and modular scenes: build geometry first, inspect inexpensive white previews, then verify saved files and exports.
 
-![RIVET tire and repair shop — owner-selected main showcase](docs/showcase/rivet-locked-main.png)
+![RIVET tire and repair shop](docs/showcase/rivet-locked-main.png)
 
-**Locked main image:** the owner-selected RIVET tire-and-repair shop scene, with its small truck, tire stacks and fenced yard. This exact screenshot is the main visual showcase; the historical street and original white-model test evidence remain separately identified below. Selecting a showcase image is not itself a new QA verdict.
+## What it does
 
-**Status:** private repository review draft; not installed or publicly released. Repository-maintained code, skill instructions and accompanying text use **GPL-3.0-only**; showcase images are separately scoped and are not covered by that grant. See [license scope](LICENSING.md) and the full [LICENSE](LICENSE). The frozen v0.1 package completed one independent fresh-context functional test; v0.2 contains narrow post-test helper corrections; v0.3 adds a runnable neutral example and conservative overlap review. Neither is represented as another independent modeling test.
+- **Independent QA:** a separate reviewer inspects actual images, reopens the saved BLEND and reimports the export. If no separate reviewer runs, report self-check only.
+- **Numeric traps:** hashes, polygon counts, AABB hints and successful reimports are evidence—not guarantees of resemblance or correct geometry.
+- **Automatic iteration:** build → freeze → review → bounded repairs → re-review. Stop honestly at permission, input or resource limits.
+- **Reusable tools:** white previews, scene inventories, overlap hints with explicit joint exceptions, and a resource-aware runner.
 
-Read [`skills/blender-asset-workflow/SKILL.md`](skills/blender-asset-workflow/SKILL.md). This folder is the portable skill package; repository showcase and tests are not required inputs. Requires Blender 4.3-compatible Python; the optional guard requires POSIX Python 3. No external plugins or online services are required.
+Read the [skill](skills/blender-asset-workflow/SKILL.md), [QA protocol](skills/blender-asset-workflow/references/independent-qa.md) and [numeric-pitfall table](skills/blender-asset-workflow/references/numeric-pitfalls.md).
 
-## What this workflow emphasizes
+## Install and run
 
-**Independent QA and the numeric-pitfall table are core, not optional finishing touches.** The normal workflow is automatic: build → freeze saved artifacts → independent reviewer inspects actual pixels and reimports exports → bounded repairs → re-review → delivery. There is no routine “wait for the user to approve the next modeling stage” gate. A distinct reviewer must actually run; if the host cannot provide one, report self-check only rather than inventing independence. Platform permission prompts and authorization boundaries still apply.
-
-- [Independent QA execution protocol](skills/blender-asset-workflow/references/independent-qa.md): builder/reviewer context separation, evidence handoff, saved-artifact checks, verdicts and bounded repair/stop conditions.
-- [Numeric and evidence traps](skills/blender-asset-workflow/references/numeric-pitfalls.md): why source hashes, AABB results, polygon counts, exporter seams and “fresh process” checks can mislead.
-
-### Platform limits
-
-**Live RSS memory limiting works only on Linux.** It is sampled process-group monitoring, not a hard memory sandbox. The optional `guarded_run.py` timeout/process-group cleanup requires POSIX (Linux tested; macOS not tested); requesting its RSS limit on another platform fails clearly. The bounded minimal-shop runner currently requires Linux. Windows is not supported by that runner or POSIX guard. The Blender modeling guidance itself is not an assertion that every helper is cross-platform.
-
-## Installation and first run
-
-Requirements: an agent host that supports directory-based skills, Python 3, and Blender 4.3-compatible CLI. Blender 4.3.2 is the tested version. Git is needed only to clone; private-repository access must already be authorized. No external Blender plug-in or asset download is required.
+Requires Python 3 and Blender CLI; **Linux / Blender 4.3.2** is tested. No external Blender plug-ins or model downloads are needed.
 
 ```sh
 git clone https://github.com/2409324124/blender-asset-workflow-skill.git
@@ -32,62 +24,58 @@ blender --version
 python3 --version
 ```
 
-### Codex directory installation (Bash on Linux/macOS)
+### One-message setup for local agent sessions
 
-Codex's skill installer convention is `$CODEX_HOME/skills`, defaulting to `~/.codex/skills`. Copy only the portable skill folder; repository examples are run from the checkout. The commands below refuse to replace an existing skill:
+Copy the relevant request into your local agent (repository access is required while private); hosted/cloud sessions may use different installation locations.
 
-```sh
-dest="${CODEX_HOME:-$HOME/.codex}/skills/blender-asset-workflow"
-if [ -e "$dest" ]; then printf '%s\n' "Already installed: $dest; review before updating."; exit 1; fi
-mkdir -p "$(dirname "$dest")"
-cp -R skills/blender-asset-workflow "$dest"
-test -f "$dest/SKILL.md" && test -f "$dest/references/independent-qa.md"
-```
+**Codex**
+> Install `skills/blender-asset-workflow` from https://github.com/2409324124/blender-asset-workflow-skill into `~/.agents/skills/blender-asset-workflow`. Copy only that folder, stop if it already exists, verify skill discovery, read `SKILL.md`, and check Blender/Python availability.
 
-On the next host turn, verify that `blender-asset-workflow` is discoverable and ask the host to read its `SKILL.md`. The filesystem check alone does not prove host discovery. If a different host/version uses another skills directory, follow that host's installation documentation and copy the same folder there; no universal one-click installer is claimed. This repository does not install itself.
+**Claude Code**
+> Install `skills/blender-asset-workflow` from https://github.com/2409324124/blender-asset-workflow-skill into `~/.claude/skills/blender-asset-workflow`. Copy only that folder, stop if it already exists, verify skill discovery, read `SKILL.md`, and check Blender/Python availability.
 
-Run the example from the repository checkout on Linux (check available RAM first; choose a fresh output directory):
+These are instructions for an agent, not executable shell commands or a promise of unattended authentication.
+
+Run the original minimal shop from the checkout:
 
 ```sh
 python3 examples/minimal-shop/run_example.py --output ./runs/shop-001 --max-rss-mib 2048
+```
+
+Outputs: BLEND, GLB, white overview, roof-off top view, furniture close-up and verification reports. The runner refuses existing output directories. Adjust the memory budget to your machine; arrange independent visual review separately. See [example options](examples/minimal-shop/README.md).
+
+**Platform limits:** live RSS checks and the example runner are **Linux-only**. RSS is sampled, not a hard sandbox. Timeout/process cleanup requires POSIX; macOS is untested and Windows is unsupported by those runners.
+
+## Validation
+
+Current skill revision: **v0.4**. Recorded local regression run: **17 tests passed**. Independent example review: **45 meshes / 540 triangles**, matching native/GLB bounds, all three preview images inspected. These are specific local checks, not hosted CI or a universal quality certificate.
+
+```sh
 python3 -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
-Open the resulting BLEND/GLB and PNGs. The runner's data checks and preview generation are **not independent visual QA**; the agent host must actually arrange the separate review described above. Change the cap for your machine; 2048 MiB is an example, not a universal safe allocation.
+See [test evidence](tests/RESULTS.md) and [release notes](RELEASE-NOTES.md). AABB hints are not exact mesh-collision checks; target-engine integration, character sculpting and production rigging are outside this validation.
 
-## Historical gun shop and street showcase
+## License and showcases
 
-![Earlier NIGHT SHIFT gun shop and neighboring storefronts](docs/showcase/gunstore-street.png)
+Code, skill and maintained text: **[GPL-3.0-only](LICENSE)**. Showcase images are the owner's stated original work and are separately scoped—not automatically GPL. See [license scope](LICENSING.md) and [image provenance](PROVENANCE.md).
 
-This user-selected screenshot depicts the earlier gun-shop and four-store street project that motivated this workflow. It is historical project work, **not an output of the independent generic-skill cold test**. The owner authorized this image for this private repository; future public redistribution requires a separate rights review. Only the screenshot is included, not the earlier project's models or source code.
+## Further details
 
-## First independent test — frozen v0.1
+### Discovery and installation scope
 
-![Original fictional café, white geometry preview](docs/showcase/morvi-white-v01.png)
+The prompts above use personal installation directories. For project-only use, copy the same folder to `.agents/skills/blender-asset-workflow` (Codex) or `.claude/skills/blender-asset-workflow` (Claude Code). Do not copy showcase images or example outputs into the skill directory.
 
-An independent first-use test created the fictional **MORVI coffee & toast** café from scratch using frozen v0.1 and ordinary Blender/Python, without historical model files or the skill author's modeling guidance. The tester used Blender's frontend for the requested genuine build recording, then serialized headless checks and cheap Workbench previews. Final native/GLB comparison found 128 evaluated objects and 9,724 triangles each, with maximum per-object world-bound difference about 0.00000024 m.
+Codex discovers skills automatically; restart if the new skill is not listed. Claude Code also discovers skills automatically; if its top-level skills directory was created during an existing session, run `/reload-skills`. A file copy is not proof of discovery: ask the host to list/read the skill before using it. Current host references: [Codex skills](https://learn.chatgpt.com/docs/build-skills), [Claude Code skills](https://code.claude.com/docs/en/skills).
 
-The first candidate needed a staff-aisle correction; the first preview framing clipped edges and was widened before final pixel review. This is one functional result, not a universal quality guarantee or a controlled skill/no-skill comparison. The model is a white/solid static scene, with simplified equipment, no authored beauty materials, no glass panes, no architecture-code certification or engine integration test. The preview shown is the tester's final v0.1 result, **not** a rerun with v0.2.
+### What independent review means
 
-v0.2 corrects empty-import isolation, nonfinite resource limits, descendant-termination test evidence, and camera fitting against the actual projected frame. It adds neutral regression fixtures rather than bundling the café builder or model as a required input.
+The builder supplies saved artifacts and an evidence handoff; the reviewer uses a separate reasoning context rather than trusting the builder's summary. Review includes actual preview pixels, reopened native geometry and reimported exports, with findings tied to artifacts. A fresh Blender process alone does not create independent reasoning. Repairs are bounded by an explicit budget and require re-review; unresolved failures are reported instead of silently passed.
 
-## Historical scene
+### Reading the numbers
 
-The selected historical screenshot appears above at the owner's request. Underlying historical models and project source are not included. MORVI remains the separate original white-preview functional-test example; it is not the main visual showcase.
+The overlap helper reports conservative AABB candidates, contact/near-contact pairs and precisely named allowed joints. It does not compute an exact mesh collision verdict. Zero candidates does not prove a scene has no defects. Source hashes help establish file identity, not correct geometry copying; triangle counts do not measure resemblance; matching native/GLB bounds do not establish engine shading or split-normal correctness. The [numeric-pitfall table](skills/blender-asset-workflow/references/numeric-pitfalls.md) explains these and other traps.
 
-## Validation
-Helper regression tests use newly created neutral primitive geometry, not historical models. See `tests/RESULTS.md` for observed results and limits. Capability claims remain limited to tested behavior, not every Blender task.
+### Historical examples
 
-## Runnable minimal shop and overlap review
-
-```sh
-python3 examples/minimal-shop/run_example.py --output ./runs/shop-001
-```
-
-[Example instructions](examples/minimal-shop/README.md) describe Linux/Blender prerequisites, adjustable resource caps, non-overwriting outputs, native/GLB checks, overall white preview, roof-off top view, and furniture close-up. The example starts from an empty scene with original neutral geometry. It does not reuse the historical showcase models.
-
-[Overlap review guidance](skills/blender-asset-workflow/references/overlap-checks.md) distinguishes conservative AABB candidates, normal/near contacts, and exact named exceptions with reasons. It does **not** claim actual mesh penetration detection or safe/code-compliant layout. Test cases cover detectable candidates, explicit joints, touching bounds, separated objects, and invalid policies.
-
-## License
-
-Code, skills and accompanying text: **GPL-3.0-only** (not “or later”). Showcase images and external/third-party material have separate boundaries; generated outputs are not automatically GPL merely because the tools produced them. See [LICENSING.md](LICENSING.md) and [PROVENANCE.md](PROVENANCE.md). The repository remains private; this license selection is not a public-release instruction.
+The RIVET lead image is a visual showcase, not by itself a QA report. The original MORVI café white preview records the frozen-v0.1 independent functional test, which required aisle and framing corrections. The earlier NIGHT SHIFT street image is historical project work, not a generic-skill cold-test output. Their sources are listed in [PROVENANCE.md](PROVENANCE.md); scene/model files are not bundled as required skill inputs.

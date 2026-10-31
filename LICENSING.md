@@ -8,11 +8,11 @@ This includes `skills/`, `examples/minimal-shop/` code and text, `tests/` code a
 
 No “or any later version” option is granted by this notice. The standard license document includes an illustrative application appendix; that example does not change this repository's explicit **version 3 only** selection.
 
-The repository's current GitHub visibility remains private. That access setting is not an additional restriction on recipients' rights under the GPL. Choosing a license does not itself authorize changing the repository to public.
+Repository access settings do not add restrictions to recipients' rights under the GPL.
 
 ## Showcase images and other separately sourced material
 
-Files under `docs/showcase/` are **excluded from the repository's GPL grant**. They are owner-selected demonstration images included for this private README. No standalone public redistribution license is granted for those images here. Their recorded origins and scope are in [PROVENANCE.md](PROVENANCE.md). Historical scene models, historical project source, and third-party reference assets are not included or relicensed by this repository.
+Files under `docs/showcase/` are **excluded from the repository's GPL grant**. The owner states that these demonstration images are their own creations and selected them for this README. No standalone image redistribution license is granted here; obtain the owner's permission for reuse outside applicable legal exceptions. Their recorded origins and scope are in [PROVENANCE.md](PROVENANCE.md). Historical scene models, historical project source, and third-party reference assets are not included or relicensed by this repository.
 
 External software (including Blender and Python) and any subsequently added third-party material retain their own licenses. This notice does not claim ownership of third-party material or replace applicable third-party notices. If incompatible or unidentified third-party content is discovered, resolve its provenance before distributing it; do not assume the repository license overrides it.
 

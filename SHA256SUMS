@@ -1,8 +1,9 @@
 81e271d4422393e3d29464a347e947c574d2868f63a51389a969d69a611a01a9  ./.gitignore
 3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986  ./LICENSE
-e2ae4ef5d15cc1b51ce957c170ec07eed980488fa550479f7ff90e10e7a800ad  ./LICENSING.md
-6c9b9b3b49991d19c33749c280e46fdc9722a192a24e628360486bed15410a57  ./PROVENANCE.md
-971c086623e888f6ac7471695a072e8ffce828bbfb2eb510f74a2f8410586424  ./README.md
+65fc5c9faf82662bd7e7f737be7571c93340ec12f689b7a0a9684c88b31a6dae  ./LICENSING.md
+769442cef49323f4ced34b66aead71b57cb6b6a057c46e295b0a0a8af7c3bc9d  ./PROVENANCE.md
+87a32668ffa624cb8c5644d80a1c9599aedaf1013872a4973cdf06ef7458af63  ./README.md
+c78cbf9169442850b2a610093bde865bbec42656c55380920e4c1dfc314f33ea  ./RELEASE-NOTES.md
 d2b53973af8a117a0073f023c10fcbf9e19ae6b9538006497b0ab4022a5d7b8f  ./docs/showcase/gunstore-street.png
 edaa797596830d658203426023ec804e04fff1a8246b7e464daaa0fd564c7a40  ./docs/showcase/morvi-white-v01.png
 d479ad1391323838a7ca2228a08fcd64e850b8df8ed40a78059afab03776f0db  ./docs/showcase/rivet-locked-main.png
@@ -21,7 +22,7 @@ a38814c6fbe4d226876f11295061e8504c66fd65a947e1621a4779b52712f359  ./skills/blend
 44dead68e15ef2a5a9a34d6d650c71565ba6cb7ff4c0a36a6600fc7e5aeddd28  ./skills/blender-asset-workflow/scripts/inspect_scene.py
 b6c9677cbec9ebb675d4e7a27abcc2973940386c13a1474e7bf1c00ee52f5b25  ./skills/blender-asset-workflow/scripts/overlap_audit.py
 6c9661f0b66b5599aa0c4613f733f15bd43c6c621d1b732401b33cd91b80ea88  ./skills/blender-asset-workflow/scripts/white_preview.py
-767efe7d57fe50e6710595f19a2ea079cccbfc40f31e457a7cdb1e2045421d6e  ./tests/RESULTS.md
+0fbf8eaffef9bf8e918e10c1ed0d53f77d999b8463ff35721e4e0e678bbd70a2  ./tests/RESULTS.md
 9dd3bbdb06458248e6e4ebda6eabca89cccec84aca4a3a87d5835e3fb0cd2fe2  ./tests/framing_fixture.py
 42d81d01722fdf668aceb7835107a4d0d6468c5755aad838c5f04c8fea5107eb  ./tests/hidden_scene_fixture.py
 ee00f7e5135d2200acbb024c039b097a43be04bbf7dab441ba5461192b8d2d94  ./tests/make_fixture.py
