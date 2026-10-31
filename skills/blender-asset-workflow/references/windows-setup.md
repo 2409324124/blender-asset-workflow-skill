@@ -1,5 +1,7 @@
 # Windows setup and initialization
 
+When the selected host is DSH, also read [Windows DSH](windows-dsh.md) for its installation, Web/CLI workflows, credentials, skill discovery and end-to-end modeling checks. Blender connectivity and host authentication are separate outcomes.
+
 Use this reference when Blender is missing, CLI discovery fails, or the user requests Windows installation/initialization. Keep the modeling workflow in `SKILL.md`; do not reinstall a working environment on each task. A request to install this skill does not by itself authorize downloading/installing Blender, changing PATH or saving preferences. An existing request to install and initialize Blender covers those necessary steps without repeated confirmation.
 
 ## Discover before downloading
