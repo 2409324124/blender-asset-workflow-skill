@@ -27,7 +27,7 @@ Work automatically through build → independent QA → bounded repair → re-re
 ## Helpers
 Run helpers from this skill folder (or substitute their absolute paths):
 
-The guarded command below is POSIX-only. On Windows, use the bounded probe in [Windows setup](references/windows-setup.md) for connectivity and a Windows-compatible supervisor for modeling jobs. Resolve input, script and output paths to absolute paths before launching Blender.
+The guarded command below is POSIX-only. On Windows, use the bounded probe in [Windows setup](references/windows-setup.md) for connectivity and direct Blender CLI for modeling jobs, with the resource guard off by default. Only when the user explicitly enables resource protection should you use a compatible supervisor with process-tree cleanup; otherwise report that no process-tree/RSS protection is active, without blocking ordinary modeling. Resolve input, script and output paths to absolute paths before launching Blender.
 
 ```sh
 python3 scripts/guarded_run.py --timeout 180 --report run.json -- blender -b --python build.py
