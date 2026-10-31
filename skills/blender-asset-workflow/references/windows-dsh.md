@@ -142,6 +142,8 @@ When automating, opt into a supervisor with a chosen deadline, for example 120 s
 
 ## Probe Blender and run the modeling test
 
+Skip Windows system-memory discovery in the normal workflow. `Get-CimInstance` or `systeminfo` access is not required to start Blender or build an asset. If a host already attempted a query and the sandbox denied it, note that memory information is unavailable, then proceed with one Blender process and inexpensive previews. Do not ask for elevation or try other commands merely to fill in that metric. Resource diagnostics/protection are a separate, explicitly requested workflow; an actual Blender failure still needs its own diagnosis.
+
 Resolve the installed `blender.exe` by absolute path and set the child process's `BLENDER` environment value. A parent process with stale PATH may need its own PATH updated or the executable passed explicitly. Run the separate factory-startup, 30-second `bpy` probe from [Windows setup](windows-setup.md#bounded-scene-safe-connectivity-probe). It must print the version and exit successfully before reporting CLI connectivity. Installing `bpy` into standalone Python is not a repair for Blender discovery.
 
 For a small modeling smoke test, give the chosen DSH surface this contract, replacing the output path with a **new absolute directory**:
