@@ -2,18 +2,6 @@
 
 Independent review is a core workflow, not an optional congratulatory summary. Automate it when the host can run an independent reviewer. A separate Blender process provides **artifact isolation**, not independent reasoning by itself.
 
-## Acceptance and stopping rules
-
-Judge the candidate against the user's requested result. A simple object without a request for photorealism or fine material work needs recognizable geometry, requested parts/style/scale, usable saved files and sufficient viewed previews. Keep review proportionate: one overall view plus only the additional views needed to check relevant details. Do not introduce a texture showcase, a lighting comparison or an unrequested export as a new acceptance requirement. Builder-authored design notes cannot silently raise the user's quality target.
-
-Classify each finding before changing the candidate:
-
-- **Required correction:** an evidenced failure of the request or basic usability, such as an unreadable file, a missing requested part, a visibly detached component, a conspicuously wrong silhouette, or incorrect required scale. Name the object/view or failed operation and the acceptance criterion it violates. Requested visual fidelity is a valid criterion; this rule does not excuse a visibly wrong model.
-- **Optional refinement:** a preference among otherwise acceptable colors, exposures, surface roughness, pore densities or lighting arrangements. These do not produce `needs_changes` and do not trigger more edits/renders unless the user requested that refinement. Deliver the passing candidate; mention an optional improvement only when useful.
-- **Uncertain finding:** gather targeted evidence when it could establish a material defect. If it remains unresolved, state the uncertainty without repeatedly changing geometry or rendering alternatives. Missing evidence for a required check must not be labeled a pass.
-
-Once required checks pass, stop editing and deliver. Optional refinements do not trigger repair passes unless requested. Re-review fixes and related regressions; do not introduce new aesthetic requirements. Apply the existing bounded repair/re-review rules below without changing their budget.
-
 ## Roles and minimal handoff
 
 **Builder** owns construction and bounded repairs. Save a versioned candidate and exported deliverables, then freeze those bytes for review. Record hashes of the actual native/export files and their bound preview images. Preserve the previous accepted baseline and the user's raw requested changes.
@@ -29,7 +17,7 @@ Do not include the builder's predicted verdict, suggested answer, or an “all c
 
 1. Verify received hashes; open the saved candidate, not the builder’s unsaved session. Compare the stated change against the accepted baseline, including per-object world transforms when modules were assembled.
 2. Independently inspect actual pixels: overall silhouette, relevant orthographic view, and close-ups/cutaways for affected details. If views conceal an affected region, generate another from the saved candidate in a fresh process. **Opening an image filename or trusting its caption is not visual review.** Check the final saved state, not only a prettier older image.
-3. Reopen native and, only when GLB delivery was requested, reimport the actual GLB into an empty process. For example, from this skill directory, with separate nonexisting report paths:
+3. Reopen native and reimport the actual GLB into an empty process. For example, from this skill directory, with separate nonexisting report paths:
 
 ```sh
 blender -b candidate.blend --python-exit-code 1 --python scripts/inspect_scene.py -- --report reviewer-native.json
