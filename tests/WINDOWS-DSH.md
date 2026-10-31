@@ -54,3 +54,21 @@ The later documentation update uses upstream's complete three-entry authenticati
 Extracted and executed the guide's PowerShell workspace/copy/skill-overlay recipe with the current skill candidate as source. In a new home/workspace, appended the complete `credentials`, `authorization`, and `deepseek-account` restore entries, an explicit reference to the existing store, and the `deepseek-official` / `deepseek-flash` selection. The actual headless probe completed in 13.5 seconds, exit 0, within its 120-second deadline. It called the skill tool and the file tool, returned the random marker, and left skill source files unchanged. This verifies that the complete overlay can boot and serve the **API-key** route; it does not test account authentication.
 
 All PowerShell examples parsed successfully. Skill structural validation, UTF-8 decoding, local reference resolution and checksum verification passed. No user profile or credential value was edited. The full modeling test above was not repeated for this documentation-only change.
+
+## Web workflow findings — 2026-11-01
+
+These observations come from tool-call/result records, visible responses and output files in a separate Web session using the older user-installed skill. They describe snapshots of that run, not an evaluation of the revised instructions. Raw sessions, credentials and private machine paths are omitted.
+
+| Observed problem and evidence | Documentation change |
+|---|---|
+| The installed skill still required memory discovery. `Get-CimInstance` failed, followed by a second failed attempt with `systeminfo` | Skip ordinary Windows memory discovery; an unavailable metric does not trigger alternate commands or elevation |
+| After finding Blender, the agent ran additional engine/device, noise and material-interface probes. One probe accessed nonexistent `CyclesRenderSettings` and failed | Reuse successful execution evidence or run one minimal `bpy` probe, then start the builder; diagnose concrete failures instead of inventorying capabilities |
+| The initial segment lasted about 153 seconds and made 17 tool calls. After a progress question, the visible response promised continuation but the turn ended; at that snapshot only `DESIGN.md` existed | A progress question is not cancellation: give a brief status and continue authorized work. Do not imply a finished turn is still executing in the background |
+| Later snapshots did contain a saved BLEND, white previews and beauty renders. A snapshot counted 48 edit calls, 20 image reads and a fifth hero image, with changes to pores, roughness, exposure and lighting; no independent reviewer invocation appeared in the inspected calls | Distinguish builder self-refinement from independent QA. Simple requests do not authorize open-ended aesthetic refinement; judge required defects separately from optional preferences |
+| Recent color-test renders took roughly 3–6 seconds each, despite the prolonged end-to-end workflow | Do not attribute all delay to Blender rendering. Bound iterative refinement and deliver the requested usable result |
+| An earlier saved-file inspection predated subsequent candidate revisions | Recheck the final delivered bytes; older reports cannot certify a revised candidate |
+| The Web session loaded the old installed skill, while fixes existed only on the PR branch | Verify the actually loaded path/content before attributing behavior to a revised skill; publishing a PR does not update an existing local installation or loaded conversation |
+
+The resulting policy keeps builder self-check and independent QA repair budgets **separate**. The model chooses finite allowances from the actual task rather than a fixed default round count; self-checks cannot consume independent QA repair capacity. Passing candidates are delivered without spending unused allowances. Optional polish requires a user request, and unresolved required failures remain explicit.
+
+These observations establish that this Web session could run Blender, save a candidate and render/read images. They do not establish final export/reimport, independent QA, final delivery, or improved behavior under the revised policy. The policy changes have document/consistency validation only; no new end-to-end modeling run is claimed.
