@@ -16,7 +16,7 @@ Create reviewable geometry before spending on presentation. **Independent QA and
 Work automatically through build → independent QA → bounded repair → re-review → delivery, without routine user sign-off gates. Read [independent QA](references/independent-qa.md) before choosing builder/reviewer roles; a fresh Blender process alone is not an independent reviewer. If a distinct reviewer is unavailable, label the outcome self-check only. Respect real resource, input and external permission boundaries; never invent a pass or retry indefinitely.
 
 ## Build and inspect
-1. Check Blender version and available memory. Start one headless process; choose bounded resource limits before parallelizing. Read [runtime](references/runtime.md). Independent assets can be built in separate files; never have two writers mutate the same scene or output path.
+1. Check Blender version and available memory. On Windows, read [Windows setup](references/windows-setup.md) when locating, installing or initializing Blender, or diagnosing a failed CLI probe. Reuse a working installation; installing the skill alone does not authorize installing Blender. Start one headless process; choose bounded resource limits before parallelizing. Read [runtime](references/runtime.md). Independent assets can be built in separate files; never have two writers mutate the same scene or output path.
 2. Construct a coarse silhouette and major proportions in semantic objects/collections. Allocate faces where curvature, openings or motion require them, not to make grid density look uniform. Do not substitute bevels, dark materials, or detail for correct proportions.
 3. Save a new candidate `.blend`. Make cheap white/solid previews from that saved file: overall perspective plus relevant orthographic and detail views. For interior scenes include a clearly labeled cutaway or interior view; an intact roof cannot demonstrate contents. Wireframe is topology evidence, not a physical cross-section.
 4. **Actually view the preview pixels.** Compare against the contract/reference and fix conspicuous silhouette, scale, clearance, floating/intersection and block-like placeholder issues. Do not report an unseen screenshot as reviewed. Keep approved geometry unchanged unless the user authorizes the change.
@@ -26,6 +26,8 @@ Work automatically through build → independent QA → bounded repair → re-re
 
 ## Helpers
 Run helpers from this skill folder (or substitute their absolute paths):
+
+The guarded command below is POSIX-only. On Windows, use the bounded probe in [Windows setup](references/windows-setup.md) for connectivity and a Windows-compatible supervisor for modeling jobs. Resolve input, script and output paths to absolute paths before launching Blender.
 
 ```sh
 python3 scripts/guarded_run.py --timeout 180 --report run.json -- blender -b --python build.py
