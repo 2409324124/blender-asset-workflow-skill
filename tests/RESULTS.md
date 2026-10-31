@@ -71,3 +71,23 @@ Observed v0.4 regression run: 17 tests passed in 18.134 seconds (Linux / Blender
 - Windows commands are documented from Blender's CLI interface, not claimed tested. Linux-only RSS monitoring and example-runner restrictions remain unchanged.
 
 PNG writeback follow-up: same-directory temporary write and atomic replacement preserve the original on write/replace failure; failure cleanup is covered by two injected-failure regressions. Final suite: **24 tests passed in 18.153 seconds**, no skips, Linux / Blender 4.3.2. The chunk cleaner is not a complete PNG decoder or structural-validity certificate.
+
+# Official dsh offline layout checks — 2026-10-31
+
+Two new offline bundle-layout tests passed; the recorded pre-review rerun took 0.003 seconds: a full skill copy into a temporary project `.dsh/skills` root with entrypoint/frontmatter/reference checks, and rejection of an existing target without altering its contents. These fixtures do not perform installation, API credential use, real catalog discovery, image delivery or independent-agent end-to-end testing. Existing Blender code is unchanged; these two layout tests are not a rerun of the earlier 24-test suite.
+
+Separate actual-provider check: official installed dsh 0.2.1-rc.5 `SkillRegistry.snapshot/get` and `FileSystemSkillProvider` completed catalog discovery and loaded `blender-asset-workflow` with source `project-dsh` (4,302-byte entrypoint body from the pre-Windows-doc revision). The nested test directory initially inherited an ancestor Git root; an intentionally separate test-project Git boundary corrected discovery. A separate 30-second-bounded Blender probe exited 0 and reported 4.3.2. No API/model call or image-backed independent-agent QA was performed. This evidence does not establish a newer entrypoint's full runtime behavior.
+
+# Official dsh model-assisted smoke test — 2026-10-31
+
+Observed on Linux with official dsh 0.2.1-rc.5, `deepseek-official/deepseek-flash` and Blender 4.3.2: process exit 0; real skill loading; original five-mesh/60-triangle table saved as BLEND and GLB; 256×256 Workbench preview. Builder and fresh independent reviewer each received actual image content via `read_image`; reviewer independently reopened native geometry and reimported GLB, checked hashes and returned pass. Actual trace counts: 19 builder calls and 8 reviewer calls (not the builder-written report's lower count).
+
+All guarded Blender calls exited 0; maximum observed sampled RSS 451.1 MiB, longest individual call 3.822 seconds. Nonfatal Draco-availability, EGL and config-cache warnings did not prevent exported-file reimport or image review. Ground contact was established numerically; no floor plane/contact-shadow test was present. No repair was required for this small example.
+
+An earlier launch with a stripped environment lost required existing proxy/CA settings and could not connect. The successful headless setup preserved the authorized network/trust environment and enabled the official credential module to use the application's saved store. No secret values or private session paths are included here. This is one real Linux/Flash smoke test, not general Windows, all-model or production-scene certification. Raw private traces and model artifacts are not bundled.
+
+# PR #2 comment follow-up — 2026-10-31
+
+The historical two-fixture timing above is normalized to its latest pre-review run (0.003 seconds), matching the PR description. The follow-up adds explicit UTF-8 text I/O, a non-ASCII preservation fixture, and execution of the documented Bash copy in a temporary path containing spaces, including refusal to overwrite on a repeated invocation.
+
+Full local suite: **27 tests passed in 19.532 seconds**, no skips, Linux / Blender 4.3.2. PowerShell was unavailable on this test host: its copy instructions were reviewed but not executed. No new model/API call or Windows-runtime test was performed.
