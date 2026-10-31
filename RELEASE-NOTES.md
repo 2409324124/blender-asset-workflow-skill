@@ -30,3 +30,7 @@ Code, skill instructions and maintained text: GPL-3.0-only. Showcase images are 
 ## Release-preparation fixes — 2026-10-31
 
 Integration tests now accept `BLENDER` executable paths, including spaces, and reject invalid explicit settings instead of skipping. Default discovery without Blender remains an explicitly reported skip. New white-preview and example PNGs remove text, EXIF and time metadata without re-encoding image data. Direct Windows/PowerShell usage is documented, but Windows execution remains untested; the bounded runner is still Linux-only. See the dated test evidence for the added regression results.
+
+## Official dsh integration guide — 2026-10-31
+
+Added an official dsh project-local setup prompt and [execution/visual-review capability guide](docs/dsh.md). The portable skill is unchanged and requires no dsh-specific plugin, model or credential. Offline layout checks pass, and actual dsh 0.2.1-rc.5 provider discovery/loading was verified without model calls on the pre-Windows-doc skill revision. UI/session tool delivery and model-assisted independent visual QA remain unverified.

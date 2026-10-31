@@ -71,3 +71,9 @@ Observed v0.4 regression run: 17 tests passed in 18.134 seconds (Linux / Blender
 - Windows commands are documented from Blender's CLI interface, not claimed tested. Linux-only RSS monitoring and example-runner restrictions remain unchanged.
 
 PNG writeback follow-up: same-directory temporary write and atomic replacement preserve the original on write/replace failure; failure cleanup is covered by two injected-failure regressions. Final suite: **24 tests passed in 18.153 seconds**, no skips, Linux / Blender 4.3.2. The chunk cleaner is not a complete PNG decoder or structural-validity certificate.
+
+# Official dsh offline layout checks — 2026-10-31
+
+Two new offline bundle-layout tests passed in 0.002 seconds: a full skill copy into a temporary project `.dsh/skills` root with entrypoint/frontmatter/reference checks, and rejection of an existing target without altering its contents. These fixtures do not execute the official dsh provider or model runtime. These two fixtures themselves do not perform installation, API credential use, real catalog discovery, image delivery or independent-agent end-to-end testing. Existing Blender code is unchanged; these two layout tests are not a rerun of the earlier 24-test suite.
+
+Separate actual-provider check: official installed dsh 0.2.1-rc.5 `SkillRegistry.snapshot/get` and `FileSystemSkillProvider` completed catalog discovery and loaded `blender-asset-workflow` with source `project-dsh` (4,302-byte entrypoint body from the pre-Windows-doc revision). The nested test directory initially inherited an ancestor Git root; an intentionally separate test-project Git boundary corrected discovery. A separate 30-second-bounded Blender probe exited 0 and reported 4.3.2. No API/model call or image-backed independent-agent QA was performed. This evidence does not establish a newer entrypoint's full runtime behavior.

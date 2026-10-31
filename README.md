@@ -34,6 +34,9 @@ Copy the relevant request into your local agent (repository access is required w
 **Claude Code**
 > Install `skills/blender-asset-workflow` from https://github.com/2409324124/blender-asset-workflow-skill into `~/.claude/skills/blender-asset-workflow`. Copy only that folder, stop if it already exists, verify skill discovery and read `SKILL.md`. Check Python availability and Blender CLI connectivity by launching a separate factory-startup background process with a 30-second timeout, running a minimal Python probe that imports `bpy` and prints the Blender version, then exiting without opening, modifying or saving any user scene. Report the actual result and any failure.
 
+**Official dsh**
+> Copy this repository's `skills/blender-asset-workflow` into the intended project's `.dsh/skills/blender-asset-workflow` without overwriting an existing copy; verify actual skill discovery/loading, run a 30-second isolated Blender CLI `bpy` probe, and check image-input and fresh-reviewer capabilities before claiming independent visual QA. Follow [the dsh guide](docs/dsh.md); report missing capabilities rather than silently substituting another route.
+
 These are instructions for an agent, not executable shell commands or a promise of unattended authentication.
 
 Run the original minimal shop from the checkout:
