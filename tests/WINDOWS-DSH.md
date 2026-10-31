@@ -65,10 +65,32 @@ These observations come from tool-call/result records, visible responses and out
 | After finding Blender, the agent ran additional engine/device, noise and material-interface probes. One probe accessed nonexistent `CyclesRenderSettings` and failed | Reuse successful execution evidence or run one minimal `bpy` probe, then start the builder; diagnose concrete failures instead of inventorying capabilities |
 | The initial segment lasted about 153 seconds and made 17 tool calls. After a progress question, the visible response promised continuation but the turn ended; at that snapshot only `DESIGN.md` existed | A progress question is not cancellation: give a brief status and continue authorized work. Do not imply a finished turn is still executing in the background |
 | Later snapshots did contain a saved BLEND, white previews and beauty renders. A snapshot counted 48 edit calls, 20 image reads and a fifth hero image, with changes to pores, roughness, exposure and lighting; no independent reviewer invocation appeared in the inspected calls | Distinguish builder refinement from independent QA. Refinement alone is not a failure; evaluate whether the agent starts modeling, continues execution and delivers the requested artifacts |
-| Recent color-test renders took roughly 3–6 seconds each, despite the prolonged end-to-end workflow | Do not attribute all delay to Blender rendering. Bound iterative refinement and deliver the requested usable result |
+| Recent color-test renders took roughly 3–6 seconds each, despite the prolonged end-to-end workflow | Do not attribute all delay to Blender rendering; distinguish active refinement from stalled execution or missing delivery |
 | An earlier saved-file inspection predated subsequent candidate revisions | Recheck the final delivered bytes; older reports cannot certify a revised candidate |
 | The Web session loaded the old installed skill, while fixes existed only on the PR branch | Verify the actually loaded path/content before attributing behavior to a revised skill; publishing a PR does not update an existing local installation or loaded conversation |
 
 These observations concern builder self-refinement, not demonstrated exhaustion of independent QA repair capacity. They do not justify changing the existing QA budget. This PR retains the existing default of at most two QA repair passes and its user-defined override. The corrective guidance addresses unnecessary preflight work and interrupted execution. Normal modeling refinement is not treated as a defect or given new restrictions.
 
-These observations establish that this Web session could run Blender, save a candidate and render/read images. They do not establish final export/reimport, independent QA, final delivery, or improved behavior under the revised policy. The policy changes have document/consistency validation only; no new end-to-end modeling run is claimed.
+These observations establish that this Web session could run Blender, save a candidate and render/read images. They do not establish final export/reimport, independent QA, final delivery, or improved behavior under the revised policy. The later two-prompt run below evaluates the revised instructions separately.
+
+## Two natural-language modeling prompts — 2026-11-01
+
+Two fresh projects used the same 16-file skill snapshot from `acd48f8`, separate `DSH_HOME` directories, the complete three-entry auth overlay, and `deepseek-official` / `deepseek-flash`. The launcher referenced the existing credential store without copying its values. No builder or previous asset was supplied. DSH's own workspace sandbox remained enabled; this is application-state isolation under the same Windows account, not a VM. Runs were sequential.
+
+The prompts requested (1) a simple low-poly wooden stool with a square seat, four legs and about 45 cm height, and (2) a simple low-poly toolbox with a blue body, orange lid, top handle and two front latches. Both requested a BLEND and a preview. Candidate times below are approximate file-creation times relative to process launch, not inference latency benchmarks.
+
+| Prompt | First saved candidate | Final outcome |
+|---|---|---|
+| Wooden stool | 130.2 s | The 600 s launcher deadline interrupted independent review at 600.9 s. Resuming the same session completed review and delivery in another 113.7 s, exit 0. Final asset: 5 meshes, 220 triangles, 0.45 m high; DSH reported independent QA pass and produced fresh reviewer views |
+| Toolbox | 196.8 s | Completed in 718.2 s, exit 0, within the 900 s deadline; final BLEND and 1400 x 1050 PNG delivered. DSH reported independent QA pass after saved-file inspection and additional reviewer views; 10 meshes, 2,496 triangles |
+
+The stool's delivered BLEND SHA-256 is `36321faf0c34c9ca251af32575f65f1c45fd1fb37dbd613fe3e07586891a4242`. The toolbox's delivered BLEND SHA-256 is `5a6e2694e4242348fed47e86c85691bf9e94d7f01b640cf53773323c95d9de38`.
+
+Observed failures and limits:
+
+- An initial stool launch inside the outer runner's restricted Windows context failed at DSH sandbox initialization (`SetNamedSecurityInfoW` / `grantWrite`, Win32 5), before Blender ran. DSH exited 0 but returned an inability-to-complete response, so this was a failed attempt. An authorized normal-user launcher worked with DSH's own sandbox retained; no ACL or sandbox-policy change was needed.
+- The stool's 600-second whole-run deadline was too short for this build plus review. The timeout and partial evidence were retained; the resumed result is not presented as a clean single-run pass. The toolbox launcher used a 900-second deadline. These test-harness deadlines do not change the skill's QA repair budget.
+- The toolbox builder initially used nonexistent `BevelModifier.clamp_overlap`, then accessed `scene.world.color` when no World existed. It corrected the property to `use_clamp_overlap`, explicitly created a World, and continued to the first saved candidate. These were concrete script failures, not a reason to add routine API inventories.
+- Both agents created and inspected models. Extra capability queries and appearance refinement still occurred; these two examples do not establish perfect instruction adherence or a general speed improvement. Normal refinement is not classified as a defect. No new refinement rules or QA budgets were added.
+
+Both delivered previews were actually viewed, final BLEND hashes matched the fresh-process inspection reports, and the 16 copied skill source files remained unchanged. No unresolved blocking finding remained in the reported independent reviews. The runs test the headless API-key route. They do not test Web progress-message interruption, OAuth/account login, export/reimport or target-engine integration. Raw reasoning, credentials and private session logs are not published.
