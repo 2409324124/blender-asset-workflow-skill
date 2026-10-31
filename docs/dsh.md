@@ -23,17 +23,21 @@ If image input/attachments are unavailable, mark **visual QA not performed**. If
 
 Blender CLI + Python remains the modeling path; Blender MCP is not required. Optional Linux timeout/RSS guards remain as documented in the README. On Windows use the direct PowerShell path with the resource guard off by default—without its protection. The Linux example runner does not silently downgrade on Windows. Do not disable sandboxing, install software, change network settings or read credentials to make a probe pass.
 
-## Validation boundary and first live check
+## Validation evidence and repeat checks
 
 Offline fixtures verify our bundle layout/frontmatter and a non-overwriting temporary copy. Separately, the actual installed official dsh `0.2.1-rc.5` filesystem provider and `SkillRegistry.snapshot/get` were exercised without a key: the catalog completed and loaded `blender-asset-workflow` as `project-dsh` (4,302-byte entrypoint body from the pre-Windows-doc revision). This was real provider discovery, not a mock, but not a UI/session tool call or model-assisted test. A separate bounded Blender CLI probe exited successfully and reported Blender 4.3.2.
 
 The real provider test initially found no skill because its nested workspace inherited an ancestor Git root. An intentionally separate test-project Git boundary corrected discovery. This is evidence for the root rule above, not a recommendation to initialize Git without authorization.
 
-Model-assisted live verification remains pending until an authorized configured dsh session is available. The user configures credentials privately in that application; no key belongs in chat, this repository or logs. Only the machine/session location and chosen model identifier are needed to coordinate testing. Then verify, in order:
+One bounded Linux model-assisted smoke test has now passed with official dsh 0.2.1-rc.5, the configured `deepseek-official/deepseek-flash` route and Blender 4.3.2. It loaded the real skill, built an original five-mesh/60-triangle table, saved BLEND/GLB, generated a 256×256 preview, and delivered actual image content through `read_image`. A fresh reviewer also read the actual image and independently reopened/reimported the saved files; its verdict was pass. The trace contains 19 builder and 8 reviewer tool calls. All guarded Blender calls exited 0; observed maximum sampled RSS was 451.1 MiB and the longest individual guarded call was 3.822 seconds. This is one small Linux example, not proof for every scene, model or platform.
+
+Environment matters: a launch that discarded existing proxy/CA environment settings could not reach the provider. Preserve the deployment's already-authorized network/trust configuration; do not invent proxy values or weaken TLS. The tested official headless configuration explicitly enabled its credential module to use the application's saved credential store. No credential values belong in this guide, logs or a repository. Nonfatal export/render/cache warnings occurred, but actual GLB reimport and preview checks succeeded.
+
+For a new machine/model/session, repeat the checks below rather than treating this result as permanent capability certification. The user configures credentials privately in that application; no key belongs in chat, this repository or logs. Only the machine/session location and chosen model identifier are needed to coordinate testing. Then verify, in order:
 
 1. Actual skill catalog and loaded source path.
 2. Bounded CLI probe and available execution route.
 3. A new tiny neutral model saved to a fresh output directory, with preview and GLB.
 4. Actual image delivery to an image-capable reviewer, independent saved-file/export checks and a recorded verdict.
 
-Report missing stages explicitly; passing the offline fixture is not an end-to-end compatibility claim.
+Report missing stages explicitly; the offline fixture alone is not an end-to-end compatibility claim.

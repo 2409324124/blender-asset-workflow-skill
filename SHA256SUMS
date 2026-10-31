@@ -3,8 +3,8 @@
 65fc5c9faf82662bd7e7f737be7571c93340ec12f689b7a0a9684c88b31a6dae  ./LICENSING.md
 769442cef49323f4ced34b66aead71b57cb6b6a057c46e295b0a0a8af7c3bc9d  ./PROVENANCE.md
 42b27f9d1c2d9f3a93fd55b03c67627ec6d226937f23a2e0206ca77db0b1de8d  ./README.md
-be781beb92a485203a30f60334c1cb1dc89933dfe5af64b7cf26523c37f7bced  ./RELEASE-NOTES.md
-c1a107169c8a0093944d05e2636a77eccc77e22a565828281e0f9963da6b6136  ./docs/dsh.md
+fdd892f5d9f6c9cf3f97da192339d17b720c5ecee99e94bf4b2e5907bdc3f294  ./RELEASE-NOTES.md
+ef4cf8c7128f19f5ae5d507340923207b194946b071253cc461e9150727dd91f  ./docs/dsh.md
 d2b53973af8a117a0073f023c10fcbf9e19ae6b9538006497b0ab4022a5d7b8f  ./docs/showcase/gunstore-street.png
 edaa797596830d658203426023ec804e04fff1a8246b7e464daaa0fd564c7a40  ./docs/showcase/morvi-white-v01.png
 d479ad1391323838a7ca2228a08fcd64e850b8df8ed40a78059afab03776f0db  ./docs/showcase/rivet-locked-main.png
@@ -25,7 +25,7 @@ cfea205543cedcbf0aafcca185b6874f143cf9236f668b9438b518ff9dd3f85e  ./skills/blend
 b6c9677cbec9ebb675d4e7a27abcc2973940386c13a1474e7bf1c00ee52f5b25  ./skills/blender-asset-workflow/scripts/overlap_audit.py
 78d0a496f1b1ea5c12267c78ce06e1c6577d2e8e43a11fa7d89565adf0a47346  ./skills/blender-asset-workflow/scripts/png_privacy.py
 d959c576bc195d622c7f922e8985cd1429fb65b980d31641c656105408a120d6  ./skills/blender-asset-workflow/scripts/white_preview.py
-f79a32b1ca08e3b00e1e7bc73a237c7f5f7fe8f3a2c358cf7ed8a8eecc7e9192  ./tests/RESULTS.md
+8fa30f8247867cedc65f1af7c09f6ee657c6fc4e31425dee7375d3733e07d121  ./tests/RESULTS.md
 b1655ed590494910f436341ad7fa6ca6b9d3eef99fe3811ba265b11e25b6c4c6  ./tests/blender_executable.py
 9dd3bbdb06458248e6e4ebda6eabca89cccec84aca4a3a87d5835e3fb0cd2fe2  ./tests/framing_fixture.py
 42d81d01722fdf668aceb7835107a4d0d6468c5755aad838c5f04c8fea5107eb  ./tests/hidden_scene_fixture.py

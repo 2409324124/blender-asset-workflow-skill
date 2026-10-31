@@ -33,4 +33,4 @@ Integration tests now accept `BLENDER` executable paths, including spaces, and r
 
 ## Official dsh integration guide — 2026-10-31
 
-Added an official dsh project-local setup prompt and [execution/visual-review capability guide](docs/dsh.md). The portable skill is unchanged and requires no dsh-specific plugin, model or credential. Offline layout checks pass, and actual dsh 0.2.1-rc.5 provider discovery/loading was verified without model calls on the pre-Windows-doc skill revision. UI/session tool delivery and model-assisted independent visual QA remain unverified.
+Added an official dsh project-local setup prompt and [execution/visual-review capability guide](docs/dsh.md). The portable skill is unchanged and requires no dsh-specific plugin, model or credential. Offline layout checks pass, and actual dsh 0.2.1-rc.5 provider discovery/loading was verified without model calls on the pre-Windows-doc skill revision. A subsequent real Linux/Flash smoke test completed skill loading, table construction, actual image delivery and fresh independent saved-file/GLB review. See the dated test record; other platforms/models remain unverified.
