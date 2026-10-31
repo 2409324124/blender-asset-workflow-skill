@@ -10,3 +10,5 @@ Example for a chosen machine budget (not a recommended universal value):
 `python3 scripts/guarded_run.py --timeout 120 --max-rss-mib 2048 --report run-01.json -- blender -b --python-exit-code 1 --python build.py`
 
 A tool failure is not evidence the model failed visually. Preserve the log, isolate the error and retry only the affected step. Never report measured resource values from an old run as current.
+
+Generated white previews remove PNG text, EXIF and time chunks without re-encoding image data. This does not remove visible scene information, anonymize BLEND files or sanitize arbitrary external images. The minimal example applies the same cleanup to all three previews.

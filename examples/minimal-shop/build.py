@@ -7,7 +7,8 @@ ROOT=Path(__file__).resolve().parents[2]
 SCRIPTS=ROOT/'skills/blender-asset-workflow/scripts'
 def module(name):
  spec=importlib.util.spec_from_file_location(name,SCRIPTS/(name+'.py'));m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
-fit=module('white_preview').fit_orthographic_camera
+preview=module('white_preview')
+fit=preview.fit_orthographic_camera
 check=module('overlap_audit')
 p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True)
 a=p.parse_args(sys.argv[sys.argv.index('--')+1:]);out=a.output.resolve()
@@ -63,11 +64,12 @@ data=bpy.data.cameras.new('PreviewCamera');camera=bpy.data.objects.new('PreviewC
 data.clip_start=.01;data.clip_end=200
 
 def render(name,center,direction,objects):
+ if (out/name).exists():raise FileExistsError(out/name)
  shade.show_shadows=(name=='white-overview.png')
  center=Vector(center);direction=Vector(direction).normalized();camera.location=center+direction*30
  camera.rotation_euler=(-direction).to_track_quat('-Z','Y').to_euler();bpy.context.view_layer.update()
  points=[o.matrix_world@Vector(v) for o in objects for v in o.bound_box]
- fit(scene,camera,points);scene.render.image_settings.file_format='PNG';scene.render.filepath=str(out/name);bpy.ops.render.render(write_still=True)
+ fit(scene,camera,points);scene.render.image_settings.file_format='PNG';scene.render.filepath=str(out/name);bpy.ops.render.render(write_still=True);preview.clean_file(out/name)
 meshes=[o for o in scene.objects if o.type=='MESH']
 render('white-overview.png',(0,0,1),(1,-1,.8),meshes)
 bpy.data.objects['Roof'].hide_render=True

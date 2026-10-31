@@ -3,6 +3,8 @@ import argparse, sys, math
 from pathlib import Path
 import bpy
 from mathutils import Vector
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from png_privacy import clean_file
 
 def fit_orthographic_camera(scene, camera, points, margin=1.12):
     """Fit world-space points in the actual frame, including pixel aspect ratio."""
@@ -52,6 +54,7 @@ def main():
     scene.world=scene.world or bpy.data.worlds.new('PreviewWorld'); scene.world.color=(.12,.12,.12)
     scene.render.image_settings.file_format='PNG'; scene.render.filepath=str(a.output.resolve())
     bpy.ops.render.render(write_still=True)
+    clean_file(a.output)
 
 if __name__ == '__main__':
     main()

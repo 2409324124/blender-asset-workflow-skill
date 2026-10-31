@@ -1,11 +1,13 @@
-"""Integration regression: requires Blender in PATH; transient neutral fixture."""
-import hashlib, json, pathlib, shutil, subprocess, tempfile, unittest
+"""Integration regression: uses BLENDER or Blender in PATH; transient neutral fixture."""
+import hashlib, importlib.util, json, pathlib, shutil, subprocess, tempfile, unittest
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 SCRIPTS=ROOT/'skills/blender-asset-workflow/scripts'
-@unittest.skipUnless(shutil.which('blender'),'Blender required')
+from blender_executable import resolve_blender
+BLENDER = resolve_blender()
+@unittest.skipUnless(BLENDER, 'Blender unavailable: set BLENDER or PATH; integration NOT validated')
 class BlenderTests(unittest.TestCase):
  def run_blender(self,*args,ok=True):
-  p=subprocess.run(['blender','-b',*map(str,args)],capture_output=True,text=True,timeout=90)
+  p=subprocess.run([BLENDER,'-b',*map(str,args)],capture_output=True,text=True,timeout=90)
   if ok:self.assertEqual(p.returncode,0,p.stdout+p.stderr)
   else:self.assertNotEqual(p.returncode,0)
  def test_artifact_roundtrip_and_preview(self):
@@ -26,6 +28,9 @@ class BlenderTests(unittest.TestCase):
    self.assertEqual(a['meshes'][0]['bounds_min'],[-2.,-1.,0.]);self.assertEqual(a['meshes'][0]['bounds_max'],[2.,1.,1.])
    self.run_blender(source,'--python-exit-code','1','--python',SCRIPTS/'white_preview.py','--','--output',d/'white.png','--size','256')
    self.assertEqual((d/'white.png').read_bytes()[:8],b'\x89PNG\r\n\x1a\n')
+   spec=importlib.util.spec_from_file_location('privacy',SCRIPTS/'png_privacy.py');privacy=importlib.util.module_from_spec(spec);spec.loader.exec_module(privacy)
+   self.assertEqual(privacy.clean_bytes((d/'white.png').read_bytes()),(d/'white.png').read_bytes())
+   self.run_blender(source,'--python-exit-code','1','--python',SCRIPTS/'white_preview.py','--','--output',d/'white.png',ok=False)
    self.assertEqual(hashlib.sha256(source.read_bytes()).hexdigest(),before)
    self.run_blender(source,'--python-exit-code','1','--python',SCRIPTS/'inspect_scene.py','--','--report',d/'native.json',ok=False)
  def test_hidden_scene_glb_import_is_empty(self):

@@ -22,3 +22,31 @@ Optional: `--blender /path/to/blender --timeout 120 --max-rss-mib 2048`. Only on
 - `*-resources.json` and logs: per-process sampled RSS and elapsed time. These runtime logs contain machine-local paths; review/redact before sharing them.
 
 The builder saves and exports before preview-only camera/visibility changes. The runner reopens the saved native file and imports the GLB in another fresh process. Still view the actual PNGs: geometry counts or a zero-candidate broad-phase result do not establish visual quality, usable access, or building-code compliance. Run the included regression suite from the repository root with `python3 -m unittest discover -s tests -p 'test_*.py' -v`.
+
+## Windows direct Blender route
+
+Blender supports direct Windows CLI invocation, but this project's Windows execution has not been tested. Run from the repository root in PowerShell; edit the executable path for your installation. These commands bypass the Linux-only bounded runner: no automatic timeout/RSS limits or combined `verification.json` are provided. Blender includes the Python used by these scripts; standalone Python is needed for the test suite, not these direct calls.
+
+```powershell
+$Blender = 'C:\Program Files\Blender Foundation\Blender 4.3\blender.exe'
+$Out = Join-Path (Get-Location) 'output-windows'
+if (Test-Path -LiteralPath $Out) { throw 'Choose a new output directory' }
+New-Item -ItemType Directory -Path $Out -ErrorAction Stop | Out-Null
+& $Blender --factory-startup --background --python-exit-code 1 --python '.\examples\minimal-shop\build.py' -- --output $Out
+if ($LASTEXITCODE -ne 0) { throw "Build failed: $LASTEXITCODE" }
+& $Blender --background "$Out\shop.blend" --python-exit-code 1 --python '.\skills\blender-asset-workflow\scripts\white_preview.py' -- --output "$Out\extra-white.png"
+if ($LASTEXITCODE -ne 0) { throw "Preview failed: $LASTEXITCODE" }
+& $Blender --background "$Out\shop.blend" --python-exit-code 1 --python '.\skills\blender-asset-workflow\scripts\inspect_scene.py' -- --report "$Out\native.json"
+if ($LASTEXITCODE -ne 0) { throw "Native inspection failed: $LASTEXITCODE" }
+& $Blender --background --python-exit-code 1 --python '.\skills\blender-asset-workflow\scripts\inspect_scene.py' -- --import-glb "$Out\shop.glb" --report "$Out\glb.json"
+if ($LASTEXITCODE -ne 0) { throw "GLB inspection failed: $LASTEXITCODE" }
+```
+
+Compare the reports and inspect actual preview pixels; generating reports alone is not independent QA. For the Blender integration tests only (not the POSIX guard tests):
+
+```powershell
+$env:BLENDER = $Blender
+python -m unittest discover -s tests -p 'test_blender.py' -v
+```
+
+Full regression coverage still requires the supported Linux environment. [Official Windows CLI guide](https://docs.blender.org/manual/en/latest/advanced/command_line/launch/windows.html).

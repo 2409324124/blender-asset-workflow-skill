@@ -26,3 +26,7 @@ The original MORVI café was a separate frozen-v0.1 independent functional test.
 ## License and assets
 
 Code, skill instructions and maintained text: GPL-3.0-only. Showcase images are separately scoped and are not covered by that grant. See [LICENSING.md](LICENSING.md) and [PROVENANCE.md](PROVENANCE.md). Installation instructions are in the [README](README.md).
+
+## Release-preparation fixes — 2026-10-31
+
+Integration tests now accept `BLENDER` executable paths, including spaces, and reject invalid explicit settings instead of skipping. Default discovery without Blender remains an explicitly reported skip. New white-preview and example PNGs remove text, EXIF and time metadata without re-encoding image data. Direct Windows/PowerShell usage is documented, but Windows execution remains untested; the bounded runner is still Linux-only. See the dated test evidence for the added regression results.

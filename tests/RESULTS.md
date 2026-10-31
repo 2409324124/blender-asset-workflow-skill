@@ -61,3 +61,13 @@ Documentation changes only: independent builder/reviewer context and evidence co
 Validation: skill structural validator passed; 16 relative Markdown targets resolved; copied the portable skill into an isolated temporary skills directory and verified entrypoint/review/traps references without installing into a user's host. Existing 17 regression tests rerun successfully; test timing is recorded below. This verifies package structure/copy commands, not discovery in every host/version. No new scene is embedded as a prescribed test answer.
 
 Observed v0.4 regression run: 17 tests passed in 18.134 seconds (Linux / Blender 4.3.2).
+
+# Executable selection and preview privacy — 2026-10-31
+
+- Linux / Blender 4.3.2: 22 regression tests passed in 18.770 seconds on the final code (initial run: 19.126 seconds), with no skips. The four Blender integration tests also passed using an explicit executable path containing spaces (17.531 seconds).
+- Explicit invalid `BLENDER` caused a test-load error and nonzero exit; an unset `BLENDER` with no PATH executable produced four explicit “integration NOT validated” skips. The latter is not a full validation pass.
+- The actual example completed in 7.954 seconds: 45 meshes / 540 triangles native and GLB, zero measured bounds difference, preserved roof. All three 960×720 images were viewed.
+- All three generated images contained no PNG text, EXIF or time chunks. Injected path metadata was removed; decoded RGBA pixels before/after cleanup were identical. The automated neutral one-pixel regression proves the same pixel invariance using only the standard library; the local full-size pixel check additionally used an external image decoder, not a runtime dependency.
+- Windows commands are documented from Blender's CLI interface, not claimed tested. Linux-only RSS monitoring and example-runner restrictions remain unchanged.
+
+PNG writeback follow-up: same-directory temporary write and atomic replacement preserve the original on write/replace failure; failure cleanup is covered by two injected-failure regressions. Final suite: **24 tests passed in 18.153 seconds**, no skips, Linux / Blender 4.3.2. The chunk cleaner is not a complete PNG decoder or structural-validity certificate.

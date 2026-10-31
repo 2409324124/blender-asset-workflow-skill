@@ -44,6 +44,8 @@ python3 examples/minimal-shop/run_example.py --output ./runs/shop-001 --max-rss-
 
 Outputs: BLEND, GLB, white overview, roof-off top view, furniture close-up and verification reports. The runner refuses existing output directories. Adjust the memory budget to your machine; arrange independent visual review separately. See [example options](examples/minimal-shop/README.md).
 
+**Optional resource management:** the Linux example runner enables timeout and sampled RSS protection. On Windows, use the direct Blender CLI instructions below with the guard **off by default**; that route has no guard protection, and the Linux runner does not automatically downgrade to it.
+
 **Platform limits:** live RSS checks and the example runner are **Linux-only**. RSS is sampled, not a hard sandbox. Timeout/process cleanup requires POSIX; macOS is untested and Windows is unsupported by those runners.
 
 ## Validation
@@ -80,3 +82,11 @@ The overlap helper reports conservative AABB candidates, contact/near-contact pa
 
 The RIVET lead image is a visual showcase, not by itself a QA report. The original MORVI café white preview records the frozen-v0.1 independent functional test, which required aisle and framing corrections. The earlier NIGHT SHIFT street image is historical project work, not a generic-skill cold-test output. Their sources are listed in [PROVENANCE.md](PROVENANCE.md); scene/model files are not bundled as required skill inputs.
 
+
+### Blender executable and Windows
+
+For integration tests, set `BLENDER` to an executable path (spaces are supported), or leave it unset to search `PATH`. An invalid explicit value is an error. If the default executable is absent, integration tests are marked **skipped**: an `OK (skipped=...)` summary is not full Blender validation.
+
+Headless operation is not Linux-specific. On Windows, Blender's own Python can directly run modeling, preview and inspection scripts; this route has **not been tested on Windows**. The Linux example runner and POSIX guard are not Windows-compatible. See [direct PowerShell steps](examples/minimal-shop/README.md#windows-direct-blender-route) and [Blender's Windows CLI documentation](https://docs.blender.org/manual/en/latest/advanced/command_line/launch/windows.html). These direct commands do not provide the runner's timeout/RSS protection or its combined verification report.
+
+New preview PNGs have text, EXIF and time chunks removed without re-encoding image data; this does not anonymize visible scene content or other output files.
