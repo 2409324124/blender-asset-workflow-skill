@@ -1,6 +1,6 @@
 # Headless execution and resource budgets
 
-Use `blender -b --python-exit-code 1 --python task.py -- ...`. Verify the installed version before relying on API properties. Save the native candidate before previews so a render failure cannot erase the modeling result. Preview from a separate fresh process; never save its temporary material, visibility or camera overrides into the delivery model.
+Use `blender -b --python-exit-code 1 --python task.py -- ...`. Record the version during the minimal `bpy` startup check, or reuse that evidence from the current task. After successful execution, proceed directly to the builder and first saved candidate; do not launch separate capability-enumeration processes as routine prerequisites. Use version-appropriate APIs in the builder and investigate the affected API if a concrete operation fails. Save the native candidate before previews so a render failure cannot erase the modeling result. Preview from a separate fresh process; never save its temporary material, visibility or camera overrides into the delivery model.
 
 Resolve executable, script, scene, report and render-output paths to absolute paths in the calling process. Loading a BLEND can change relative-path interpretation; do not assume a shell-relative render path stays under the workspace. Blender processes CLI arguments in order: load the scene before setting render output/options, and put the render action last. Check the path reported by the renderer against the intended destination.
 
