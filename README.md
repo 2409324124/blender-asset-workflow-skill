@@ -29,10 +29,10 @@ python3 --version
 Copy the relevant request into your local agent (repository access is required while private); hosted/cloud sessions may use different installation locations.
 
 **Codex**
-> Install `skills/blender-asset-workflow` from https://github.com/2409324124/blender-asset-workflow-skill into `~/.agents/skills/blender-asset-workflow`. Copy only that folder, stop if it already exists, verify skill discovery, read `SKILL.md`, and check Blender/Python availability.
+> Install `skills/blender-asset-workflow` from https://github.com/2409324124/blender-asset-workflow-skill into `~/.agents/skills/blender-asset-workflow`. Copy only that folder, stop if it already exists, verify skill discovery and read `SKILL.md`. Check Python availability and Blender CLI connectivity by launching a separate factory-startup background process with a 30-second timeout, running a minimal Python probe that imports `bpy` and prints the Blender version, then exiting without opening, modifying or saving any user scene. Report the actual result and any failure.
 
 **Claude Code**
-> Install `skills/blender-asset-workflow` from https://github.com/2409324124/blender-asset-workflow-skill into `~/.claude/skills/blender-asset-workflow`. Copy only that folder, stop if it already exists, verify skill discovery, read `SKILL.md`, and check Blender/Python availability.
+> Install `skills/blender-asset-workflow` from https://github.com/2409324124/blender-asset-workflow-skill into `~/.claude/skills/blender-asset-workflow`. Copy only that folder, stop if it already exists, verify skill discovery and read `SKILL.md`. Check Python availability and Blender CLI connectivity by launching a separate factory-startup background process with a 30-second timeout, running a minimal Python probe that imports `bpy` and prints the Blender version, then exiting without opening, modifying or saving any user scene. Report the actual result and any failure.
 
 These are instructions for an agent, not executable shell commands or a promise of unattended authentication.
 
@@ -79,3 +79,4 @@ The overlap helper reports conservative AABB candidates, contact/near-contact pa
 ### Historical examples
 
 The RIVET lead image is a visual showcase, not by itself a QA report. The original MORVI café white preview records the frozen-v0.1 independent functional test, which required aisle and framing corrections. The earlier NIGHT SHIFT street image is historical project work, not a generic-skill cold-test output. Their sources are listed in [PROVENANCE.md](PROVENANCE.md); scene/model files are not bundled as required skill inputs.
+
