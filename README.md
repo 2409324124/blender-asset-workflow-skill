@@ -17,12 +17,17 @@ Read the [skill](skills/blender-asset-workflow/SKILL.md), [QA protocol](skills/b
 
 Requires Python 3 and Blender CLI. Tested: **Blender 4.3.2 on Linux** and **Blender 5.2.3 on Windows**; the current [LTS](https://www.blender.org/download/lts/) is recommended. No external Blender plug-ins or model downloads are needed.
 
-```sh
-git clone https://github.com/2409324124/blender-asset-workflow-skill.git
-cd blender-asset-workflow-skill
-blender --version
-python3 --version
-```
+### Windows + Codex: start here
+
+Follow the [Windows + Codex setup guide](docs/windows-codex.md) in your local Codex session:
+
+1. [Install the skill](docs/windows-codex.md#1-install-the-skill) into your user or project skill directory; keep existing copies intact.
+2. [Confirm Codex loads it](docs/windows-codex.md#2-confirm-codex-loads-it) from the intended path.
+3. [Find Blender or install it with permission](docs/windows-codex.md#3-find-blender-or-install-it-with-permission).
+4. [Run the 30-second connection test](docs/windows-codex.md#4-run-the-30-second-connection-test) in a separate background process.
+5. [Start modeling](docs/windows-codex.md#5-start-modeling) and receive a saved BLEND plus a checked preview.
+
+The guide includes a copyable Codex request and optional PowerShell installation steps. This route uses Blender CLI and Python; DSH and Blender MCP are not prerequisites.
 
 ### No Blender?
 
@@ -34,7 +39,7 @@ For dsh on Windows, see [Windows DSH](skills/blender-asset-workflow/references/w
 
 Copy the relevant request into your local agent (repository access is required while private); hosted/cloud sessions may use different installation locations.
 
-**Codex**
+**Codex** — [Windows step-by-step guide](docs/windows-codex.md)
 > Install `skills/blender-asset-workflow` from https://github.com/2409324124/blender-asset-workflow-skill into `~/.agents/skills/blender-asset-workflow`. Copy only that folder, stop if it already exists, verify skill discovery and read `SKILL.md`. Check Python availability and Blender CLI connectivity by launching a separate factory-startup background process with a 30-second timeout, running a minimal Python probe that imports `bpy` and prints the Blender version, then exiting without opening, modifying or saving any user scene. Report the actual result and any failure. If Blender is missing, stop and ask me before installing anything.
 
 **Claude Code**
@@ -45,9 +50,11 @@ Copy the relevant request into your local agent (repository access is required w
 
 These are instructions for an agent, not executable shell commands or a promise of unattended authentication.
 
-Run the original minimal shop from the checkout:
+For the Linux example runner, use a repository checkout (this is separate from installing the skill):
 
 ```sh
+git clone https://github.com/2409324124/blender-asset-workflow-skill.git
+cd blender-asset-workflow-skill
 python3 examples/minimal-shop/run_example.py --output ./runs/shop-001 --max-rss-mib 2048
 ```
 

@@ -2,12 +2,13 @@
 3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986  ./LICENSE
 65fc5c9faf82662bd7e7f737be7571c93340ec12f689b7a0a9684c88b31a6dae  ./LICENSING.md
 769442cef49323f4ced34b66aead71b57cb6b6a057c46e295b0a0a8af7c3bc9d  ./PROVENANCE.md
-a886183e3b77b775744a5453390390e1e84261af88299494d35ea50ab194ea10  ./README.md
+47e8ceb57e9ae74fbcf5c449040e7017ba697767fc1bd0fd96a9c2b74136da9b  ./README.md
 fdd892f5d9f6c9cf3f97da192339d17b720c5ecee99e94bf4b2e5907bdc3f294  ./RELEASE-NOTES.md
 a3869e6b477b705df96492a26656d04911878f8038d065f975c48ca07a614aad  ./docs/dsh.md
 d2b53973af8a117a0073f023c10fcbf9e19ae6b9538006497b0ab4022a5d7b8f  ./docs/showcase/gunstore-street.png
 edaa797596830d658203426023ec804e04fff1a8246b7e464daaa0fd564c7a40  ./docs/showcase/morvi-white-v01.png
 d479ad1391323838a7ca2228a08fcd64e850b8df8ed40a78059afab03776f0db  ./docs/showcase/rivet-locked-main.png
+ee5d165e5c371e6a41c700c1055f98834df986bfe7350f3cf984bd0fbfafd727  ./docs/windows-codex.md
 90145ca612bc083d6bfe4b35da4daeb544c51957f10a652f8fb62a9e67cf90b7  ./examples/minimal-shop/README.md
 cf4dde32b30951ca074fe115a54588218d3dfab8f1d66d97e43e15c64dc3eb8b  ./examples/minimal-shop/build.py
 d8b2aeb735eac15d7a2cec61664ae51218f585e19fd2cbfe3cba9322cb7d3063  ./examples/minimal-shop/run_example.py
