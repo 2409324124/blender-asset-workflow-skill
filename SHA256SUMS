@@ -11,9 +11,9 @@ d479ad1391323838a7ca2228a08fcd64e850b8df8ed40a78059afab03776f0db  ./docs/showcas
 90145ca612bc083d6bfe4b35da4daeb544c51957f10a652f8fb62a9e67cf90b7  ./examples/minimal-shop/README.md
 cf4dde32b30951ca074fe115a54588218d3dfab8f1d66d97e43e15c64dc3eb8b  ./examples/minimal-shop/build.py
 d8b2aeb735eac15d7a2cec61664ae51218f585e19fd2cbfe3cba9322cb7d3063  ./examples/minimal-shop/run_example.py
-64f4f821cecb4a54d263abf096b4f45453e658a2044a94dbf786a7e1b06e9a71  ./skills/blender-asset-workflow/SKILL.md
+abd903adb7461721d1733abff4b5f19854310ad41067bb7517002dd65ed4e04b  ./skills/blender-asset-workflow/SKILL.md
 073cda67b871405255e85876ba6c7c9c986abd927ab42cf550f23189ad59b2f6  ./skills/blender-asset-workflow/references/assembly.md
-8c0f2c7d60db227ecc09558e84506c0b40e64c107f004141519e4a5b8d40632e  ./skills/blender-asset-workflow/references/blender-install.md
+66f99236575fcd42431d67c9824b45da190dedf8fa6a25636cd6987e52f45acc  ./skills/blender-asset-workflow/references/blender-install.md
 b3d7597e7896119ab8a2c64ec3c0394a0a644573cee651220bab97944799c5ee  ./skills/blender-asset-workflow/references/dsh-authentication.md
 62648c1fff4729c1b5cc77494dfbab96e5ff21c4cb0eca9c5a005045050e897f  ./skills/blender-asset-workflow/references/independent-qa.md
 42c816dd234505d7903c39cbfb2b0b5a4ba2f1fe8fbabece7dbfa7799deb3acc  ./skills/blender-asset-workflow/references/numeric-pitfalls.md
@@ -22,7 +22,7 @@ cfea205543cedcbf0aafcca185b6874f143cf9236f668b9438b518ff9dd3f85e  ./skills/blend
 2ae642dd7c87c72511e46c19a9d24e8ce3ccb2d65d4fc051b7f0591d4fd3aa09  ./skills/blender-asset-workflow/references/runtime.md
 065672120658283f96e36e4169c46c60e05864f99a427188b83fe20f50e5b7c1  ./skills/blender-asset-workflow/references/verification.md
 957049a75c2e062c549201ebbf564263f5b748630ec18cb1841fe73e40ef4e8b  ./skills/blender-asset-workflow/references/windows-dsh.md
-086ae54ad07dfbc11861746044fb80dbef16a18b9328af5d9ed7b1d113c75209  ./skills/blender-asset-workflow/references/windows-setup.md
+e8248b31102ee8b0aad1122d709e89c1e0c267b2f3befc554db845ac49f57dc4  ./skills/blender-asset-workflow/references/windows-setup.md
 4f15d64fdf0814cc65687237c3218a0160436f1d9d52474af21743862aa54df9  ./skills/blender-asset-workflow/scripts/guarded_run.py
 44dead68e15ef2a5a9a34d6d650c71565ba6cb7ff4c0a36a6600fc7e5aeddd28  ./skills/blender-asset-workflow/scripts/inspect_scene.py
 b6c9677cbec9ebb675d4e7a27abcc2973940386c13a1474e7bf1c00ee52f5b25  ./skills/blender-asset-workflow/scripts/overlap_audit.py
