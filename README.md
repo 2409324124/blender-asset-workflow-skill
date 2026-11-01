@@ -65,7 +65,7 @@ That is fine. Ask your agent to set it up. It will first look for an existing Bl
 
 For dsh on Windows, see [Windows DSH](skills/blender-asset-workflow/references/windows-dsh.md); for API keys and logins, see [DSH credentials](skills/blender-asset-workflow/references/dsh-authentication.md).
 
-Copy the relevant request into your local agent (repository access is required while private); hosted/cloud sessions may use different installation locations.
+Copy the relevant request into your local agent; hosted/cloud sessions may use different installation locations.
 
 **Codex** — [Windows step-by-step guide](docs/windows-codex.md)
 > Install `skills/blender-asset-workflow` from https://github.com/2409324124/blender-asset-workflow-skill into `~/.agents/skills/blender-asset-workflow` (on Windows: `%USERPROFILE%\.agents\skills\blender-asset-workflow`). Copy only that folder, stop if it already exists, verify skill discovery and read `SKILL.md`. Check Python availability and Blender CLI connectivity by launching a separate factory-startup background process with a 30-second timeout, running a minimal Python probe that imports `bpy` and prints the Blender version, then exiting without opening, modifying or saving any user scene. Report the actual result and any failure. If Blender is missing, stop and ask me before installing anything.
