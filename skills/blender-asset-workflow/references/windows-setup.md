@@ -9,7 +9,7 @@ Use this reference when Blender is missing, CLI discovery fails, or the user req
 - Check standalone Python by actually running it (for example, `python --version`); a WindowsApps execution alias is not proof of a usable interpreter. Blender bundles its own Python for `bpy`; do not install `bpy` into standalone Python to repair CLI connectivity.
 - Try the user's explicit executable, `Get-Command blender -ErrorAction SilentlyContinue`, then relevant installed-app records and usual locations under `Program Files\Blender Foundation` and `$env:LOCALAPPDATA\Programs\Blender Foundation`. Resolve a portable installation if the user already has one. Absence from PATH alone does not establish that Blender is uninstalled.
 - Confirm OS architecture, for example `[System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture`. Select x64 or ARM64 accordingly and check the chosen release's OS/GPU requirements. Do not hard-code a release number, username or drive.
-- Run the bounded probe below against the resolved executable. Reuse it if successful; retain actual errors if it fails.
+- Run the bounded probe below against the resolved executable. On success, reuse it. If a found executable fails to start, times out or fails the `bpy` check, preserve its actual error/exit status and diagnose that specific failure; do not treat it as absence or automatically reinstall. Ask about installation only when discovery finds no installation route, or obtain separate consent for a specifically diagnosed repair. See the [three discovery outcomes](blender-install.md#1-detect-first).
 
 ## Download only when needed and authorized
 
