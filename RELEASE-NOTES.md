@@ -34,3 +34,7 @@ Integration tests now accept `BLENDER` executable paths, including spaces, and r
 ## Official dsh integration guide — 2026-10-31
 
 Added an official dsh project-local setup prompt and [execution/visual-review capability guide](docs/dsh.md). The portable skill is unchanged and requires no dsh-specific plugin, model or credential. Offline layout checks pass, and actual dsh 0.2.1-rc.5 provider discovery/loading was verified without model calls on the pre-Windows-doc skill revision. A subsequent real Linux/Flash smoke test completed skill loading, table construction, actual image delivery and fresh independent saved-file/GLB review. See the dated test record; other platforms/models remain unverified.
+
+## Windows validation and README update — 2026-11-01
+
+Later work validated Windows: DSH with Blender 5.2.3 (see [tests/WINDOWS-DSH.md](tests/WINDOWS-DSH.md)) and Codex on Windows with several models built. The local regression suite now has 27 tests (Blender integration tests skip when Blender is absent). Earlier sections above remain as dated historical records. Claude Code and macOS remain untested. The README now leads with the geometry-first, blockout-first workflow and an agent × OS status table.

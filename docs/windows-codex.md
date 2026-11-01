@@ -2,7 +2,7 @@
 
 **Install skill → confirm loading → find/install Blender → 30-second connection test → model.**
 
-Use a local Codex session running natively on Windows, with an intended project folder open and a working model connection. The PowerShell paths below refer to that Windows account. A WSL or hosted/cloud session has its own filesystem and executable environment; a Windows installation does not prove it works there. Access to this GitHub repository is required while it is private; use your existing repository authentication, never paste a token into the request.
+Use a local Codex session running natively on Windows, with an intended project folder open and a working model connection. The PowerShell paths below refer to that Windows account. A WSL or hosted/cloud session has its own filesystem and executable environment; a Windows installation does not prove it works there.
 
 ## 1. Install the skill
 

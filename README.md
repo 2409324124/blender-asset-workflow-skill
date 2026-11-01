@@ -1,15 +1,43 @@
 # Blender Asset Workflow
 
-A Blender skill for low-poly hard-surface assets and modular scenes: build geometry first, inspect inexpensive white previews, then verify saved files and exports.
+**Plan the geometry. Validate the blockout. Refine with visual feedback.**
+
+An open-source AI agent skill for procedural low-poly modeling with Blender CLI, Python/bpy and independent visual QA.
+
+Instead of jumping directly from natural language to detailed meshes, the workflow starts with a **geometry plan and a coarse blockout**. It validates proportions, silhouettes and structural relationships through inexpensive Blender previews before investing in further detail.
+
+> **No Blender?** The agent asks before installing anything. See [No Blender?](#no-blender).
 
 ![RIVET tire and repair shop](docs/showcase/rivet-locked-main.png)
 
-## What it does
+## How it works
 
-- **Independent QA:** a separate reviewer inspects actual images, reopens the saved BLEND and reimports the export. If no separate reviewer runs, report self-check only.
+**Natural language → Geometry planning → Coarse blockout → White previews → Visual QA → Iterative refinement → BLEND verification (GLB export/reimport when requested)**
+
+## What makes it different?
+
+- **Geometry-first planning:** define scale, axes, silhouettes, semantic parts and assembly constraints before detailed modeling.
+- **Blockout-driven iteration:** build coarse geometry first and inspect proportions using lightweight multi-view white previews.
+- **Independent visual QA:** a separate reviewer, when available, inspects actual rendered images and saved geometry rather than trusting the builder's claims. If no separate reviewer runs, the result is reported as self-check only.
+- **Bounded automatic repair:** fix reviewed issues within a finite repair budget (default two passes), preserve approved geometry, re-review changes, and stop with an honest report when limits are reached.
+- **Artifact verification:** reopen saved BLEND files and, when requested, reimport actual GLB exports, checking geometry, dimensions and structure.
 - **Numeric traps:** hashes, polygon counts, AABB hints and successful reimports are evidence—not guarantees of resemblance or correct geometry.
-- **Automatic iteration:** build → freeze → review → bounded repairs → re-review. Stop honestly at permission, input or resource limits.
-- **Reusable tools:** white previews, scene inventories, overlap hints with explicit joint exceptions, and a resource-aware runner.
+
+## Designed for AI agent workflows
+
+Built around Blender's native Python API and headless CLI, without requiring Blender MCP or external modeling plugins.
+
+Supports **Codex, Claude Code and DeepSeek Harness (DSH)**.
+
+Focused on low-poly hard-surface assets and modular scenes.
+
+| Agent | Windows | Linux | macOS |
+|---|---|---|---|
+| DSH | Tested (Blender 5.2.3) | Tested (Blender 4.3.2) | Documented |
+| Codex | Tested | Documented | Documented |
+| Claude Code | Documented | Documented | Documented |
+
+"Documented" means install instructions exist but no recorded end-to-end run yet.
 
 Read the [skill](skills/blender-asset-workflow/SKILL.md), [QA protocol](skills/blender-asset-workflow/references/independent-qa.md) and [numeric-pitfall table](skills/blender-asset-workflow/references/numeric-pitfalls.md).
 
@@ -37,7 +65,7 @@ That is fine. Ask your agent to set it up. It will first look for an existing Bl
 
 For dsh on Windows, see [Windows DSH](skills/blender-asset-workflow/references/windows-dsh.md); for API keys and logins, see [DSH credentials](skills/blender-asset-workflow/references/dsh-authentication.md).
 
-Copy the relevant request into your local agent (repository access is required while private); hosted/cloud sessions may use different installation locations.
+Copy the relevant request into your local agent; hosted/cloud sessions may use different installation locations.
 
 **Codex** — [Windows step-by-step guide](docs/windows-codex.md)
 > Install `skills/blender-asset-workflow` from https://github.com/2409324124/blender-asset-workflow-skill into `~/.agents/skills/blender-asset-workflow` (on Windows: `%USERPROFILE%\.agents\skills\blender-asset-workflow`). Copy only that folder, stop if it already exists, verify skill discovery and read `SKILL.md`. Check Python availability and Blender CLI connectivity by launching a separate factory-startup background process with a 30-second timeout, running a minimal Python probe that imports `bpy` and prints the Blender version, then exiting without opening, modifying or saving any user scene. Report the actual result and any failure. If Blender is missing, stop and ask me before installing anything.
@@ -62,7 +90,7 @@ Outputs: BLEND, GLB, white overview, roof-off top view, furniture close-up and v
 
 **Optional resource management:** the Linux example runner enables timeout and sampled RSS protection. On Windows, use the direct Blender CLI instructions below with the guard **off by default**; that route has no guard protection, and the Linux runner does not automatically downgrade to it.
 
-**Platform limits:** live RSS checks and the example runner are **Linux-only**. RSS is sampled, not a hard sandbox. Timeout/process cleanup requires POSIX; macOS is untested and Windows is unsupported by those runners. macOS can use the direct Blender CLI route (`/Applications/Blender.app/Contents/MacOS/Blender`). Windows was tested through the dsh CLI route on Blender 5.2.3; see [Windows test record](tests/WINDOWS-DSH.md).
+**Platform limits:** live RSS checks and the example runner are **Linux-only**. RSS is sampled, not a hard sandbox. Timeout/process cleanup requires POSIX; macOS is untested and Windows is unsupported by those runners. macOS can use the direct Blender CLI route (`/Applications/Blender.app/Contents/MacOS/Blender`). Windows was tested through the dsh CLI route on Blender 5.2.3 and through Codex; see [Windows test record](tests/WINDOWS-DSH.md).
 
 ## Validation
 
