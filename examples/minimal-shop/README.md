@@ -25,7 +25,7 @@ The builder saves and exports before preview-only camera/visibility changes. The
 
 ## Windows direct Blender route
 
-Blender supports direct Windows CLI invocation, but this project's Windows execution has not been tested. Run from the repository root in PowerShell; edit the executable path for your installation. These commands bypass the Linux-only bounded runner: no automatic timeout/RSS limits or combined `verification.json` are provided. Blender includes the Python used by these scripts; standalone Python is needed for the test suite, not these direct calls.
+Blender supports direct Windows CLI invocation. This project was tested on Windows through the dsh CLI route on Blender 5.2.3; see [Windows test record](../../tests/WINDOWS-DSH.md). Run from the repository root in PowerShell; edit the executable path for your installation: the `Blender 4.3` folder below must match your installed version (for example `Blender 5.2`). These commands bypass the Linux-only bounded runner: no automatic timeout/RSS limits or combined `verification.json` are provided. Blender includes the Python used by these scripts; standalone Python is needed for the test suite, not these direct calls.
 
 ```powershell
 $Blender = 'C:\Program Files\Blender Foundation\Blender 4.3\blender.exe'
