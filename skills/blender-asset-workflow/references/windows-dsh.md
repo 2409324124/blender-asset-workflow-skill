@@ -70,7 +70,7 @@ $TestHome = Join-Path $TestRoot 'dsh-home'
 $SkillParent = Join-Path $Project '.agents\skills'
 $SkillTarget = Join-Path $SkillParent 'blender-asset-workflow'
 if (Test-Path -LiteralPath $SkillTarget) { throw 'Skill target already exists; stop' }
-New-Item -ItemType Directory -Path $SkillParent, $TestHome | Out-Null
+New-Item -ItemType Directory -Path $SkillParent, $TestHome -ErrorAction Stop | Out-Null
 Copy-Item -LiteralPath $SkillSource -Destination $SkillTarget -Recurse
 $Patch = Join-Path $TestRoot 'test.patch.yml'
 $SkillYamlPath = $SkillParent.Replace('\', '/').Replace("'", "''")
