@@ -9,7 +9,7 @@ This is a dated local test report, not hosted CI or a guarantee for every DSH/Bl
 | OS | Native Windows x64 |
 | Node / npm | 24.14.0 / 11.9.0 |
 | DSH | `@deepseek-ai/dsh@0.2.1-rc.5` |
-| Blender | 5.2.3 LTS, per-user installation |
+| Blender | 5.2.3 LTS, per-user installation (SKILL.md targets Blender 4.3; this Windows run was verified on 5.2.3) |
 | Skill source | PR #1 candidate commit `8a3ceba6b60854931caca4136412506ea6e44797` |
 | Host mode | CLI `--profile headless --patch <test-overlay> --json` |
 | Authentication | Existing saved API key via the official credential service; only `credentials` restored |
