@@ -1,0 +1,16 @@
+{
+  "name": "dsh-profile-headless",
+  "private": true,
+  "dependencies": {
+    "dsh-blender-plugin": "3.0.4"
+  },
+  "dsh": {
+    "profile": {
+      "bundles": [
+        "@deepseek-ai/dsh-base",
+        "@deepseek-ai/dsh-headless",
+        "dsh-blender-plugin"
+      ]
+    }
+  }
+}
