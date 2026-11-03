@@ -1,0 +1,57 @@
+{
+  "trace_sha256": "cf63619f23a5f9a5df4b7b93cb20bc4326ec8a31c32d4a63da8e442bac0abdb5",
+  "call_count": 10,
+  "tool_counts": {
+    "bash": 4,
+    "blender_rt_headless": 3,
+    "read_image": 3
+  },
+  "skill_calls": {},
+  "tool_result_statuses": {
+    "completed": 10
+  },
+  "final_events": 1,
+  "calls": [
+    {
+      "index": 1,
+      "tool": "bash"
+    },
+    {
+      "index": 2,
+      "tool": "bash"
+    },
+    {
+      "index": 3,
+      "tool": "blender_rt_headless"
+    },
+    {
+      "index": 4,
+      "tool": "read_image"
+    },
+    {
+      "index": 5,
+      "tool": "read_image"
+    },
+    {
+      "index": 6,
+      "tool": "bash"
+    },
+    {
+      "index": 7,
+      "tool": "blender_rt_headless"
+    },
+    {
+      "index": 8,
+      "tool": "read_image"
+    },
+    {
+      "index": 9,
+      "tool": "blender_rt_headless"
+    },
+    {
+      "index": 10,
+      "tool": "bash"
+    }
+  ],
+  "limitations": "Names and statuses only. A completed tool event does not prove its operation succeeded; inspect the original trace."
+}

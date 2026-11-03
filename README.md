@@ -1,5 +1,7 @@
 # Blender Asset Workflow
 
+**v0.1.1 — Skill + DSH worker 桥优化版.** See the [release notes](RELEASE-NOTES.md) and [three-configuration report with final renders and token usage](repro/dsh-forced-bridge/REPORT.md).
+
 **Plan the geometry. Validate the blockout. Refine with visual feedback.**
 
 An open-source AI agent skill for procedural low-poly modeling with Blender CLI, Python/bpy and independent visual QA.
@@ -40,6 +42,12 @@ Focused on low-poly hard-surface assets and modular scenes.
 "Documented" means install instructions exist but no recorded end-to-end run yet.
 
 Read the [skill](skills/blender-asset-workflow/SKILL.md), [QA protocol](skills/blender-asset-workflow/references/independent-qa.md) and [numeric-pitfall table](skills/blender-asset-workflow/references/numeric-pitfalls.md).
+
+### Optional DSH real-time bridge route — v0.1.1
+
+DSH can also use the third-party `dsh-blender-plugin@3.0.4` bridge with our skill for persistent scene execution and immediate visual feedback. The dreamcore-bedroom experiment completed after disabling the plugin's bundled modeling skill registration in an isolated copy. This release includes the configuration, isolation helper, final render comparisons and token evidence; it does not bundle the plugin or add an independent worker implementation.
+
+Follow the [isolated setup](repro/dsh-forced-bridge/REPRODUCE.md) to reproduce that experiment. It uses the recorded [skill snapshot](repro/dsh-forced-bridge/skill-snapshot/blender-asset-workflow/SKILL.md), which differs from the portable skill under `skills/`. The experiment validates that exact combination; it does not certify every skill revision. The portable skill remains usable without the plugin. See the [report](repro/dsh-forced-bridge/REPORT.md) for QA differences, known intersections and the limits of the token comparison.
 
 ## Install and run
 
@@ -94,7 +102,7 @@ Outputs: BLEND, GLB, white overview, roof-off top view, furniture close-up and v
 
 ## Validation
 
-Current skill revision: **v0.4**. Local regression suite: **27 tests** (Blender integration tests are skipped when Blender is absent). Independent example review: **45 meshes / 540 triangles**, matching native/GLB bounds, all three preview images inspected. These are specific local checks, not hosted CI or a universal quality certificate.
+Current release: **v0.1.1**. Older v0.4 labels in the evidence are historical development-candidate records. Local regression suite: **27 tests** (Blender integration tests are skipped when Blender is absent). Independent example review: **45 meshes / 540 triangles**, matching native/GLB bounds, all three preview images inspected. These are specific local checks, not hosted CI or a universal quality certificate.
 
 ```sh
 python3 -m unittest discover -s tests -p 'test_*.py' -v

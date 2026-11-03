@@ -1,0 +1,218 @@
+{
+  "scene_sha256": "4f84784ef23248636caed82e176031f9bb328bde096a0c25c4083898489aae9c",
+  "blender": "5.2.2 LTS",
+  "method": "World-space evaluated triangles, including converted curves; BVH candidates verified by strict edge/triangle crossing.",
+  "epsilon_scene_units": 1e-06,
+  "scope": "16 explicitly selected pairs in the saved C scene; no rendering or scene save.",
+  "limitations": "Positive results confirm surface crossing, not penetration depth or visual severity. Negative results do not exclude containment, coplanar contact or untested pairs. Triangle counts are not defect counts. Intended joints need semantic review.",
+  "pairs": [
+    {
+      "objects": [
+        "Curtain_Left",
+        "Window_Arch_Frame"
+      ],
+      "original_types": [
+        "MESH",
+        "CURVE"
+      ],
+      "candidate_triangle_pairs": 534,
+      "transverse_triangle_pairs": 534,
+      "surface_crossing_confirmed": true
+    },
+    {
+      "objects": [
+        "Curtain_Left",
+        "Window_Arch_OuterTrim"
+      ],
+      "original_types": [
+        "MESH",
+        "CURVE"
+      ],
+      "candidate_triangle_pairs": 342,
+      "transverse_triangle_pairs": 342,
+      "surface_crossing_confirmed": true
+    },
+    {
+      "objects": [
+        "Curtain_Left",
+        "Window_Crossbar"
+      ],
+      "original_types": [
+        "MESH",
+        "CURVE"
+      ],
+      "candidate_triangle_pairs": 154,
+      "transverse_triangle_pairs": 154,
+      "surface_crossing_confirmed": true
+    },
+    {
+      "objects": [
+        "Curtain_Right",
+        "Window_Arch_Frame"
+      ],
+      "original_types": [
+        "MESH",
+        "CURVE"
+      ],
+      "candidate_triangle_pairs": 576,
+      "transverse_triangle_pairs": 576,
+      "surface_crossing_confirmed": true
+    },
+    {
+      "objects": [
+        "Curtain_Right",
+        "Window_Arch_OuterTrim"
+      ],
+      "original_types": [
+        "MESH",
+        "CURVE"
+      ],
+      "candidate_triangle_pairs": 254,
+      "transverse_triangle_pairs": 254,
+      "surface_crossing_confirmed": true
+    },
+    {
+      "objects": [
+        "Curtain_Right",
+        "Window_Crossbar"
+      ],
+      "original_types": [
+        "MESH",
+        "CURVE"
+      ],
+      "candidate_triangle_pairs": 164,
+      "transverse_triangle_pairs": 164,
+      "surface_crossing_confirmed": true
+    },
+    {
+      "objects": [
+        "Bunny_Body",
+        "Pillow_Back_R"
+      ],
+      "original_types": [
+        "MESH",
+        "MESH"
+      ],
+      "candidate_triangle_pairs": 266,
+      "transverse_triangle_pairs": 266,
+      "surface_crossing_confirmed": true
+    },
+    {
+      "objects": [
+        "Bunny_Body",
+        "Pillow_Front_R"
+      ],
+      "original_types": [
+        "MESH",
+        "MESH"
+      ],
+      "candidate_triangle_pairs": 172,
+      "transverse_triangle_pairs": 172,
+      "surface_crossing_confirmed": true
+    },
+    {
+      "objects": [
+        "Bunny_Head",
+        "Pillow_Back_R"
+      ],
+      "original_types": [
+        "MESH",
+        "MESH"
+      ],
+      "candidate_triangle_pairs": 143,
+      "transverse_triangle_pairs": 143,
+      "surface_crossing_confirmed": true
+    },
+    {
+      "objects": [
+        "Bunny_Head",
+        "Pillow_Front_R"
+      ],
+      "original_types": [
+        "MESH",
+        "MESH"
+      ],
+      "candidate_triangle_pairs": 0,
+      "transverse_triangle_pairs": 0,
+      "surface_crossing_confirmed": false
+    },
+    {
+      "objects": [
+        "Pillow_Back_L",
+        "Pillow_Back_R"
+      ],
+      "original_types": [
+        "MESH",
+        "MESH"
+      ],
+      "candidate_triangle_pairs": 162,
+      "transverse_triangle_pairs": 162,
+      "surface_crossing_confirmed": true
+    },
+    {
+      "objects": [
+        "Pillow_Back_L",
+        "Pillow_Front_L"
+      ],
+      "original_types": [
+        "MESH",
+        "MESH"
+      ],
+      "candidate_triangle_pairs": 274,
+      "transverse_triangle_pairs": 274,
+      "surface_crossing_confirmed": true
+    },
+    {
+      "objects": [
+        "Pillow_Back_L",
+        "Pillow_Front_R"
+      ],
+      "original_types": [
+        "MESH",
+        "MESH"
+      ],
+      "candidate_triangle_pairs": 116,
+      "transverse_triangle_pairs": 116,
+      "surface_crossing_confirmed": true
+    },
+    {
+      "objects": [
+        "Pillow_Back_R",
+        "Pillow_Front_L"
+      ],
+      "original_types": [
+        "MESH",
+        "MESH"
+      ],
+      "candidate_triangle_pairs": 130,
+      "transverse_triangle_pairs": 130,
+      "surface_crossing_confirmed": true
+    },
+    {
+      "objects": [
+        "Pillow_Back_R",
+        "Pillow_Front_R"
+      ],
+      "original_types": [
+        "MESH",
+        "MESH"
+      ],
+      "candidate_triangle_pairs": 261,
+      "transverse_triangle_pairs": 261,
+      "surface_crossing_confirmed": true
+    },
+    {
+      "objects": [
+        "Pillow_Front_L",
+        "Pillow_Front_R"
+      ],
+      "original_types": [
+        "MESH",
+        "MESH"
+      ],
+      "candidate_triangle_pairs": 242,
+      "transverse_triangle_pairs": 242,
+      "surface_crossing_confirmed": true
+    }
+  ]
+}

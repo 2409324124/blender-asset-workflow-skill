@@ -1,0 +1,1113 @@
+{
+  "trace_sha256": "bcc52cab4d00d4e293740d94e78c3d8375c4423abc34f66aa2f5d65640ab58f4",
+  "call_count": 271,
+  "tool_counts": {
+    "bash": 172,
+    "read_image": 64,
+    "list_agents": 14,
+    "read": 6,
+    "todo_write": 3,
+    "write": 3,
+    "send_message": 3,
+    "job_list": 2,
+    "skill": 1,
+    "job_output": 1,
+    "job_kill": 1,
+    "subagent": 1
+  },
+  "skill_calls": {
+    "blender-asset-workflow": 1
+  },
+  "tool_result_statuses": {
+    "completed": 271
+  },
+  "final_events": 1,
+  "calls": [
+    {
+      "index": 1,
+      "tool": "skill",
+      "skill": "blender-asset-workflow"
+    },
+    {
+      "index": 2,
+      "tool": "bash"
+    },
+    {
+      "index": 3,
+      "tool": "bash"
+    },
+    {
+      "index": 4,
+      "tool": "bash"
+    },
+    {
+      "index": 5,
+      "tool": "read"
+    },
+    {
+      "index": 6,
+      "tool": "read"
+    },
+    {
+      "index": 7,
+      "tool": "read"
+    },
+    {
+      "index": 8,
+      "tool": "read"
+    },
+    {
+      "index": 9,
+      "tool": "read"
+    },
+    {
+      "index": 10,
+      "tool": "read"
+    },
+    {
+      "index": 11,
+      "tool": "bash"
+    },
+    {
+      "index": 12,
+      "tool": "bash"
+    },
+    {
+      "index": 13,
+      "tool": "bash"
+    },
+    {
+      "index": 14,
+      "tool": "bash"
+    },
+    {
+      "index": 15,
+      "tool": "bash"
+    },
+    {
+      "index": 16,
+      "tool": "bash"
+    },
+    {
+      "index": 17,
+      "tool": "bash"
+    },
+    {
+      "index": 18,
+      "tool": "bash"
+    },
+    {
+      "index": 19,
+      "tool": "bash"
+    },
+    {
+      "index": 20,
+      "tool": "bash"
+    },
+    {
+      "index": 21,
+      "tool": "todo_write"
+    },
+    {
+      "index": 22,
+      "tool": "write"
+    },
+    {
+      "index": 23,
+      "tool": "bash"
+    },
+    {
+      "index": 24,
+      "tool": "write"
+    },
+    {
+      "index": 25,
+      "tool": "bash"
+    },
+    {
+      "index": 26,
+      "tool": "bash"
+    },
+    {
+      "index": 27,
+      "tool": "bash"
+    },
+    {
+      "index": 28,
+      "tool": "todo_write"
+    },
+    {
+      "index": 29,
+      "tool": "bash"
+    },
+    {
+      "index": 30,
+      "tool": "bash"
+    },
+    {
+      "index": 31,
+      "tool": "bash"
+    },
+    {
+      "index": 32,
+      "tool": "bash"
+    },
+    {
+      "index": 33,
+      "tool": "read_image"
+    },
+    {
+      "index": 34,
+      "tool": "read_image"
+    },
+    {
+      "index": 35,
+      "tool": "read_image"
+    },
+    {
+      "index": 36,
+      "tool": "bash"
+    },
+    {
+      "index": 37,
+      "tool": "read_image"
+    },
+    {
+      "index": 38,
+      "tool": "bash"
+    },
+    {
+      "index": 39,
+      "tool": "bash"
+    },
+    {
+      "index": 40,
+      "tool": "bash"
+    },
+    {
+      "index": 41,
+      "tool": "read_image"
+    },
+    {
+      "index": 42,
+      "tool": "bash"
+    },
+    {
+      "index": 43,
+      "tool": "bash"
+    },
+    {
+      "index": 44,
+      "tool": "bash"
+    },
+    {
+      "index": 45,
+      "tool": "read_image"
+    },
+    {
+      "index": 46,
+      "tool": "read_image"
+    },
+    {
+      "index": 47,
+      "tool": "read_image"
+    },
+    {
+      "index": 48,
+      "tool": "bash"
+    },
+    {
+      "index": 49,
+      "tool": "bash"
+    },
+    {
+      "index": 50,
+      "tool": "read_image"
+    },
+    {
+      "index": 51,
+      "tool": "read_image"
+    },
+    {
+      "index": 52,
+      "tool": "bash"
+    },
+    {
+      "index": 53,
+      "tool": "read_image"
+    },
+    {
+      "index": 54,
+      "tool": "bash"
+    },
+    {
+      "index": 55,
+      "tool": "read_image"
+    },
+    {
+      "index": 56,
+      "tool": "read_image"
+    },
+    {
+      "index": 57,
+      "tool": "bash"
+    },
+    {
+      "index": 58,
+      "tool": "read_image"
+    },
+    {
+      "index": 59,
+      "tool": "bash"
+    },
+    {
+      "index": 60,
+      "tool": "bash"
+    },
+    {
+      "index": 61,
+      "tool": "read_image"
+    },
+    {
+      "index": 62,
+      "tool": "read_image"
+    },
+    {
+      "index": 63,
+      "tool": "read_image"
+    },
+    {
+      "index": 64,
+      "tool": "read_image"
+    },
+    {
+      "index": 65,
+      "tool": "bash"
+    },
+    {
+      "index": 66,
+      "tool": "read_image"
+    },
+    {
+      "index": 67,
+      "tool": "bash"
+    },
+    {
+      "index": 68,
+      "tool": "bash"
+    },
+    {
+      "index": 69,
+      "tool": "bash"
+    },
+    {
+      "index": 70,
+      "tool": "bash"
+    },
+    {
+      "index": 71,
+      "tool": "bash"
+    },
+    {
+      "index": 72,
+      "tool": "bash"
+    },
+    {
+      "index": 73,
+      "tool": "bash"
+    },
+    {
+      "index": 74,
+      "tool": "bash"
+    },
+    {
+      "index": 75,
+      "tool": "bash"
+    },
+    {
+      "index": 76,
+      "tool": "bash"
+    },
+    {
+      "index": 77,
+      "tool": "bash"
+    },
+    {
+      "index": 78,
+      "tool": "read_image"
+    },
+    {
+      "index": 79,
+      "tool": "bash"
+    },
+    {
+      "index": 80,
+      "tool": "bash"
+    },
+    {
+      "index": 81,
+      "tool": "bash"
+    },
+    {
+      "index": 82,
+      "tool": "read_image"
+    },
+    {
+      "index": 83,
+      "tool": "read_image"
+    },
+    {
+      "index": 84,
+      "tool": "bash"
+    },
+    {
+      "index": 85,
+      "tool": "read_image"
+    },
+    {
+      "index": 86,
+      "tool": "read_image"
+    },
+    {
+      "index": 87,
+      "tool": "bash"
+    },
+    {
+      "index": 88,
+      "tool": "read_image"
+    },
+    {
+      "index": 89,
+      "tool": "bash"
+    },
+    {
+      "index": 90,
+      "tool": "read_image"
+    },
+    {
+      "index": 91,
+      "tool": "read_image"
+    },
+    {
+      "index": 92,
+      "tool": "read_image"
+    },
+    {
+      "index": 93,
+      "tool": "bash"
+    },
+    {
+      "index": 94,
+      "tool": "bash"
+    },
+    {
+      "index": 95,
+      "tool": "bash"
+    },
+    {
+      "index": 96,
+      "tool": "bash"
+    },
+    {
+      "index": 97,
+      "tool": "bash"
+    },
+    {
+      "index": 98,
+      "tool": "bash"
+    },
+    {
+      "index": 99,
+      "tool": "read_image"
+    },
+    {
+      "index": 100,
+      "tool": "bash"
+    },
+    {
+      "index": 101,
+      "tool": "bash"
+    },
+    {
+      "index": 102,
+      "tool": "bash"
+    },
+    {
+      "index": 103,
+      "tool": "read_image"
+    },
+    {
+      "index": 104,
+      "tool": "bash"
+    },
+    {
+      "index": 105,
+      "tool": "bash"
+    },
+    {
+      "index": 106,
+      "tool": "bash"
+    },
+    {
+      "index": 107,
+      "tool": "bash"
+    },
+    {
+      "index": 108,
+      "tool": "read_image"
+    },
+    {
+      "index": 109,
+      "tool": "bash"
+    },
+    {
+      "index": 110,
+      "tool": "read_image"
+    },
+    {
+      "index": 111,
+      "tool": "read_image"
+    },
+    {
+      "index": 112,
+      "tool": "bash"
+    },
+    {
+      "index": 113,
+      "tool": "bash"
+    },
+    {
+      "index": 114,
+      "tool": "bash"
+    },
+    {
+      "index": 115,
+      "tool": "bash"
+    },
+    {
+      "index": 116,
+      "tool": "bash"
+    },
+    {
+      "index": 117,
+      "tool": "read_image"
+    },
+    {
+      "index": 118,
+      "tool": "bash"
+    },
+    {
+      "index": 119,
+      "tool": "bash"
+    },
+    {
+      "index": 120,
+      "tool": "bash"
+    },
+    {
+      "index": 121,
+      "tool": "read_image"
+    },
+    {
+      "index": 122,
+      "tool": "read_image"
+    },
+    {
+      "index": 123,
+      "tool": "bash"
+    },
+    {
+      "index": 124,
+      "tool": "bash"
+    },
+    {
+      "index": 125,
+      "tool": "bash"
+    },
+    {
+      "index": 126,
+      "tool": "write"
+    },
+    {
+      "index": 127,
+      "tool": "bash"
+    },
+    {
+      "index": 128,
+      "tool": "bash"
+    },
+    {
+      "index": 129,
+      "tool": "job_output"
+    },
+    {
+      "index": 130,
+      "tool": "bash"
+    },
+    {
+      "index": 131,
+      "tool": "job_list"
+    },
+    {
+      "index": 132,
+      "tool": "bash"
+    },
+    {
+      "index": 133,
+      "tool": "job_kill"
+    },
+    {
+      "index": 134,
+      "tool": "bash"
+    },
+    {
+      "index": 135,
+      "tool": "read_image"
+    },
+    {
+      "index": 136,
+      "tool": "bash"
+    },
+    {
+      "index": 137,
+      "tool": "read_image"
+    },
+    {
+      "index": 138,
+      "tool": "bash"
+    },
+    {
+      "index": 139,
+      "tool": "read_image"
+    },
+    {
+      "index": 140,
+      "tool": "read_image"
+    },
+    {
+      "index": 141,
+      "tool": "read_image"
+    },
+    {
+      "index": 142,
+      "tool": "bash"
+    },
+    {
+      "index": 143,
+      "tool": "bash"
+    },
+    {
+      "index": 144,
+      "tool": "bash"
+    },
+    {
+      "index": 145,
+      "tool": "bash"
+    },
+    {
+      "index": 146,
+      "tool": "bash"
+    },
+    {
+      "index": 147,
+      "tool": "read_image"
+    },
+    {
+      "index": 148,
+      "tool": "bash"
+    },
+    {
+      "index": 149,
+      "tool": "bash"
+    },
+    {
+      "index": 150,
+      "tool": "read_image"
+    },
+    {
+      "index": 151,
+      "tool": "bash"
+    },
+    {
+      "index": 152,
+      "tool": "read_image"
+    },
+    {
+      "index": 153,
+      "tool": "bash"
+    },
+    {
+      "index": 154,
+      "tool": "bash"
+    },
+    {
+      "index": 155,
+      "tool": "read_image"
+    },
+    {
+      "index": 156,
+      "tool": "bash"
+    },
+    {
+      "index": 157,
+      "tool": "bash"
+    },
+    {
+      "index": 158,
+      "tool": "read_image"
+    },
+    {
+      "index": 159,
+      "tool": "bash"
+    },
+    {
+      "index": 160,
+      "tool": "read_image"
+    },
+    {
+      "index": 161,
+      "tool": "bash"
+    },
+    {
+      "index": 162,
+      "tool": "bash"
+    },
+    {
+      "index": 163,
+      "tool": "read_image"
+    },
+    {
+      "index": 164,
+      "tool": "bash"
+    },
+    {
+      "index": 165,
+      "tool": "bash"
+    },
+    {
+      "index": 166,
+      "tool": "read_image"
+    },
+    {
+      "index": 167,
+      "tool": "read_image"
+    },
+    {
+      "index": 168,
+      "tool": "read_image"
+    },
+    {
+      "index": 169,
+      "tool": "bash"
+    },
+    {
+      "index": 170,
+      "tool": "bash"
+    },
+    {
+      "index": 171,
+      "tool": "bash"
+    },
+    {
+      "index": 172,
+      "tool": "read_image"
+    },
+    {
+      "index": 173,
+      "tool": "bash"
+    },
+    {
+      "index": 174,
+      "tool": "bash"
+    },
+    {
+      "index": 175,
+      "tool": "bash"
+    },
+    {
+      "index": 176,
+      "tool": "bash"
+    },
+    {
+      "index": 177,
+      "tool": "bash"
+    },
+    {
+      "index": 178,
+      "tool": "bash"
+    },
+    {
+      "index": 179,
+      "tool": "subagent"
+    },
+    {
+      "index": 180,
+      "tool": "list_agents"
+    },
+    {
+      "index": 181,
+      "tool": "bash"
+    },
+    {
+      "index": 182,
+      "tool": "list_agents"
+    },
+    {
+      "index": 183,
+      "tool": "list_agents"
+    },
+    {
+      "index": 184,
+      "tool": "bash"
+    },
+    {
+      "index": 185,
+      "tool": "job_list"
+    },
+    {
+      "index": 186,
+      "tool": "list_agents"
+    },
+    {
+      "index": 187,
+      "tool": "bash"
+    },
+    {
+      "index": 188,
+      "tool": "bash"
+    },
+    {
+      "index": 189,
+      "tool": "bash"
+    },
+    {
+      "index": 190,
+      "tool": "list_agents"
+    },
+    {
+      "index": 191,
+      "tool": "bash"
+    },
+    {
+      "index": 192,
+      "tool": "bash"
+    },
+    {
+      "index": 193,
+      "tool": "list_agents"
+    },
+    {
+      "index": 194,
+      "tool": "bash"
+    },
+    {
+      "index": 195,
+      "tool": "list_agents"
+    },
+    {
+      "index": 196,
+      "tool": "bash"
+    },
+    {
+      "index": 197,
+      "tool": "bash"
+    },
+    {
+      "index": 198,
+      "tool": "bash"
+    },
+    {
+      "index": 199,
+      "tool": "list_agents"
+    },
+    {
+      "index": 200,
+      "tool": "bash"
+    },
+    {
+      "index": 201,
+      "tool": "bash"
+    },
+    {
+      "index": 202,
+      "tool": "bash"
+    },
+    {
+      "index": 203,
+      "tool": "bash"
+    },
+    {
+      "index": 204,
+      "tool": "list_agents"
+    },
+    {
+      "index": 205,
+      "tool": "bash"
+    },
+    {
+      "index": 206,
+      "tool": "bash"
+    },
+    {
+      "index": 207,
+      "tool": "list_agents"
+    },
+    {
+      "index": 208,
+      "tool": "send_message"
+    },
+    {
+      "index": 209,
+      "tool": "bash"
+    },
+    {
+      "index": 210,
+      "tool": "list_agents"
+    },
+    {
+      "index": 211,
+      "tool": "bash"
+    },
+    {
+      "index": 212,
+      "tool": "bash"
+    },
+    {
+      "index": 213,
+      "tool": "bash"
+    },
+    {
+      "index": 214,
+      "tool": "bash"
+    },
+    {
+      "index": 215,
+      "tool": "bash"
+    },
+    {
+      "index": 216,
+      "tool": "bash"
+    },
+    {
+      "index": 217,
+      "tool": "bash"
+    },
+    {
+      "index": 218,
+      "tool": "bash"
+    },
+    {
+      "index": 219,
+      "tool": "bash"
+    },
+    {
+      "index": 220,
+      "tool": "read_image"
+    },
+    {
+      "index": 221,
+      "tool": "bash"
+    },
+    {
+      "index": 222,
+      "tool": "read_image"
+    },
+    {
+      "index": 223,
+      "tool": "read_image"
+    },
+    {
+      "index": 224,
+      "tool": "bash"
+    },
+    {
+      "index": 225,
+      "tool": "bash"
+    },
+    {
+      "index": 226,
+      "tool": "read_image"
+    },
+    {
+      "index": 227,
+      "tool": "read_image"
+    },
+    {
+      "index": 228,
+      "tool": "read_image"
+    },
+    {
+      "index": 229,
+      "tool": "bash"
+    },
+    {
+      "index": 230,
+      "tool": "bash"
+    },
+    {
+      "index": 231,
+      "tool": "bash"
+    },
+    {
+      "index": 232,
+      "tool": "bash"
+    },
+    {
+      "index": 233,
+      "tool": "bash"
+    },
+    {
+      "index": 234,
+      "tool": "bash"
+    },
+    {
+      "index": 235,
+      "tool": "send_message"
+    },
+    {
+      "index": 236,
+      "tool": "read_image"
+    },
+    {
+      "index": 237,
+      "tool": "bash"
+    },
+    {
+      "index": 238,
+      "tool": "bash"
+    },
+    {
+      "index": 239,
+      "tool": "bash"
+    },
+    {
+      "index": 240,
+      "tool": "list_agents"
+    },
+    {
+      "index": 241,
+      "tool": "bash"
+    },
+    {
+      "index": 242,
+      "tool": "bash"
+    },
+    {
+      "index": 243,
+      "tool": "list_agents"
+    },
+    {
+      "index": 244,
+      "tool": "bash"
+    },
+    {
+      "index": 245,
+      "tool": "list_agents"
+    },
+    {
+      "index": 246,
+      "tool": "bash"
+    },
+    {
+      "index": 247,
+      "tool": "bash"
+    },
+    {
+      "index": 248,
+      "tool": "read_image"
+    },
+    {
+      "index": 249,
+      "tool": "read_image"
+    },
+    {
+      "index": 250,
+      "tool": "bash"
+    },
+    {
+      "index": 251,
+      "tool": "bash"
+    },
+    {
+      "index": 252,
+      "tool": "bash"
+    },
+    {
+      "index": 253,
+      "tool": "bash"
+    },
+    {
+      "index": 254,
+      "tool": "bash"
+    },
+    {
+      "index": 255,
+      "tool": "bash"
+    },
+    {
+      "index": 256,
+      "tool": "bash"
+    },
+    {
+      "index": 257,
+      "tool": "bash"
+    },
+    {
+      "index": 258,
+      "tool": "read_image"
+    },
+    {
+      "index": 259,
+      "tool": "bash"
+    },
+    {
+      "index": 260,
+      "tool": "bash"
+    },
+    {
+      "index": 261,
+      "tool": "read_image"
+    },
+    {
+      "index": 262,
+      "tool": "read_image"
+    },
+    {
+      "index": 263,
+      "tool": "bash"
+    },
+    {
+      "index": 264,
+      "tool": "bash"
+    },
+    {
+      "index": 265,
+      "tool": "bash"
+    },
+    {
+      "index": 266,
+      "tool": "bash"
+    },
+    {
+      "index": 267,
+      "tool": "send_message"
+    },
+    {
+      "index": 268,
+      "tool": "bash"
+    },
+    {
+      "index": 269,
+      "tool": "bash"
+    },
+    {
+      "index": 270,
+      "tool": "bash"
+    },
+    {
+      "index": 271,
+      "tool": "todo_write"
+    }
+  ],
+  "limitations": "Names and statuses only. A completed tool event does not prove its operation succeeded; inspect the original trace."
+}

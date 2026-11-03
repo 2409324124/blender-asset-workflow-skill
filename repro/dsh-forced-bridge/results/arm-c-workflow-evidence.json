@@ -1,0 +1,131 @@
+{
+  "trace_sha256": "3c5ad51f6ddac1463fa7b86d1446bd070a9ae3e04e6ad0eca9e2e88a9ae9bcfb",
+  "source_qa_report_sha256": "dc558e9e657da57e21f266075b9f22c1e22a6cab48889da5f01d051ec02b9d5c",
+  "scene_sha256": "4f84784ef23248636caed82e176031f9bb328bde096a0c25c4083898489aae9c",
+  "events": [
+    {
+      "call_index": 1,
+      "tool": "skill",
+      "name": "blender-asset-workflow"
+    },
+    {
+      "call_index": 57,
+      "tool": "blender_rt_cmd",
+      "operation": "execute_code",
+      "observed_action": "Translate every Bunny* object +1.20 along world X for visibility",
+      "targeted_neighbor_check_in_this_call": false
+    },
+    {
+      "call_index": 104,
+      "tool": "blender_rt_plan",
+      "operation": "audit_scene",
+      "outer_event_status": "completed",
+      "inner_ok": false,
+      "error_code": "backend_error",
+      "error_message": "NameError: name '__file__' is not defined"
+    },
+    {
+      "call_index": 105,
+      "tool": "blender_rt_cmd",
+      "observed_action": "Generate replacement numeric self-check; room envelope, four AABB pairs and single-object manifold checks"
+    },
+    {
+      "call_index": 111,
+      "tool": "blender_rt_cmd",
+      "observed_action": "Rebuild four pillows; each reports zero non-manifold edges; save scene",
+      "neighbor_intersection_check_in_this_call": false
+    },
+    {
+      "call_index": 117,
+      "tool": "blender_rt_cmd",
+      "observed_action": "Write final numeric self-check; room envelope, five directional gaps and selected single-object manifold checks"
+    }
+  ],
+  "final_self_check": {
+    "status": "self-check (no independent reviewer available)",
+    "interior_fit": {
+      "passed": true,
+      "violations": []
+    },
+    "clearances": {
+      "bed_right_to_nightstand_left_m": 0.17,
+      "shelf_bottom_to_monitor_top_m": 0.347,
+      "curtain_right_to_desk_left_m": 0.012,
+      "monitor_bottom_to_desk_top_m": 0.022,
+      "stool_front_to_desk_front_m": 0.01
+    },
+    "manifold": {
+      "Mattress": {
+        "verts": 3530,
+        "faces": 3600,
+        "non_manifold_edges": 0
+      },
+      "Pillow_Back_L": {
+        "verts": 1718,
+        "faces": 1768,
+        "non_manifold_edges": 0
+      },
+      "Pillow_Back_R": {
+        "verts": 1718,
+        "faces": 1768,
+        "non_manifold_edges": 0
+      },
+      "Pillow_Front_L": {
+        "verts": 1718,
+        "faces": 1768,
+        "non_manifold_edges": 0
+      },
+      "Pillow_Front_R": {
+        "verts": 1718,
+        "faces": 1768,
+        "non_manifold_edges": 0
+      },
+      "CRT_Monitor_Shell": {
+        "verts": 2370,
+        "faces": 2432,
+        "non_manifold_edges": 0
+      },
+      "CRT_Foot": {
+        "verts": 762,
+        "faces": 800,
+        "non_manifold_edges": 0
+      },
+      "Bunny_Body": {
+        "verts": 1002,
+        "faces": 1040,
+        "non_manifold_edges": 0
+      },
+      "Bunny_Head": {
+        "verts": 1002,
+        "faces": 1040,
+        "non_manifold_edges": 0
+      },
+      "Mushroom_Cap": {
+        "verts": 1010,
+        "faces": 1056,
+        "non_manifold_edges": 0
+      },
+      "Stool_Cushion": {
+        "verts": 1298,
+        "faces": 1344,
+        "non_manifold_edges": 0
+      },
+      "Mouse": {
+        "verts": 922,
+        "faces": 960,
+        "non_manifold_edges": 0
+      }
+    },
+    "reopen_verified": true
+  },
+  "final_self_check_scope": {
+    "source_object_filter": "MESH",
+    "curve_count_in_scene": 35,
+    "not_tested_relations": [
+      "curtain to window frame / trim / crossbar",
+      "bunny to pillows",
+      "pillow to pillow"
+    ],
+    "caution": "No general collision pass was recorded. A room-envelope pass or zero non-manifold edges does not establish pairwise clearance."
+  }
+}

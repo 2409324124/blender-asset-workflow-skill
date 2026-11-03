@@ -1,0 +1,420 @@
+{
+  "trace_sha256": "5dd9aec306df23090d3cbff52efe0664ad14a906048decd953435107892ceb8c",
+  "call_count": 95,
+  "tool_counts": {
+    "blender_rt_do": 49,
+    "read_image": 22,
+    "blender_rt_worker": 6,
+    "bash": 4,
+    "blender_viewport": 3,
+    "blender_rt_commands": 2,
+    "read": 2,
+    "write": 2,
+    "skill": 1,
+    "blender_rt_plan": 1,
+    "blender_rt_see": 1,
+    "blender_rt_headless": 1,
+    "edit": 1
+  },
+  "skill_calls": {
+    "blender-modeling": 1
+  },
+  "tool_result_statuses": {
+    "completed": 95
+  },
+  "final_events": 1,
+  "calls": [
+    {
+      "index": 1,
+      "tool": "skill",
+      "skill": "blender-modeling"
+    },
+    {
+      "index": 2,
+      "tool": "blender_rt_commands"
+    },
+    {
+      "index": 3,
+      "tool": "blender_viewport",
+      "operation": "status"
+    },
+    {
+      "index": 4,
+      "tool": "blender_rt_plan",
+      "operation": "catalog"
+    },
+    {
+      "index": 5,
+      "tool": "blender_viewport",
+      "operation": "launch"
+    },
+    {
+      "index": 6,
+      "tool": "blender_viewport",
+      "operation": "status"
+    },
+    {
+      "index": 7,
+      "tool": "blender_rt_commands"
+    },
+    {
+      "index": 8,
+      "tool": "blender_rt_worker",
+      "operation": "start"
+    },
+    {
+      "index": 9,
+      "tool": "blender_rt_worker",
+      "operation": "start"
+    },
+    {
+      "index": 10,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 11,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 12,
+      "tool": "blender_rt_see"
+    },
+    {
+      "index": 13,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 14,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 15,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 16,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 17,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 18,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 19,
+      "tool": "read_image"
+    },
+    {
+      "index": 20,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 21,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 22,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 23,
+      "tool": "read_image"
+    },
+    {
+      "index": 24,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 25,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 26,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 27,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 28,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 29,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 30,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 31,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 32,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 33,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 34,
+      "tool": "read_image"
+    },
+    {
+      "index": 35,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 36,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 37,
+      "tool": "read_image"
+    },
+    {
+      "index": 38,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 39,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 40,
+      "tool": "read_image"
+    },
+    {
+      "index": 41,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 42,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 43,
+      "tool": "read_image"
+    },
+    {
+      "index": 44,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 45,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 46,
+      "tool": "read_image"
+    },
+    {
+      "index": 47,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 48,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 49,
+      "tool": "read_image"
+    },
+    {
+      "index": 50,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 51,
+      "tool": "read_image"
+    },
+    {
+      "index": 52,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 53,
+      "tool": "read_image"
+    },
+    {
+      "index": 54,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 55,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 56,
+      "tool": "read_image"
+    },
+    {
+      "index": 57,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 58,
+      "tool": "read_image"
+    },
+    {
+      "index": 59,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 60,
+      "tool": "blender_rt_worker",
+      "operation": "exec"
+    },
+    {
+      "index": 61,
+      "tool": "read_image"
+    },
+    {
+      "index": 62,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 63,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 64,
+      "tool": "read_image"
+    },
+    {
+      "index": 65,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 66,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 67,
+      "tool": "read_image"
+    },
+    {
+      "index": 68,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 69,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 70,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 71,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 72,
+      "tool": "read_image"
+    },
+    {
+      "index": 73,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 74,
+      "tool": "read_image"
+    },
+    {
+      "index": 75,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 76,
+      "tool": "read_image"
+    },
+    {
+      "index": 77,
+      "tool": "blender_rt_worker",
+      "operation": "exec"
+    },
+    {
+      "index": 78,
+      "tool": "read_image"
+    },
+    {
+      "index": 79,
+      "tool": "read_image"
+    },
+    {
+      "index": 80,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 81,
+      "tool": "blender_rt_do"
+    },
+    {
+      "index": 82,
+      "tool": "read_image"
+    },
+    {
+      "index": 83,
+      "tool": "blender_rt_worker",
+      "operation": "exec"
+    },
+    {
+      "index": 84,
+      "tool": "read_image"
+    },
+    {
+      "index": 85,
+      "tool": "read"
+    },
+    {
+      "index": 86,
+      "tool": "blender_rt_worker",
+      "operation": "exec"
+    },
+    {
+      "index": 87,
+      "tool": "read"
+    },
+    {
+      "index": 88,
+      "tool": "bash"
+    },
+    {
+      "index": 89,
+      "tool": "bash"
+    },
+    {
+      "index": 90,
+      "tool": "write"
+    },
+    {
+      "index": 91,
+      "tool": "write"
+    },
+    {
+      "index": 92,
+      "tool": "bash"
+    },
+    {
+      "index": 93,
+      "tool": "blender_rt_headless"
+    },
+    {
+      "index": 94,
+      "tool": "edit"
+    },
+    {
+      "index": 95,
+      "tool": "bash"
+    }
+  ],
+  "limitations": "Names and statuses only. A completed tool event does not prove its operation succeeded; inspect the original trace."
+}

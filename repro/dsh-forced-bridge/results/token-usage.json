@@ -1,0 +1,117 @@
+{
+  "components": {
+    "A_main": {
+      "source_sha256": "4fc6f4010b77ce116d63ae362b446395bb9f9a67fec4d8dfe827d74f14d2e38f",
+      "format": "session-v4-zstd",
+      "usage_records": 230,
+      "records_without_usage": 3,
+      "unclosed_steps": 0,
+      "reported_totals": {
+        "inputTokens": 150985,
+        "cacheReadTokens": 54584448,
+        "cacheWriteTokens": 0,
+        "outputTokens": 261875,
+        "totalTokens": 54997308
+      },
+      "records_missing_fields": {},
+      "limitations": "Reported usage only; unknown attempts are not zero. Sum a direct usage OR its mirrored stream value, never both. Do not add a session to its matching headless log. Excludes prechecks, title generation, external reviewers and monetary pricing."
+    },
+    "A_independent_reviewer": {
+      "source_sha256": "9b35cca8bbecb18828f8bd6669bcbb5c0822ad775a04a420d37c58692c72f10c",
+      "format": "session-v4-zstd",
+      "usage_records": 55,
+      "records_without_usage": 0,
+      "unclosed_steps": 0,
+      "reported_totals": {
+        "inputTokens": 95294,
+        "cacheReadTokens": 5880576,
+        "cacheWriteTokens": 0,
+        "outputTokens": 95102,
+        "totalTokens": 6070972
+      },
+      "records_missing_fields": {},
+      "limitations": "Reported usage only; unknown attempts are not zero. Sum a direct usage OR its mirrored stream value, never both. Do not add a session to its matching headless log. Excludes prechecks, title generation, external reviewers and monetary pricing."
+    },
+    "B_interrupted": {
+      "source_sha256": "ae64a69f3cb27e6184d09583acb2a7e600c8ab6bd900fb14248a4e4dd69bc9b5",
+      "format": "session-v4-zstd",
+      "usage_records": 72,
+      "records_without_usage": 0,
+      "unclosed_steps": 1,
+      "reported_totals": {
+        "inputTokens": 56785,
+        "cacheReadTokens": 8654208,
+        "cacheWriteTokens": 0,
+        "outputTokens": 118630,
+        "totalTokens": 8829623
+      },
+      "records_missing_fields": {},
+      "limitations": "Reported usage only; unknown attempts are not zero. Sum a direct usage OR its mirrored stream value, never both. Do not add a session to its matching headless log. Excludes prechecks, title generation, external reviewers and monetary pricing."
+    },
+    "B_resumed": {
+      "source_sha256": "cf63619f23a5f9a5df4b7b93cb20bc4326ec8a31c32d4a63da8e442bac0abdb5",
+      "format": "headless-jsonl",
+      "usage_records": 10,
+      "records_without_usage": 0,
+      "unclosed_steps": 0,
+      "reported_totals": {
+        "inputTokens": 13125,
+        "cacheReadTokens": 1875456,
+        "cacheWriteTokens": 0,
+        "outputTokens": 9810,
+        "totalTokens": 1898391
+      },
+      "records_missing_fields": {},
+      "limitations": "Reported usage only; unknown attempts are not zero. Sum a direct usage OR its mirrored stream value, never both. Do not add a session to its matching headless log. Excludes prechecks, title generation, external reviewers and monetary pricing."
+    },
+    "C": {
+      "source_sha256": "ac948b7e2a0340f1406dedc74a2f549d7893958632de35ba7bd1b6471694385b",
+      "format": "session-v4-zstd",
+      "usage_records": 119,
+      "records_without_usage": 0,
+      "unclosed_steps": 0,
+      "reported_totals": {
+        "inputTokens": 72151,
+        "cacheReadTokens": 15309184,
+        "cacheWriteTokens": 0,
+        "outputTokens": 167194,
+        "totalTokens": 15548529
+      },
+      "records_missing_fields": {},
+      "limitations": "Reported usage only; unknown attempts are not zero. Sum a direct usage OR its mirrored stream value, never both. Do not add a session to its matching headless log. Excludes prechecks, title generation, external reviewers and monetary pricing."
+    }
+  },
+  "aggregates": {
+    "A_including_independent_reviewer": {
+      "components": [
+        "A_main",
+        "A_independent_reviewer"
+      ],
+      "reported_totals": {
+        "inputTokens": 246279,
+        "cacheReadTokens": 60465024,
+        "cacheWriteTokens": 0,
+        "outputTokens": 356977,
+        "totalTokens": 61068280
+      }
+    },
+    "B_interrupted_plus_resumed": {
+      "components": [
+        "B_interrupted",
+        "B_resumed"
+      ],
+      "reported_totals": {
+        "inputTokens": 69910,
+        "cacheReadTokens": 10529664,
+        "cacheWriteTokens": 0,
+        "outputTokens": 128440,
+        "totalTokens": 10728014
+      }
+    }
+  },
+  "scope": "Modeling assistant and DSH independent-reviewer requests with reported usage; A includes its separately persisted reviewer. No prechecks, title-generation requests or later Codex visual audits. B original comes from the pre-resume backup; the continuation is added exactly once.",
+  "semantics": "In the installed DeepSeek Messages adapter, totalTokens = inputTokens + cacheReadTokens + cacheWriteTokens + outputTokens. Cached context is counted again each time it is processed; this is not newly generated text.",
+  "completeness": "A has three retry attempts without usage, so A reported totals are lower bounds. B original is interrupted with one unclosed tool step; persisted usage includes its already-returned assistant request. Observed usage is not an independently reconciled provider bill.",
+  "pricing": null,
+  "comparability": "A performs independent review; C reports self-check only. Single runs and different QA/render paths prevent attributing token differences solely to the bridge."
+}

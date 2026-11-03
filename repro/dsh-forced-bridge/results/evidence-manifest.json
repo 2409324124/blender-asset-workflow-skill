@@ -1,0 +1,104 @@
+{
+  "dsh_version": "0.2.1-rc.5",
+  "blender_version": "5.2.2 LTS",
+  "model_id": null,
+  "model_sampling_parameters": null,
+  "plugin": {
+    "npm_package": "dsh-blender-plugin",
+    "version": "3.0.4",
+    "b_entry_sha256": "2ce4c82fde86a388030079214fc6b68e34d31e5646221d20ad821eb588cc1f4f",
+    "c_entry_sha256": "a97f9bf36f12bf24c95bf770d72e483c540b31b0eac81aa4810bb108e7fa8f4d",
+    "c_change": "disable registerBundledSkill only; all other plugin tools retained"
+  },
+  "prompt": {
+    "a_sha256": "67730f5a2afef72bb77af4bd41a9b8cb72aaa07be0bb40125812e0e8f472f1bc",
+    "b_c_sha256": "237bceb8ccb6c2b5e2053d597114414b90587283c39543e1237513318c28cdfd",
+    "body_identical": true,
+    "a_difference": "forced bridge prefix removed",
+    "b_recovery": "additional instruction; EEVEE 64 samples, ray tracing off, 1000x620, memory and CPU caps"
+  },
+  "skill_snapshot_sha256": {
+    "SKILL.md": "a5ac81176f2925fc911bea1e68da5e0676193e6ae9d09e7a8ccb92efdf3af38b",
+    "references/assembly.md": "073cda67b871405255e85876ba6c7c9c986abd927ab42cf550f23189ad59b2f6",
+    "references/dsh-authentication.md": "b3d7597e7896119ab8a2c64ec3c0394a0a644573cee651220bab97944799c5ee",
+    "references/independent-qa.md": "62648c1fff4729c1b5cc77494dfbab96e5ff21c4cb0eca9c5a005045050e897f",
+    "references/numeric-pitfalls.md": "42c816dd234505d7903c39cbfb2b0b5a4ba2f1fe8fbabece7dbfa7799deb3acc",
+    "references/overlap-checks.md": "5c8dd1a42e733798af34d021150ac5214f3298aa59ac9b813f8b507b4389ee35",
+    "references/revisions.md": "cfea205543cedcbf0aafcca185b6874f143cf9236f668b9438b518ff9dd3f85e",
+    "references/runtime.md": "2ae642dd7c87c72511e46c19a9d24e8ce3ccb2d65d4fc051b7f0591d4fd3aa09",
+    "references/verification.md": "065672120658283f96e36e4169c46c60e05864f99a427188b83fe20f50e5b7c1",
+    "references/windows-dsh.md": "957049a75c2e062c549201ebbf564263f5b748630ec18cb1841fe73e40ef4e8b",
+    "references/windows-setup.md": "aa011afe1cd2859c89c368c6c7e20c8ec61943b4c1b723148a91242de0bba8ca",
+    "scripts/gated_write.sh": "a4f0dfcc144fafd42659976fb55cc3bc283def5ece7893d9e77b288544b83b5f",
+    "scripts/guarded_run.py": "4f15d64fdf0814cc65687237c3218a0160436f1d9d52474af21743862aa54df9",
+    "scripts/hard_gate.py": "9681de9e51441d07d4887c45d7202b225c36cc5c001a7a7723c400fad29e1bec",
+    "scripts/inspect_scene.py": "44dead68e15ef2a5a9a34d6d650c71565ba6cb7ff4c0a36a6600fc7e5aeddd28",
+    "scripts/overlap_audit.py": "b6c9677cbec9ebb675d4e7a27abcc2973940386c13a1474e7bf1c00ee52f5b25",
+    "scripts/png_privacy.py": "78d0a496f1b1ea5c12267c78ce06e1c6577d2e8e43a11fa7d89565adf0a47346",
+    "scripts/white_preview.py": "d959c576bc195d622c7f922e8985cd1429fb65b980d31641c656105408a120d6"
+  },
+  "arms": {
+    "A": {
+      "trace": {
+        "sha256": "bcc52cab4d00d4e293740d94e78c3d8375c4423abc34f66aa2f5d65640ab58f4",
+        "bytes": 870808
+      },
+      "skill_snapshot_matches": true,
+      "input_prompt_sha256": "67730f5a2afef72bb77af4bd41a9b8cb72aaa07be0bb40125812e0e8f472f1bc",
+      "scene": {
+        "sha256": "6ab54d25d551e7ffa49db499c827a8632b68d846afa8d11384571c58fdcb817b",
+        "bytes": 2450293
+      },
+      "hero": {
+        "sha256": "7c81e1496520a33a9bec112f73b215f432c121bc6273411185298d769c9855d7",
+        "bytes": 2452479
+      }
+    },
+    "B_interrupted": {
+      "trace": {
+        "sha256": "2478cb6d5ed3adfe65aff46945e7e2617b35afe0b960b734c28541dfe39a7bd2",
+        "bytes": 389095
+      },
+      "skill_snapshot_matches": true,
+      "input_prompt_sha256": "237bceb8ccb6c2b5e2053d597114414b90587283c39543e1237513318c28cdfd",
+      "scene_before_resume": {
+        "sha256": "af0fb584c8c134122e321fb588253572bcbb229d99226b3486c15b8c2f570689",
+        "bytes": 2220239
+      }
+    },
+    "B_resumed": {
+      "trace": {
+        "sha256": "cf63619f23a5f9a5df4b7b93cb20bc4326ec8a31c32d4a63da8e442bac0abdb5",
+        "bytes": 69723
+      },
+      "skill_snapshot_matches": true,
+      "input_prompt_sha256": "237bceb8ccb6c2b5e2053d597114414b90587283c39543e1237513318c28cdfd",
+      "scene": {
+        "sha256": "a6967126c18f1f4da8a914391857e89afaae986b700b014b3f3256fa71e67913",
+        "bytes": 2184766
+      },
+      "hero": {
+        "sha256": "370739973efd007c1e64a23ccc88a37d21e26318eb8769b92fa2dac20bedbfda",
+        "bytes": 1001382
+      },
+      "additional_recovery_prompt_sha256": "e48b65eacb330313d5d55f3a2f4a66c4c8667f2a646e386d54308ae36d7a3602"
+    },
+    "C": {
+      "trace": {
+        "sha256": "3c5ad51f6ddac1463fa7b86d1446bd070a9ae3e04e6ad0eca9e2e88a9ae9bcfb",
+        "bytes": 595882
+      },
+      "skill_snapshot_matches": true,
+      "input_prompt_sha256": "237bceb8ccb6c2b5e2053d597114414b90587283c39543e1237513318c28cdfd",
+      "scene": {
+        "sha256": "4f84784ef23248636caed82e176031f9bb328bde096a0c25c4083898489aae9c",
+        "bytes": 1210852
+      },
+      "hero": {
+        "sha256": "0fa455d7a24e0eabdf2b1cd08ee994634c324bb9a951120502d32532c0e58c65",
+        "bytes": 2280159
+      }
+    }
+  },
+  "limitations": "Original traces and scenes remain local; summaries are derived evidence. Model identity is unknown. B recovery changes prompt and rendering conditions."
+}

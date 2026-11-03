@@ -47,6 +47,14 @@ Get-ChildItem -LiteralPath $Source -Force |
 
 Both routes refuse an existing destination rather than replacing it. A failed copy may leave a partial destination; inspect it instead of retrying with overwrite enabled. The bundle includes references and Python helpers, not repository showcase images. No custom dsh plugin is needed for this skill format.
 
+## Optional real-time bridge integration — v0.1.1
+
+The standalone installation above uses Blender CLI. For a persistent Blender scene and immediate execution/image feedback, v0.1.1 also documents an optional route using `dsh-blender-plugin@3.0.4`. The [dreamcore-bedroom report](../repro/dsh-forced-bridge/REPORT.md) shows completed modeling with our skill after the plugin's bundled modeling skill registration was disabled in an isolated copy.
+
+Use the [recorded setup](../repro/dsh-forced-bridge/REPRODUCE.md) for exact experimental reproduction. It intentionally installs the experiment's frozen skill snapshot, not the current portable skill. The plugin is installed separately through npm; only its copied registration entry is modified. Its bridge and other tools remain present. Verify actual skill loading and active Blender session/ports before modeling; an installed skill or disable stub alone is insufficient evidence.
+
+This is an optional integration, not an independent worker implementation in this repository. It does not change independent-review availability, repair limits or QA stopping rules. The experiment's narrower self-check still missed intersections; bridge feedback and QA coverage must be evaluated separately. See the report for final render comparisons and token usage, including A's separate reviewer cost and B's interrupted/recovered run.
+
 ## Check execution and review capabilities
 
 | Need | Actual-session check |
@@ -58,7 +66,7 @@ Both routes refuse an existing destination rather than replacing it. A failed co
 
 If image input/attachments are unavailable, mark **visual QA not performed**. If no distinct reviewer can actually run, mark **self-check only**. Report exactly which stage is blocked; do not silently substitute a text-only answer or invent independence. If another reviewer route is available, use it only within its existing permissions and name the route used.
 
-Blender CLI + Python remains the modeling path; Blender MCP is not required. Optional Linux timeout/RSS guards remain as documented in the README. On Windows use the direct PowerShell path with the resource guard off by default—without its protection. The Linux example runner does not silently downgrade on Windows. Do not disable sandboxing, install software, change network settings or read credentials to make a probe pass.
+The standalone route uses Blender CLI + Python; Blender MCP is not required. The optional bridge route above has its own recorded setup. Optional Linux timeout/RSS guards remain as documented in the README. On Windows use the direct PowerShell path with the resource guard off by default—without its protection. The Linux example runner does not silently downgrade on Windows. Do not disable sandboxing, install software, change network settings or read credentials to make a probe pass.
 
 ## Validation evidence
 
