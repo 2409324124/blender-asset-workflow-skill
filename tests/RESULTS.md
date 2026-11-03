@@ -2,6 +2,13 @@
 
 These are dated local observations, not hosted CI results or a universal quality certification. Historical version sections describe their state at the time; the current license is in [LICENSING.md](../LICENSING.md).
 
+## v0.1.1 release preparation — 2026-11-03
+
+- Existing regression suite on Linux with Blender 5.2.2 LTS: `python3 -m unittest discover -s tests -p 'test_*.py' -v`; 27 tests passed in 6.573 seconds, no skips. The test process had a 4 GiB memory limit and a four-core CPU quota. It used generated fixtures, not the dreamcore scenes.
+- All three final render images are embedded in the [bridge integration report](../repro/dsh-forced-bridge/REPORT.md); the report distinguishes successful skill isolation and delivery from unresolved QA stopping/coverage issues.
+- Token summarization checks confirmed that a direct usage field and its mirrored stream field are counted once, missing retry usage is preserved as unknown, and open steps are reported. Report links, sanitized JSON, version consistency and Python helper compilation passed.
+- The portable `skills/` contents and experiment snapshot were not modified. The dreamcore runs used the recorded snapshot, which differs from the portable skill; these release checks do not turn them into an end-to-end test of the current portable skill.
+
 # v0.1 author-side validation — 2026-10-30
 
 Environment observed: Linux, Blender 4.3.2, Python standard library. Available memory was approximately 8 GiB at the start; no machine-specific limit is embedded in the package.
