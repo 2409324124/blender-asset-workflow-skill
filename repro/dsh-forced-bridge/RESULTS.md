@@ -2,6 +2,10 @@
 
 三组配置使用同一段卧室需求正文。A 不具备 DSH Blender 桥工具，因此移除了原有强制用桥前缀；B、C 保留前缀。A、C 各完整运行一次，B 中断后追加指令续接并改变了渲染条件。结果用于观察配置和运行过程，不能证明统计优劣或单独归因。工作流成因与改进方案见 [实验报告](REPORT.md)，校验值见[证据清单](results/evidence-manifest.json)。
 
+本 PR 已验证 C 的“第三方桥工具＋我们的 skill”能完成本案例，替代插件自带建模 skill。A 有实际独立审阅调用，C 仅声明自查，不能把较短过程直接解释成 QA 打转已修复；桥、隔离效果、QA 差异与最终图对比在报告中分别呈现。
+
+已记录 token：A 主会话至少 54,997,308，另有独立 reviewer 6,070,972，合计至少 61,068,280；B 中断前与续接合计 10,728,014；C 为 15,548,529。缓存读取占主要部分。缺失重试用量、统计范围及可比性见[报告中的 token 统计](REPORT.md)与[原始计数摘要](results/token-usage.json)，不能按调用次数或统一 token 单价推算费用。
+
 ## A：DSH + 我们的 skill，无 DSH Blender 插件
 
 - DSH 0.2.1-rc.5；Blender 5.2.2 LTS；无 `dsh-blender-plugin`。同一 skill 快照的哈希与 C 组相同；正式运行调用了我们的 `blender-asset-workflow`。实际模型 ID 和采样参数未记录。

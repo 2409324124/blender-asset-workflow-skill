@@ -1,0 +1,76 @@
+{
+  "arms": {
+    "A": {
+      "trace_sha256": "bcc52cab4d00d4e293740d94e78c3d8375c4423abc34f66aa2f5d65640ab58f4",
+      "call_count": 271,
+      "review_coordination_calls": {
+        "subagent": 1,
+        "list_agents": 14,
+        "send_message": 3
+      },
+      "image_read_calls": 64,
+      "final_events": 1,
+      "selected_events": [
+        {
+          "call_index": 179,
+          "action": "Start independent reviewer"
+        },
+        {
+          "call_index": 208,
+          "action": "Ask reviewer to conclude using available evidence"
+        },
+        {
+          "call_index": 235,
+          "action": "Request targeted re-review of repaired candidate"
+        },
+        {
+          "call_index": 267,
+          "action": "Request final targeted check after another saved change"
+        }
+      ],
+      "execution_observation": "Repeated external Blender invocations for build/repair, render, logs and saved-file inspection; actual independent review and wait calls."
+    },
+    "C": {
+      "trace_sha256": "3c5ad51f6ddac1463fa7b86d1446bd070a9ae3e04e6ad0eca9e2e88a9ae9bcfb",
+      "call_count": 126,
+      "review_coordination_calls": {
+        "subagent": 0,
+        "list_agents": 0,
+        "send_message": 0
+      },
+      "image_read_calls": 29,
+      "final_events": 1,
+      "bridge_calls": {
+        "blender_rt_cmd": 54,
+        "blender_rt_do": 10,
+        "blender_rt_see": 17,
+        "blender_rt_worker": 0
+      },
+      "selected_events": [
+        {
+          "call_index": 13,
+          "action": "Define superellipsoid helper and persist it as K.superellipsoid"
+        },
+        {
+          "call_index": 19,
+          "action": "Reuse K.superellipsoid while adding bunny and decorations"
+        },
+        {
+          "call_index": 104,
+          "action": "audit_scene returns internal ok:false"
+        },
+        {
+          "call_index": 117,
+          "action": "Write narrower self-check; declare independent reviewer unavailable"
+        }
+      ],
+      "review_observation": "No recorded independent-reviewer or coordination calls; self-check only is the run report, not independent proof that the host could not provide a reviewer."
+    }
+  },
+  "interpretation": {
+    "demonstrated": "Third-party bridge tools and our skill completed scene construction and delivery after disabling the bundled modeling skill registration.",
+    "mechanism_inference": "Persistent scene/context and immediate frames can reduce execution/feedback overhead; this experiment does not isolate the time saved by this mechanism.",
+    "qa_confounder": "A invoked independent review and re-review; C reported self-check only. Shorter completion is not proof that a QA loop was fixed.",
+    "pr_change": "Dependency/configuration, verified skill-registration isolation, reproducible experiment records; no independent worker implementation and no change to QA stopping policy."
+  }
+}

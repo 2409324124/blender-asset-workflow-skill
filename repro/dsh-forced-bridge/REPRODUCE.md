@@ -63,6 +63,16 @@ python3 "$REPRO_SOURCE/summarize_trace.py" "$REPRO_RUN/$arm/run.jsonl" > "$REPRO
 
 `count_calls.py` 对空事件流和无效 JSON 报错；其 bash 背景命令扫描只识别字面命令，不能证明动态 shell 代码没有启动 Blender。`summarize_trace.py` 只导出工具名、有限的操作名、状态、顺序和原始日志哈希，不输出命令、完整结果或路径；输出前仍应人工检查。`tool_result` 的 `completed` 不等于 Blender 操作成功，需查看原始结果。保留场景及其相关贴图、截图、日志和版本信息，并明确独立审核是否可用。
 
+## 提取 token 用量
+
+```bash
+python3 "$REPRO_SOURCE/summarize_usage.py" "$REPRO_RUN/$arm/run.jsonl"
+# 或读取已结束的 v4 保存会话；压缩格式需要 zstd 命令。
+python3 "$REPRO_SOURCE/summarize_usage.py" /path/to/session.v4.jsonl.zstd
+```
+
+两种输入针对同一模型请求时只能选一种累加。保存会话能保留 headless 缺失整步时成功尝试的已知用量；失败尝试没有报告的用量仍未知。独立 reviewer 使用自己的保存会话单列，续接使用续接前备份加续接事件，不能再累加包含旧历史的完整会话。脚本只输出来源哈希和计数，不输出正文、代码、响应或本机路径；不计算金额。
+
 ## 复核 C 的指定对象相交
 
 `audit_selected_surfaces.py` 只用于本次 C 场景中已有的对象名；它不是建模工具，也不会修复或保存场景。使用保留的 C 场景副本，输出到新的报告路径：

@@ -2,6 +2,8 @@
 
 记录 dreamcore-bedroom 的历史强制用桥实验及三组配置的运行证据。工作流问题、证据与改进方案见 [实验报告](REPORT.md)；配置、实际加载、产物与缺陷见 [三组对照](RESULTS.md)。B 含中断后续接，不是三次都在原条件下完整完成。
 
+**主要验证结果：关闭第三方插件自带建模 skill 后，DSH 仍通过实时桥工具与我们的 skill 完成了梦核卧室。** [报告](REPORT.md)直接展示 A/B/C 最终渲染，并说明 skill 隔离已完成、实时执行路线奏效，以及为何这尚不等于 QA 打转或穿模已被修复。
+
 This directory preserves the historical forced-bridge record and documents three subsequent configurations, including B's interrupted run and recovery. See the [workflow report](REPORT.md) and [comparison results](RESULTS.md).
 
 > **单次实例观察，不是统计结论；B 含中断后续接。** These are observations, not statistics; B includes recovery.
@@ -52,6 +54,7 @@ d959c576bc195d622c7f922e8985cd1429fb65b980d31641c656105408a120d6  blender-asset-
 - `stub/blender-modeling/SKILL.md` — 禁用提示空壳；单独放入嵌套运行目录不能保证覆盖插件 skill
 - `profile/` — profile 配置（`package.json`、`cordis*.yml`、`pnpm-*`；无密钥）
 - `count_calls.py` / `summarize_trace.py` — 严格读取事件流、生成调用统计及脱敏序列
+- `summarize_usage.py` / `results/token-usage.json` — 从实际记录提取非缓存输入、缓存与输出 token；A 的独立 reviewer 单列，缺失用量不按零处理
 - `prepare_bridge_only.py` / `REPRODUCE.md` — 隔离插件副本并仅关闭内置 skill 注册，及三组复现步骤
 - `profile-no-bridge/` / `input_prompt_no_bridge.txt` — 无 DSH Blender 插件配置及去掉强制用桥前缀的需求正文
 - `REPORT.md` / `RESULTS.md` — 工作流分析与下一 PR 方案，以及成图和运行条件
