@@ -1,12 +1,13 @@
-# 复现：「一句话 + 固定用桥前缀」臂 / Repro: one-sentence + fixed bridge prefix arm
+# DSH 梦核卧室：实验与工作流报告
 
-固定 dreamcore-bedroom 对照实验中 `ours-dsh-bridge-forced` 这一臂的完整配置，便于在别的机器上复现。
-Pins the exact configuration of the `ours-dsh-bridge-forced` arm so it can be reproduced elsewhere.
+记录 dreamcore-bedroom 的历史强制用桥实验及三组配置的运行证据。工作流问题、证据与改进方案见 [实验报告](REPORT.md)；配置、实际加载、产物与缺陷见 [三组对照](RESULTS.md)。B 含中断后续接，不是三次都在原条件下完整完成。
 
-> **单次运行，不是统计结论。** Single run only; results are a signal, not a statistic.
+This directory preserves the historical forced-bridge record and documents three subsequent configurations, including B's interrupted run and recovery. See the [workflow report](REPORT.md) and [comparison results](RESULTS.md).
+
+> **单次实例观察，不是统计结论；B 含中断后续接。** These are observations, not statistics; B includes recovery.
 > 本 PR 不修改仓库 `skills/` 下的 skill；`skill-snapshot/` 是该次运行实际加载的版本，与 main (8b9befa) 不同。
 
-## 固定版本 / Pinned versions
+## 历史 67 分钟运行的记录版本 / Historical run versions
 
 | 组件 | 版本 |
 |---|---|
@@ -46,54 +47,30 @@ d959c576bc195d622c7f922e8985cd1429fb65b980d31641c656105408a120d6  blender-asset-
 校验：`cd skill-snapshot && sha256sum -c ../SHA256SUMS.snapshot`
 
 ## 目录 / Files
-- `input_prompt.txt` — 固定前缀 + 原话（整场只发一次，中途不催）
+- `input_prompt.txt` — 固定前缀 + 原话；B/C 初始运行只发一次，B 续接另加恢复指令并单独记录
 - `skill-snapshot/blender-asset-workflow/` — 实际加载的 skill
-- `stub/blender-modeling/SKILL.md` — 禁用插件自带 modeling skill 的空壳
+- `stub/blender-modeling/SKILL.md` — 禁用提示空壳；单独放入嵌套运行目录不能保证覆盖插件 skill
 - `profile/` — profile 配置（`package.json`、`cordis*.yml`、`pnpm-*`；无密钥）
-- `count_calls.py` — 从 jsonl 统计工具调用
+- `count_calls.py` / `summarize_trace.py` — 严格读取事件流、生成调用统计及脱敏序列
+- `prepare_bridge_only.py` / `REPRODUCE.md` — 隔离插件副本并仅关闭内置 skill 注册，及三组复现步骤
+- `profile-no-bridge/` / `input_prompt_no_bridge.txt` — 无 DSH Blender 插件配置及去掉强制用桥前缀的需求正文
+- `REPORT.md` / `RESULTS.md` — 工作流分析与下一 PR 方案，以及成图和运行条件
+- `audit_selected_surfaces.py` / `results/arm-c-selected-surfaces.json` — 针对 C 已保存场景的只读相交证据
+- `results/evidence-manifest.json` / `results/arm-c-workflow-evidence.json` — 版本、提示词和产物哈希，以及自查范围与关键调用索引
 - `results/beauty_960.jpg` — 原记录成片缩略图
 - `results/rerun_hero_960.jpg` — 本机再跑的一张成片。点图片打开文件。
 
-[![本机再跑成片](results/rerun_hero_960.jpg)](results/rerun_hero_960.jpg)
+本机历史再跑[成片](results/rerun_hero_960.jpg)（Blender 5.2.2，约 34 分钟，95 次调用）。事件流显示实际加载的是插件自带 `blender-modeling`，不是预期空壳；我们的 skill 当时是否可被发现缺少证据，不把它当作完整 B 组。原记录的数字和 `beauty_960.jpg` 不变。A/B/C 的图片和条件集中展示在 [RESULTS.md](RESULTS.md)。
 
-本机再跑一次的成片（Blender 5.2.2，约 34 分钟，95 次调用）。上面原记录的数字和 `beauty_960.jpg` 不变。
+## 复现 / Reproduction
 
-## 步骤 / Steps
-前提：Node + npm、pnpm、Blender 4.5.3 在 PATH、DeepSeek API key（按 DSH 文档配置，勿提交）。
+详见 [三组隔离复现步骤](REPRODUCE.md)。之前将空壳放在嵌套运行目录下的做法并未成功覆盖插件 skill，不能作为有效隔离方式；仅有文件清单也不能证明模型实际加载了 skill。C 组采用隔离插件副本并关闭该副本中的 `registerBundledSkill`，保留桥及插件其他工具。预检和正式运行都应核对工具返回内容与实际 skill 调用。
 
-```bash
-npm i -g @deepseek-ai/dsh@0.2.1-rc.5
-dsh --version                    # 0.2.1-rc.5
-
-# 建 profile 并装插件 3.0.4
-mkdir -p ~/.dsh/profiles/bridge-ours
-cp repro/dsh-forced-bridge/profile/* ~/.dsh/profiles/bridge-ours/
-dsh plugin --profile bridge-ours install   # 按 package.json / pnpm-lock.yaml 安装 dsh-blender-plugin@3.0.4
-# 或：dsh plugin --profile bridge-ours add dsh-blender-plugin@3.0.4
-
-# 项目工作目录，放 skill 快照 + 空壳
-RUN=~/runs/forced-bridge && mkdir -p $RUN/.dsh/skills && cd $RUN
-cp -a <repo>/repro/dsh-forced-bridge/skill-snapshot/blender-asset-workflow .dsh/skills/
-cp -a <repo>/repro/dsh-forced-bridge/stub/blender-modeling .dsh/skills/
-cp <repo>/repro/dsh-forced-bridge/input_prompt.txt .
-find .dsh > skills_listing.txt
-
-# headless 一次性运行（JSON 事件流）
-date +%s > start_epoch
-dsh --profile bridge-ours --json "$(cat input_prompt.txt)" > dsh_run.jsonl 2> dsh_stderr.log
-python3 <repo>/repro/dsh-forced-bridge/count_calls.py dsh_run.jsonl
-```
-
-## 预期检查 / Expected checks
-1. `skills` 只出现 `blender-asset-workflow`（一次）。
-2. 第一次建模类调用为 `blender_rt_*`（本次：`blender_rt_commands` → `blender_viewport` → `blender_rt_worker` start/exec）。
-3. `bash blender -b` 计数为 0。
-
-## 本次结果 / This run's numbers
-约 67 分钟，DSH 自行退出。总计 201：`blender_rt_worker` 96（exec 77 / see 17 / start 2），read_image 45，bash 37，write 15，`blender_rt_headless` 3，其它桥 3；bash 跑 `blender -b` 0 次。
-注：无独立 QA（仅模型自查）；GLB 是运行结束后补导的，不算该臂产出；显示器为平板而非 CRT。
+## 历史运行结果 / Historical run numbers
+原记录报告约 67 分钟，DSH 自行退出。报告总计 201：`blender_rt_worker` 96（exec 77 / see 17 / start 2），read_image 45，bash 37，write 15，`blender_rt_headless` 3，其它桥 3；bash 跑 `blender -b` 0 次。
+原始完整事件流不在本仓库，以上数据未能独立复核。原记录无独立 QA（仅模型自查）；GLB 是运行结束后补导的，不算该臂产出；显示器为平板而非 CRT。
 
 ## 未能精确固定 / Not pinned exactly
-- 当次 headless 命令行没有逐字记录；上面的命令按 trace 记录的 `dsh --profile … --json` 形式重建。
+- 历史运行的 headless 命令行没有逐字记录；复现步骤按记录的 `dsh --profile … --json` 形式重建，不能代替原始命令证据。
 - 模型 ID 与采样参数取决于 DeepSeek provider 的默认值，未固定。
 - `@deepseek-ai/dsh-base` / `dsh-headless` bundle 版本随 DSH 0.2.1-rc.5 自带。
