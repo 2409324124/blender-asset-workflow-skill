@@ -1,6 +1,6 @@
 # Blender Asset Workflow
 
-**v0.1.1 — Skill + DSH worker 桥优化版.** See the [release notes](RELEASE-NOTES.md) and [three-configuration report with final renders and token usage](repro/dsh-forced-bridge/REPORT.md).
+**v0.1.1 — DSH workflow update:** Added a verified real-time Blender bridge workflow for incremental modeling and visual feedback. See the [release notes](RELEASE-NOTES.md) and [experiment report](repro/dsh-forced-bridge/REPORT.md).
 
 **Plan the geometry. Validate the blockout. Refine with visual feedback.**
 
