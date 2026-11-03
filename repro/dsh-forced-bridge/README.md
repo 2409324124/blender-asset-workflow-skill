@@ -51,7 +51,12 @@ d959c576bc195d622c7f922e8985cd1429fb65b980d31641c656105408a120d6  blender-asset-
 - `stub/blender-modeling/SKILL.md` — 禁用插件自带 modeling skill 的空壳
 - `profile/` — profile 配置（`package.json`、`cordis*.yml`、`pnpm-*`；无密钥）
 - `count_calls.py` — 从 jsonl 统计工具调用
-- `results/beauty_960.jpg` — 本次成片缩略图
+- `results/beauty_960.jpg` — 原记录成片缩略图
+- `results/rerun_hero_960.jpg` — 本机再跑的一张成片。点图片打开文件。
+
+[![本机再跑成片](results/rerun_hero_960.jpg)](results/rerun_hero_960.jpg)
+
+本机再跑一次的成片（Blender 5.2.2，约 34 分钟，95 次调用）。上面原记录的数字和 `beauty_960.jpg` 不变。
 
 ## 步骤 / Steps
 前提：Node + npm、pnpm、Blender 4.5.3 在 PATH、DeepSeek API key（按 DSH 文档配置，勿提交）。
