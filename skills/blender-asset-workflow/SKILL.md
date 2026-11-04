@@ -11,6 +11,7 @@ Create reviewable geometry before spending on presentation. **Independent QA and
 - **New asset or scene:** write a short design contract: style, known scale (or explicitly relative scale), axes, footprint, silhouette landmarks, semantic parts, and requested deliverables. Original procedural work does not require traced drawings or SVG.
 - **Revision:** identify the exact baseline file and hash, requested variant, changed region, and approved regions to preserve. Read [revisions and references](references/revisions.md).
 - **Assembly or moving parts:** read [scene assembly](references/assembly.md) for hierarchy, units, pivots, and ownership.
+- **Parametric radial blades:** when fan/compressor/turbine sections and spanwise laws are specified, read the [blade recipe and runnable example](references/parametric-blades.md). Use explicit chord, thickness, twist and cylindrical coordinates; keep assembly clearance and visual QA separate from single-blade geometry checks.
 
 ## Default execution contract
 
