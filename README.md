@@ -59,10 +59,6 @@ Focused on low-poly hard-surface assets and modular scenes.
 
 Read the [skill](skills/blender-asset-workflow/SKILL.md), [QA protocol](skills/blender-asset-workflow/references/independent-qa.md) and [numeric-pitfall table](skills/blender-asset-workflow/references/numeric-pitfalls.md).
 
-### Parametric aviation geometry
-
-For radial fan, compressor or turbine display blades, use the [parameter guide and runnable recipe](skills/blender-asset-workflow/references/parametric-blades.md). It includes root/mid/tip chord, thickness and twist controls, cylindrical mapping, cap topology and shared-Mesh repetition. The [aviation case study](docs/aviation-parametric-case-study.md) explains how reusable geometry, reference documents and targeted repairs contributed to a CFM56 study, with explicit limits on historical evidence and parameter coverage. This adds a geometry example, not a manufacturer-airfoil or full-engine CAD claim.
-
 ### Optional DSH real-time bridge route — v0.1.1
 
 DSH can also use the third-party `dsh-blender-plugin@3.0.4` bridge with our skill for persistent scene execution and immediate visual feedback. The dreamcore-bedroom experiment completed after disabling the plugin's bundled modeling skill registration in an isolated copy. This release includes the configuration, isolation helper, final render comparisons and token evidence; it does not bundle the plugin or add an independent worker implementation.

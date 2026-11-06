@@ -110,12 +110,3 @@ An earlier launch with a stripped environment lost required existing proxy/CA se
 The historical two-fixture timing above is normalized to its latest pre-review run (0.003 seconds), matching the PR description. The follow-up adds explicit UTF-8 text I/O, a non-ASCII preservation fixture, and execution of the documented Bash copy in a temporary path containing spaces, including refusal to overwrite on a repeated invocation.
 
 Full local suite: **27 tests passed in 19.532 seconds**, no skips, Linux / Blender 4.3.2. PowerShell was unavailable on this test host: its copy instructions were reviewed but not executed. No new model/API call or Windows-runtime test was performed.
-
-
-## Parametric radial blade recipe — 2026-11-04
-
-The portable helper and numeric verifier ran with Blender 5.2.2 LTS on Linux. The [recorded result](../docs/evidence/parametric-blades-validation.json) contains **48 passing checks** on one default and nine separate parameter changes, including source topology/radii, selected displacement invariants, repeated default geometry, array angles, shared Mesh data, import side effects and refusal of an existing output before scene mutation. No owner-local engine files are needed for this command.
-
-A separate invocation saved a new example BLEND and a fresh Blender process reopened it with 24 blade objects sharing one Mesh. The existing regression suite also passed: **27 tests in 6.414 seconds**, without skips. Skill structural validation and relative-link checks passed. These are numeric/packaging checks; no new blade preview or independent visual QA is claimed.
-
-Final Blender executions completed with exit code 0 outside the restricted execution sandbox. Earlier sandbox-only runs wrote their numeric reports but hung during local audio shutdown; those process runs were not counted as successful execution. The historical whole-engine case remains reported owner evidence, as described in the [case study](../docs/aviation-parametric-case-study.md).
