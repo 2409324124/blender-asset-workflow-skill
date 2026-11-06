@@ -1,5 +1,17 @@
 # Recorded validation
 
+## Current platform status — 2026-11-04
+
+This status distinguishes recorded evidence from maintainer-reported testing. It does **not** imply that every agent, Blender version, execution backend or QA mode works on every platform.
+
+| Platform | Status | Evidence / remaining gap |
+|---|---|---|
+| Linux | **Recorded and verified** | Blender 4.3.2 and 5.2.2 CLI/regression tests; official DSH 0.2.1-rc.5 model-assisted BLEND/GLB/preview/reviewer smoke test; DSH bridge experiment on Blender 5.2.2. See dated entries below and [bridge report](../repro/dsh-forced-bridge/REPORT.md). |
+| Windows | **Recorded and verified** | DSH + Blender 5.2.3 and Codex workflows; see [Windows DSH test log](WINDOWS-DSH.md) and [Windows Codex setup](../docs/windows-codex.md). Linux-only runners are not validated here. |
+| macOS | **Tested, per maintainer report; reproducibility details pending** | The maintainer reports testing completed, but this repository does not yet record Blender version, macOS version/architecture, agent, CLI commands, pass/fail logs or output hashes. Do not treat this as a recorded DSH bridge, BlenderMCP, independent-QA or runner certification. |
+
+The older dated entries retain their original test boundaries and are not retroactively rewritten. Before changing an agent × OS cell to "Tested", add an identifiable run with environment, toolchain, exact task, outcome and evidence.
+
 These are dated local observations, not hosted CI results or a universal quality certification. Historical version sections describe their state at the time; the current license is in [LICENSING.md](../LICENSING.md).
 
 ## v0.1.1 release preparation — 2026-11-03

@@ -16,6 +16,20 @@ Instead of jumping directly from natural language to detailed meshes, the workfl
 
 **Natural language → Geometry planning → Coarse blockout → White previews → Visual QA → Iterative refinement → BLEND verification (GLB export/reimport when requested)**
 
+## Roadmap
+
+**One geometry-first workflow, three execution routes.** The project keeps its portable Blender Python/bpy + CLI path while validating optional real-time adapters:
+
+| Backend | Current status | Role |
+|---|---|---|
+| **DSH real-time bridge** | Validated in one DSH + third-party plugin experiment ([PR #10](https://github.com/2409324124/blender-asset-workflow-skill/pull/10)) | Persistent Blender scene, incremental edits and immediate feedback; clean cross-platform installs still need testing. |
+| **BlenderMCP** | Planned integration; not yet validated with this skill | Interactive MCP route for compatible agents, subject to host/Blender service availability. |
+| **Python/bpy + Blender CLI** | Existing portable baseline, validated on Linux and Windows | Plugin-free fallback for headless environments; optimize cold-start, rebuild and preview costs. |
+
+**Next:** (P0) incremental geometry/adjacency QA and audit-failure handling; (P0) BlenderMCP integration and DSH clean-install smoke tests; (P1) prompt expansion and optional user clarification; (P1) backend capability detection and comparable quality/cost benchmarks; (P2) faster headless bpy feedback. This is a priority-based plan, not a dated release commitment.
+
+See the [detailed roadmap](docs/ROADMAP.md) and [recorded test evidence](tests/RESULTS.md).
+
 ## What makes it different?
 
 - **Geometry-first planning:** define scale, axes, silhouettes, semantic parts and assembly constraints before detailed modeling.
@@ -39,7 +53,9 @@ Focused on low-poly hard-surface assets and modular scenes.
 | Codex | Tested | Documented | Documented |
 | Claude Code | Documented | Documented | Documented |
 
-"Documented" means install instructions exist but no recorded end-to-end run yet.
+"Documented" means install instructions exist but no recorded end-to-end run **for that agent × OS combination**. A platform-level test does not automatically validate every agent or execution backend.
+
+**Platform testing status (as of 2026-11-04):** Linux is verified with recorded Blender CLI/regression and DSH model-assisted tests; Windows has recorded DSH/Codex tests. **macOS has also been tested according to the project maintainer**, but the agent, Blender version, test command and artifacts have not yet been added to this repository. Its agent-specific matrix cells remain "Documented" until reproducible evidence is recorded. See [test records](tests/RESULTS.md).
 
 Read the [skill](skills/blender-asset-workflow/SKILL.md), [QA protocol](skills/blender-asset-workflow/references/independent-qa.md) and [numeric-pitfall table](skills/blender-asset-workflow/references/numeric-pitfalls.md).
 
@@ -98,7 +114,7 @@ Outputs: BLEND, GLB, white overview, roof-off top view, furniture close-up and v
 
 **Optional resource management:** the Linux example runner enables timeout and sampled RSS protection. On Windows, use the direct Blender CLI instructions below with the guard **off by default**; that route has no guard protection, and the Linux runner does not automatically downgrade to it.
 
-**Platform limits:** live RSS checks and the example runner are **Linux-only**. RSS is sampled, not a hard sandbox. Timeout/process cleanup requires POSIX; macOS is untested and Windows is unsupported by those runners. macOS can use the direct Blender CLI route (`/Applications/Blender.app/Contents/MacOS/Blender`). Windows was tested through the dsh CLI route on Blender 5.2.3 and through Codex; see [Windows test record](tests/WINDOWS-DSH.md).
+**Platform limits:** live RSS checks and the example runner are **Linux-only**. RSS is sampled, not a hard sandbox. The separate timeout/process-group guard targets POSIX; its macOS behavior is not covered by a recorded test, and Windows is unsupported by those runners. The direct macOS Blender CLI route (`/Applications/Blender.app/Contents/MacOS/Blender`) has maintainer-reported testing but no reproducible environment/command record in this repository yet. Windows was tested through the dsh CLI route on Blender 5.2.3 and through Codex; see [Windows test record](tests/WINDOWS-DSH.md).
 
 ## Validation
 
