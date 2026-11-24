@@ -60,26 +60,16 @@ Do not diagnose every bright band as a material error or every triangular highli
 | Rounded/melted plate boundaries | Compare flat versus smooth shading, split/sharp edges and modifier order | Preserve intentional hard edges; use smoothing or weighted normals only where appropriate |
 | Dark patches or seams | Check winding, duplicate/internal faces, coincident surfaces and material boundaries | Correct the responsible topology/normal issue rather than brightening the world |
 | Exposed polygon facets | Inspect neutral and material views at intended delivery size | Add segments only to necessary curves, or explicitly accept the low-poly style |
-| Near-white broad bands on paint | Compare a neutral material and a roughness-only variation under fixed lights | Reduce excessive coat/specular response, tune roughness or soften lights; do not move vertices unless shape evidence calls for it |
+| Near-white broad bands on paint | Compare a neutral material and a roughness-only variation under fixed lights | Test a single material input or one light on separate copies. Keep the finish change only if the reference and fixed-view comparison support it. |
 | Vehicle still feels generic | Recheck real reference silhouettes, plate transitions and medium-scale mounting structure | Return to geometry; do not cycle through colors indefinitely |
 
 Use a neutral gray/clay pass, a simple diffuse pass and a material pass of the same geometry. Keep cavities/AO subtle: they can exaggerate gaps or hide missing contacts. A glossy pass is useful for revealing surface discontinuities, but is not automatically the final finish. Smooth shading and weighted normals are techniques, not universal fixes.
 
 ## 6. Build material families under controlled light
 
-Start with the actual finish reference. Distinguish painted armor, painted mounts/tubes, exposed steel, rubber and glass; do not assign one shiny material to every dark part.
+Record the requested condition and a finish reference. Use the same camera and light rig for a material comparison. If surface defects persist in the neutral view, return to the local geometry diagnosis. A change in highlight intensity alone cannot establish the intended finish.
 
-- **Paint:** treat it as a dielectric coating, not bare metal. Tune color, roughness and any clearcoat together. Strong coat and low roughness can create a polished-metal appearance even with a plausible green base color.
-- **Bare metal:** reserve a metal response for visibly exposed parts. Do not assume a fitting is unpainted just because it is metal underneath.
-- **Rubber:** keep broader, weaker reflections and enough lighting to read its shape; pure black can crush the running gear.
-- **Glass/lenses:** distinguish them from both armor and chrome, without inventing transparency through an opaque vehicle interior.
-- **Wear:** match the requested condition. A clean parade vehicle is not automatically a high-gloss toy; a field vehicle is not automatically covered in rust and mud.
-
-Any roughness numbers are renderer/lighting-specific starting points, not official vehicle-paint specifications. Do not equate a linear shader color with the same numeric display-space RGB. Keep color management and exposure fixed when comparing revisions.
-
-Use a broad key/fill setup and a restrained background. Preserve dark running-gear detail and painted highlights without clipping. Do not change geometry, paint and lighting in the same diagnostic experiment. Compare **identical cameras** before deciding that the finish improved.
-
-Procedural shader details are not automatically preserved in GLB. Inspect the actual target material or bake supported textures when required; report omitted shader behavior rather than claiming native/export visual equivalence from matching bounds.
+Use [surface presentation](surface-presentation.md) for optional material families, fixed framing and native versus exported appearance. Read [parametric surfaces](parametric-surfaces.md) when a profile or a repeated path feature needs a revision.
 
 ## 7. Use separate acceptance gates
 
@@ -88,7 +78,7 @@ Procedural shader details are not automatically preserved in GLB. Inspect the ac
 | Reference identity | Variant/source sheet and uncertainty labels | Exact dimensions from perspective photos |
 | Geometry appearance | Whole-vehicle silhouette, armor-plane and local comparison images actually viewed | Correctness from object names/counts |
 | Surface/finish | Neutral diagnostic views and same-camera material views | Realism from a green palette or a successful render |
-| Artifact integrity | Reopened native file; actual export/reimport; geometry, hierarchy and bounds checks | Similarity to the real vehicle or matching exported shaders |
+| Artifact integrity | Reopen the native file. When an export is requested, reimport that deliverable and inspect its geometry, hierarchy, bounds and appearance. | Similarity to the real vehicle or matching exported shaders |
 | User acceptance | The requested whole-vehicle appearance reviewed after the latest changes | Permanent approval of every later revision |
 
 A bounded part review may pass while the whole vehicle still fails. Keep technical passes when valid, but reopen visual acceptance when the user rejects the appearance. Stop at the finite repair budget in [independent QA](independent-qa.md); report unresolved problems instead of issuing another blanket “final” label.
@@ -97,4 +87,4 @@ A bounded part review may pass while the whole vehicle still fails. Keep technic
 
 Give the next worker the frozen source/hash, permitted changes, prohibited changes, camera settings, actual preview paths, remaining issues and test scope. Nominate one geometry writer, one presentation writer and a separate reviewer when available. One person coordinates the issue list and final package so old geometry and new renders cannot be mixed.
 
-Deliver editable native files, requested exports, white and material views, a compact change table and a limitations note. Keep reference-photo licenses separate from self-generated evidence. Copy only the skill folder when installing; the repository's historical case images are not runtime inputs.
+Deliver the editable native file and the exports and views in the design contract. Include a compact change table and unresolved findings. Keep reference-photo licenses separate from self-generated evidence. Copy only the skill folder when installing; the repository's historical case images are not runtime inputs.

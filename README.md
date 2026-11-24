@@ -23,10 +23,10 @@ Instead of jumping directly from natural language to detailed meshes, the workfl
 | Backend | Current status | Role |
 |---|---|---|
 | **DSH real-time bridge** | Validated in one DSH + third-party plugin experiment ([PR #10](https://github.com/2409324124/blender-asset-workflow-skill/pull/10)) | Persistent Blender scene, incremental edits and immediate feedback; clean cross-platform installs still need testing. |
-| **BlenderMCP** | Planned integration; not yet validated with this skill | Interactive MCP route for compatible agents, subject to host/Blender service availability. |
+| **BlenderMCP** | [Local macOS scene-read and two-call geometry smoke test](tests/RESULTS.md#parametric-exterior-modeling-and-presentation--2026-11-24) | Interactive MCP route for compatible agents, subject to host/Blender service availability. |
 | **Python/bpy + Blender CLI** | Existing portable baseline, validated on Linux and Windows | Plugin-free fallback for headless environments; optimize cold-start, rebuild and preview costs. |
 
-**Next:** (P0) incremental geometry/adjacency QA and audit-failure handling; (P0) BlenderMCP integration and DSH clean-install smoke tests; (P1) prompt expansion and optional user clarification; (P1) backend capability detection and comparable quality/cost benchmarks; (P2) faster headless bpy feedback. This is a priority-based plan, not a dated release commitment.
+**Next:** (P0) incremental geometry/adjacency QA and audit-failure handling; (P0) end-to-end BlenderMCP asset delivery and DSH clean-install smoke tests; (P1) prompt expansion and optional user clarification; (P1) backend capability detection and comparable quality/cost benchmarks; (P2) faster headless bpy feedback. This is a priority-based plan, not a dated release commitment.
 
 See the [detailed roadmap](docs/ROADMAP.md) and [recorded test evidence](tests/RESULTS.md).
 
@@ -39,9 +39,11 @@ See the [detailed roadmap](docs/ROADMAP.md) and [recorded test evidence](tests/R
 - **Artifact verification:** reopen saved BLEND files and, when requested, reimport actual GLB exports, checking geometry, dimensions and structure.
 - **Numeric traps:** hashes, polygon counts, AABB hints and successful reimports are evidence—not guarantees of resemblance or correct geometry.
 
-## Armored vehicle refinement
+## Hard-surface modeling experiments
 
-See the [modeling and refinement guide](skills/blender-asset-workflow/references/armored-vehicles.md) for reference planning, armor planes, semantic parts, local repairs and surface diagnostics. The [Tunguska iteration case](docs/cases/tunguska-refinement.md) records bounded improvements **and a later whole-vehicle visual rejection**; it is not a realism benchmark or a functional vehicle model. Case images are historical evidence, not required skill inputs.
+Use the [parametric geometry reference](skills/blender-asset-workflow/references/parametric-surfaces.md) for corresponding sections and evenly spaced path details, and the [presentation reference](skills/blender-asset-workflow/references/surface-presentation.md) for fixed-camera gray, color and reimport comparisons. Each is optional and includes an original runnable civilian fixture. [Compressor before/after](docs/experiments/geometry-transfer.md) · [Gauge and GLB round trip](docs/experiments/presentation-transfer.md)
+
+The [source audit](docs/experiments/asset-audit.md), [two-vehicle render study](docs/experiments/surface-ablation.md) and [isolated agent trials](docs/experiments/agent-comparison.md) distinguish measured effects from unresolved work. The [vehicle refinement guide](skills/blender-asset-workflow/references/armored-vehicles.md) retains the [Tunguska case](docs/cases/tunguska-refinement.md), including the later whole-vehicle visual rejection.
 
 ## Designed for AI agent workflows
 
@@ -122,7 +124,7 @@ Outputs: BLEND, GLB, white overview, roof-off top view, furniture close-up and v
 
 ## Validation
 
-Current release: **v0.1.1**. Older v0.4 labels in the evidence are historical development-candidate records. Local regression suite: **30 tests** (Blender integration tests are skipped when Blender is absent). Independent example review: **45 meshes / 540 triangles**, matching native/GLB bounds, all three preview images inspected. These are specific local checks, not hosted CI or a universal quality certificate.
+Current release: **v0.1.1**. Older v0.4 labels in the evidence are historical development-candidate records. The current checkout includes native Blender, GLB appearance, geometry and platform-specific regression tests. See the [recorded runs and platform coverage](tests/RESULTS.md). Independent example review: **45 meshes / 540 triangles**, matching native/GLB bounds, all three preview images inspected. These are specific local checks, not hosted CI or a universal quality certificate.
 
 ```sh
 python3 -m unittest discover -s tests -p 'test_*.py' -v

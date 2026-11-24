@@ -1,6 +1,20 @@
 # Recorded validation
 
-## Armored vehicle documentation — 2026-11-24
+## Parametric exterior modeling and presentation — 2026-11-24
+
+| Frozen checkout | macOS tests passed | Linux-only skips | Time |
+| --- | ---: | ---: | ---: |
+| PR base, `d84ca83` | 25 of 27 | 2 | 5.329 s |
+| Original PR, `037f540` | 28 of 30 | 2 | 5.338 s |
+| Candidate in this PR | 39 of 41 | 2 | 18.343 s |
+
+All three runs selected the same Blender 4.5.16 LTS executable on macOS 27.2.1 arm64 and used standard unittest discovery. The candidate tests include exact corner tangents, saved loft sections, procedural and portable surfaces, actual GLB reimport, and failed or concurrent image publication and an existing dangling output link. A separate Alpine Linux 3.22.8 arm64 VM ran all six guard tests in 1.693 seconds, including the two skipped on macOS. Its descendant probe verified termination via `/proc`. The RSS probe observed 91,131,904 bytes against a 40 MiB cap and returned 125. [Per-test results and raw-log hashes](../docs/experiments/regression-results.json)
+
+A second reviewer copied just the 22 skill files into a new installation, checked 48 local links and anchors in 15 Markdown files, imported the helpers from that copy, built a 12-vertex part and rendered a 480 × 360 image. The four final compressor views matched the original file hashes. The reviewer also exercised 19,200 exact-corner cases after fixing one tangent-direction error. The installation check covered direct imports. [Geometry fixture](../docs/experiments/geometry-transfer.md) · [Studio and export fixture](../docs/experiments/presentation-transfer.md)
+
+A separate local stdio MCP client connected to the installed MCP for Blender 2.3.1 service and the Blender 4.5.16 GUI add-on. The client listed 10 tools and read the default scene. It then called the shipped section helper to build a temporary tapered part. A second tool call measured eight vertices, ten faces and a top height of 0.75 scene units, then removed it. Native saves, renders and GLB reimports in the suite above used the CLI.
+
+## Original armored vehicle documentation at `037f540` — 2026-11-24
 
 - Linux / Blender 4.3.2; explicit `BLENDER` executable selected. Ran `python3 -m unittest discover -s tests -p 'test_*.py' -v`: **30 tests passed in 6.127 seconds, no skips**. Existing real-Blender fixture/roundtrip/preview tests ran; this is not an end-to-end rerun or visual acceptance of the historical Tunguska model.
 - Three added documentation checks resolve local skill/case links, verify bundled image SHA-256 values and PNG dimensions, and reject machine-local paths in the extracted case evidence. They do not prove resemblance, normals or shader correctness.

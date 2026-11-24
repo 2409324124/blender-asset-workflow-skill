@@ -24,7 +24,7 @@ Reference photographs were uncalibrated perspective views and included different
 | Dark-green study | Darker paint; metal/rubber material separation | A material-direction preview existed | Specific earlier parade photo was not identified; no claim of exact color/marking match |
 | Material r1 | Reduced painted-surface coat/specular/metalness and increased roughness | Near-white broad painted highlights visibly weakened under fixed lights | Overall vehicle still rejected; surface-construction diagnosis remained open |
 
-The model retained **16 mesh objects**. The checked GLB triangulation changed from **55,404 triangles in v03r1** to **62,660 in v04**. These are particular artifact statistics, not quality targets. See the [recorded evidence summary](tunguska-evidence.json).
+The model retained **16 mesh objects**. The checked GLB triangulation changed from **55,404 triangles in v03r1** to **62,660 in v04**. These are particular artifact statistics, not quality targets. The [recorded evidence summary](tunguska-evidence.json) lists the v04 counts. The v03r1 count comes from the historical narrative; the v03r1 GLB is unavailable for independent comparison.
 
 ## Local repair: fix the missing shape, not its color
 
@@ -95,3 +95,5 @@ All four bundled images show only this project's procedurally generated model re
 Historical reference filenames included the Saint Petersburg museum pic1/pic2, the TankBiathlon14part2-25 through -30 series, and a MAKS-2011 side view. This is an inventory, **not verified photographer attribution or a license notice**. Those photographs are not uploaded in this PR. The two Commons pages linked above confirm their photographer/date and display attribution/share-alike conditions; consult their current notices for precise reuse terms. The remaining photo-source/license mappings and the requested parade photo remain unresolved. The method requires recording those before redistribution; do not guess a public-domain or Creative Commons license from a filename.
 
 Only exterior-art methodology is documented. No functional weapon details or manufacturing data are supplied.
+
+A subsequent [fixed-camera experiment](../experiments/surface-ablation.md) reopened the frozen exterior, tested selected wheel surfaces on local copies, and compared native and exported renders. It leaves the historical whole-vehicle rejection open.

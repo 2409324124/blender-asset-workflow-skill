@@ -1,0 +1,218 @@
+{
+  "host": "macOS 27.2.1 arm64, CPython 3.9.6, Blender 4.5.16 LTS",
+  "command": "BLENDER=<absolute executable> python3 -m unittest discover -s tests -p 'test_*.py' -v",
+  "macos": {
+    "base": {
+      "revision": "d84ca8355ca558893cff7c16712a5909033ec549",
+      "tests": 27,
+      "duration_seconds": 5.329,
+      "passed": 25,
+      "raw_log_sha256": "6759e29630271bb7f7eef3643e2638259713a9c2165db0d8a55617d52a399535",
+      "test_results": {
+        "test_artifact_roundtrip_and_preview (test_blender.BlenderTests)": "ok",
+        "test_hidden_scene_glb_import_is_empty (test_blender.BlenderTests)": "ok",
+        "test_long_box_projected_framing (test_blender.BlenderTests)": "ok",
+        "test_overlap_actual_scene (test_blender.BlenderTests)": "ok",
+        "test_default_missing_is_none (test_blender_executable.ExecutableTests)": "ok",
+        "test_explicit_path_with_spaces (test_blender_executable.ExecutableTests)": "ok",
+        "test_invalid_explicit_fails (test_blender_executable.ExecutableTests)": "ok",
+        "test_direct_bundle_frontmatter_and_helpers (test_dsh_layout.DshBundleLayoutTests)": "ok",
+        "test_documented_bash_copy_and_repeat_refusal (test_dsh_layout.DshBundleLayoutTests)": "ok",
+        "test_existing_bundle_not_overwritten (test_dsh_layout.DshBundleLayoutTests)": "ok",
+        "test_child_error (test_guard.GuardTests)": "ok",
+        "test_descendant_cleanup (test_guard.GuardTests)": "skipped 'Linux /proc termination evidence'",
+        "test_memory (test_guard.GuardTests)": "skipped 'Linux RSS'",
+        "test_nonfinite_limits_rejected (test_guard.GuardTests)": "ok",
+        "test_success (test_guard.GuardTests)": "ok",
+        "test_term_ignored (test_guard.GuardTests)": "ok",
+        "test_blanket_missing_reason_rejected (test_overlap.OverlapTests)": "ok",
+        "test_detect_candidate (test_overlap.OverlapTests)": "ok",
+        "test_explicit_exception (test_overlap.OverlapTests)": "ok",
+        "test_invalid_tolerance (test_overlap.OverlapTests)": "ok",
+        "test_separation (test_overlap.OverlapTests)": "ok",
+        "test_stale_exception_rejected (test_overlap.OverlapTests)": "ok",
+        "test_touch_is_not_candidate (test_overlap.OverlapTests)": "ok",
+        "test_failed_replace_preserves_original (test_png_privacy.PNGTests)": "ok",
+        "test_failed_write_preserves_original (test_png_privacy.PNGTests)": "ok",
+        "test_invalid_input_rejected (test_png_privacy.PNGTests)": "ok",
+        "test_metadata_removed_pixels_identical (test_png_privacy.PNGTests)": "ok"
+      }
+    },
+    "original_pr": {
+      "revision": "037f540451a6e897d5629af28bc9a15f28e0384e",
+      "tests": 30,
+      "duration_seconds": 5.338,
+      "passed": 28,
+      "raw_log_sha256": "3e65d87d79c64125f937e23a9e60c8ebeea9fa5572e653c21143eaf63f67de81",
+      "test_results": {
+        "test_bundled_image_hashes_and_png_dimensions (test_armored_docs.ArmoredDocumentationTests)": "ok",
+        "test_evidence_is_portable_metadata (test_armored_docs.ArmoredDocumentationTests)": "ok",
+        "test_local_links_resolve (test_armored_docs.ArmoredDocumentationTests)": "ok",
+        "test_artifact_roundtrip_and_preview (test_blender.BlenderTests)": "ok",
+        "test_hidden_scene_glb_import_is_empty (test_blender.BlenderTests)": "ok",
+        "test_long_box_projected_framing (test_blender.BlenderTests)": "ok",
+        "test_overlap_actual_scene (test_blender.BlenderTests)": "ok",
+        "test_default_missing_is_none (test_blender_executable.ExecutableTests)": "ok",
+        "test_explicit_path_with_spaces (test_blender_executable.ExecutableTests)": "ok",
+        "test_invalid_explicit_fails (test_blender_executable.ExecutableTests)": "ok",
+        "test_direct_bundle_frontmatter_and_helpers (test_dsh_layout.DshBundleLayoutTests)": "ok",
+        "test_documented_bash_copy_and_repeat_refusal (test_dsh_layout.DshBundleLayoutTests)": "ok",
+        "test_existing_bundle_not_overwritten (test_dsh_layout.DshBundleLayoutTests)": "ok",
+        "test_child_error (test_guard.GuardTests)": "ok",
+        "test_descendant_cleanup (test_guard.GuardTests)": "skipped 'Linux /proc termination evidence'",
+        "test_memory (test_guard.GuardTests)": "skipped 'Linux RSS'",
+        "test_nonfinite_limits_rejected (test_guard.GuardTests)": "ok",
+        "test_success (test_guard.GuardTests)": "ok",
+        "test_term_ignored (test_guard.GuardTests)": "ok",
+        "test_blanket_missing_reason_rejected (test_overlap.OverlapTests)": "ok",
+        "test_detect_candidate (test_overlap.OverlapTests)": "ok",
+        "test_explicit_exception (test_overlap.OverlapTests)": "ok",
+        "test_invalid_tolerance (test_overlap.OverlapTests)": "ok",
+        "test_separation (test_overlap.OverlapTests)": "ok",
+        "test_stale_exception_rejected (test_overlap.OverlapTests)": "ok",
+        "test_touch_is_not_candidate (test_overlap.OverlapTests)": "ok",
+        "test_failed_replace_preserves_original (test_png_privacy.PNGTests)": "ok",
+        "test_failed_write_preserves_original (test_png_privacy.PNGTests)": "ok",
+        "test_invalid_input_rejected (test_png_privacy.PNGTests)": "ok",
+        "test_metadata_removed_pixels_identical (test_png_privacy.PNGTests)": "ok"
+      }
+    },
+    "candidate": {
+      "revision": "content covered by repository SHA256SUMS",
+      "tests": 41,
+      "duration_seconds": 18.343,
+      "passed": 39,
+      "raw_log_sha256": "a63a86ea54ded34202ff300b9d97bfa8ebcd3e0ad07c358c18463c98a24afaad",
+      "test_results": {
+        "test_bundled_image_hashes_and_dimensions (test_armored_docs.ArmoredDocumentationTests)": "ok",
+        "test_evidence_is_portable_metadata (test_armored_docs.ArmoredDocumentationTests)": "ok",
+        "test_local_links_resolve (test_armored_docs.ArmoredDocumentationTests)": "ok",
+        "test_artifact_roundtrip_and_preview (test_blender.BlenderTests)": "ok",
+        "test_hidden_scene_glb_import_is_empty (test_blender.BlenderTests)": "ok",
+        "test_long_box_projected_framing (test_blender.BlenderTests)": "ok",
+        "test_overlap_actual_scene (test_blender.BlenderTests)": "ok",
+        "test_default_missing_is_none (test_blender_executable.ExecutableTests)": "ok",
+        "test_explicit_path_with_spaces (test_blender_executable.ExecutableTests)": "ok",
+        "test_invalid_explicit_fails (test_blender_executable.ExecutableTests)": "ok",
+        "test_direct_bundle_frontmatter_and_helpers (test_dsh_layout.DshBundleLayoutTests)": "ok",
+        "test_documented_bash_copy_and_repeat_refusal (test_dsh_layout.DshBundleLayoutTests)": "ok",
+        "test_existing_bundle_not_overwritten (test_dsh_layout.DshBundleLayoutTests)": "ok",
+        "test_child_error (test_guard.GuardTests)": "ok",
+        "test_descendant_cleanup (test_guard.GuardTests)": "skipped 'Linux /proc termination evidence'",
+        "test_memory (test_guard.GuardTests)": "skipped 'Linux RSS'",
+        "test_nonfinite_limits_rejected (test_guard.GuardTests)": "ok",
+        "test_success (test_guard.GuardTests)": "ok",
+        "test_term_ignored (test_guard.GuardTests)": "ok",
+        "test_blanket_missing_reason_rejected (test_overlap.OverlapTests)": "ok",
+        "test_detect_candidate (test_overlap.OverlapTests)": "ok",
+        "test_explicit_exception (test_overlap.OverlapTests)": "ok",
+        "test_invalid_tolerance (test_overlap.OverlapTests)": "ok",
+        "test_separation (test_overlap.OverlapTests)": "ok",
+        "test_stale_exception_rejected (test_overlap.OverlapTests)": "ok",
+        "test_touch_is_not_candidate (test_overlap.OverlapTests)": "ok",
+        "test_failed_replace_preserves_original (test_png_privacy.PNGTests)": "ok",
+        "test_failed_write_preserves_original (test_png_privacy.PNGTests)": "ok",
+        "test_invalid_input_rejected (test_png_privacy.PNGTests)": "ok",
+        "test_metadata_removed_pixels_identical (test_png_privacy.PNGTests)": "ok",
+        "test_bad_sampling_inputs (test_section_loft.SectionTests)": "ok",
+        "test_invalid_contours (test_section_loft.SectionTests)": "ok",
+        "test_invalid_stations (test_section_loft.SectionTests)": "ok",
+        "test_roundoff_at_corners_uses_outgoing_edge (test_section_loft.SectionTests)": "ok",
+        "test_snapshot_drives_preview_and_mesh (test_section_loft.SectionTests)": "ok",
+        "test_uniform_distance_corner_and_seam (test_section_loft.SectionTests)": "ok",
+        "test_saved_sections (test_section_loft_blender.SectionBlenderTests)": "ok",
+        "test_exported_appearance (test_surface_studio.SurfaceBlenderTests)": "ok",
+        "test_material_boundaries (test_surface_studio.SurfaceParameters)": "ok",
+        "test_publish_failures_preserve_the_destination_and_restore_state (test_surface_studio.SurfaceParameters)": "ok",
+        "test_review_geometry_is_consistent_across_profiles (test_surface_studio.SurfaceParameters)": "ok"
+      }
+    }
+  },
+  "linux_guard": {
+    "recorded_utc": "2026-11-24T13:56:12.094038+00:00",
+    "platform": "Alpine Linux 3.22.8 aarch64, Linux 6.12.115-0-virt, CPython 3.12.16",
+    "virtualization": "Apple Virtualization framework, 2 vCPU / 512 MiB / RAM-only initramfs; no network, storage devices or host directory mounts",
+    "suite": {
+      "command": "python3 tests/test_guard.py -v",
+      "passed": 6,
+      "skipped": 0,
+      "duration_seconds": 1.693,
+      "exit_code": 0
+    },
+    "supplemental": {
+      "descendant_before": "S (sleeping), SIGTERM ignored",
+      "descendant_after": "gone from /proc",
+      "descendant_probe": {
+        "rc": 0,
+        "reason": "exited",
+        "sampled_group_peak_rss_bytes": 1572864,
+        "elapsed_seconds": 0.31581312500000003
+      },
+      "rss_limit_bytes": 41943040,
+      "rss_probe": {
+        "rc": 125,
+        "reason": "rss_limit",
+        "sampled_group_peak_rss_bytes": 91131904,
+        "elapsed_seconds": 0.21039379199999964
+      }
+    },
+    "host_lifecycle": [
+      "Guest running",
+      "Guest powered off"
+    ],
+    "sha256": {
+      "serial.log": "ce13a14146e4dcbfe04288ff5fbdc3e0aa304a2906364024b45ecc913f9133e9",
+      "kernel_image": "ee66670649107e2efe319a436c9b9caf84b093d471f73577d54292e5c081b80b",
+      "boot_rootfs": "773c6f81dd4102f88756568817b5d99b80eb0424b94e809901cb764eb1773852",
+      "tests/test_guard.py": "25521e9dd3b7dcbb441584ad925e8d7f772586445edbd7e82f31749233dc272a",
+      "skills/blender-asset-workflow/scripts/guarded_run.py": "4f15d64fdf0814cc65687237c3218a0160436f1d9d52474af21743862aa54df9"
+    },
+    "distribution": "https://dl-cdn.alpinelinux.org/alpine/v3.22/releases/aarch64/"
+  },
+  "isolated_skill_copy": {
+    "copy_layout": ".agents/skills/blender-asset-workflow",
+    "installed_files": 22,
+    "markdown_files": 15,
+    "local_links_including_fragments": 48,
+    "missing_links": [],
+    "python": "3.9.6",
+    "blender": "4.5.16 LTS",
+    "section_and_studio_smoke": "Created a tapered 12-vertex mesh and a 480x360 Cycles render from only the installed modules",
+    "focused_tests": "7 passed, including saved Blender geometry",
+    "integer_rectangle_corner_checks": 19200,
+    "render_reproduction_sha256": {
+      "after-iso.png": "893fd54ef08f1e580e7a6b242d5265679ef609324ea85137ea6cc5225b04dcb9",
+      "after-side.png": "06232790b9ed80e31659a4eaa3198a83a7e6d414731133315bf9fbd3766870fb",
+      "before-iso.png": "f394dbf0447182f662eba7c3a5ae32189e0b9a9b8c127661bb9c8a7111b335eb",
+      "before-side.png": "5b18c7c29c217427795e4bfd0a4c8a480675fa712a1f9e50e91d501028f47518"
+    },
+    "helper_sha256": {
+      "scripts/section_loft.py": "c3c3dfe53eec08627b4b49bccb713458b2a9d193b8814bcad1c448912d6fba53",
+      "scripts/surface_studio.py": "f72ee124b8d48a7d2fb8b72ead161ec83a88e48ccf34ff09bb29bd77a9497c6f"
+    },
+    "scope": "Local file installation and direct imports, not host auto-discovery."
+  },
+  "mcp_smoke": {
+    "server": "mcp-for-blender 2.3.1",
+    "interface": "local stdio MCP client to Blender GUI add-on protocol 16, loopback TCP",
+    "configured_codex_server": "blender",
+    "tools_advertised": 10,
+    "active_scene": "default Cube, Camera, Light",
+    "geometry_replies": [
+      "Code executed successfully: Built: 8 vertices, 10 faces",
+      "Code executed successfully: Measured: 8 vertices, 10 faces, upper Z 0.75"
+    ],
+    "scope": "Created an unlinked SectionLoft mesh, read it in a second MCP call, then removed the temporary datablock. No hosted agent or MCP render in this probe."
+  },
+  "final_isolated_rerun": {
+    "reason": "Output publication now rejects existing dangling symlinks. The earlier independent copy and this follow-up identify their exact helper versions separately.",
+    "helper_sha256": {
+      "scripts/section_loft.py": "c3c3dfe53eec08627b4b49bccb713458b2a9d193b8814bcad1c448912d6fba53",
+      "scripts/surface_studio.py": "74d9cff66a96e8bcda43795131d5cfe5bd1ca7cb31a4573abde8a211f14a784b"
+    },
+    "local_links": 48,
+    "mesh_vertices": 12,
+    "mesh_faces": 18,
+    "preview_sha256": "554d3b2b576044a6e94847c248de8055f4d72a584af100aea8dba3ae71000859"
+  }
+}

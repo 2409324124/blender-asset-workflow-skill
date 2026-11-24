@@ -18,16 +18,22 @@ class ArmoredDocumentationTests(unittest.TestCase):
             ROOT / 'docs/cases/tunguska-refinement.md',
         ]
         for document in documents:
-            for target in re.findall(r'!?\[[^\]]*\]\(([^\s)]+)\)', document.read_text()):
+            for target in re.findall(r'!?\[[^\]]*\]\(([^\s)]+)\)', document.read_text(encoding='utf-8')):
                 if '://' in target or target.startswith('#'):
                     continue
                 path = unquote(target.split('#', 1)[0])
                 with self.subTest(document=document.name, target=target):
                     self.assertTrue((document.parent / path).is_file())
 
-    def test_bundled_image_hashes_and_png_dimensions(self):
-        evidence = json.loads((ROOT / 'docs/cases/tunguska-evidence.json').read_text())
-        self.assertTrue(evidence['images'])
+    def test_bundled_image_hashes_and_dimensions(self):
+        evidence = json.loads((ROOT / 'docs/cases/tunguska-evidence.json').read_text(encoding='utf-8'))
+        case = ROOT / 'docs/cases/tunguska-refinement.md'
+        targets = re.findall(r'!\[[^\]]*\]\(([^)]+)\)', case.read_text(encoding='utf-8'))
+        referenced = {(case.parent / target).resolve().relative_to(ROOT).as_posix() for target in targets}
+        bundled = {path.relative_to(ROOT).as_posix()
+                   for path in (ROOT / 'docs/showcase/tunguska').iterdir() if path.is_file()}
+        self.assertEqual(set(evidence['images']), referenced)
+        self.assertEqual(referenced, bundled)
         for name, record in evidence['images'].items():
             path = (ROOT / name).resolve()
             with self.subTest(image=name):
@@ -41,8 +47,25 @@ class ArmoredDocumentationTests(unittest.TestCase):
                     self.assertEqual(struct.unpack('>II', data[16:24]),
                                      (record['width'], record['height']))
 
+                else:
+                    # These archived JPEGs use a baseline or progressive start-of-frame.
+                    self.assertEqual(data[:2], b'\xff\xd8')
+                    offset = 2
+                    while data[offset:offset + 1] == b'\xff':
+                        marker = data[offset + 1]
+                        size = int.from_bytes(data[offset + 2:offset + 4], 'big')
+                        self.assertGreaterEqual(size, 2)
+                        if marker in (0xc0, 0xc2):
+                            height, width = struct.unpack_from('>HH', data, offset + 5)
+                            self.assertEqual((width, height), (record['width'], record['height']))
+                            break
+                        self.assertNotEqual(marker, 0xda, 'JPEG scan before frame header')
+                        offset += 2 + size
+                    else:
+                        self.fail('Missing JPEG frame header')
+
     def test_evidence_is_portable_metadata(self):
-        text = (ROOT / 'docs/cases/tunguska-evidence.json').read_text()
+        text = (ROOT / 'docs/cases/tunguska-evidence.json').read_text(encoding='utf-8')
         self.assertNotIn('/workspace/', text)
         self.assertNotIn('/home/box/', text)
         evidence = json.loads(text)
