@@ -43,7 +43,7 @@ See the [detailed roadmap](docs/ROADMAP.md) and [recorded test evidence](tests/R
 
 Use the [parametric geometry reference](skills/blender-asset-workflow/references/parametric-surfaces.md) for corresponding sections and evenly spaced path details, and the [presentation reference](skills/blender-asset-workflow/references/surface-presentation.md) for fixed-camera gray, color and reimport comparisons. Each is optional and includes an original runnable civilian fixture. [Compressor before/after](docs/experiments/geometry-transfer.md) · [Gauge and GLB round trip](docs/experiments/presentation-transfer.md)
 
-The [source audit](docs/experiments/asset-audit.md), [two-vehicle render study](docs/experiments/surface-ablation.md) and [isolated agent trials](docs/experiments/agent-comparison.md) distinguish measured effects from unresolved work. The [vehicle refinement guide](skills/blender-asset-workflow/references/armored-vehicles.md) retains the [Tunguska case](docs/cases/tunguska-refinement.md), including the later whole-vehicle visual rejection.
+The [source audit](docs/experiments/asset-audit.md) and [two-vehicle render study](docs/experiments/surface-ablation.md) trace the wheel changes to specific geometry and shading choices. The [36 isolated agent trials](docs/experiments/agent-comparison.md) compare visual results and cost. In a separate [industrial meter study](docs/experiments/agent-feedback.md), both builders revised their part after seeing a Blender render. The [vehicle refinement guide](skills/blender-asset-workflow/references/armored-vehicles.md) retains the [Tunguska case](docs/cases/tunguska-refinement.md), including the later whole-vehicle visual rejection.
 
 ## Designed for AI agent workflows
 

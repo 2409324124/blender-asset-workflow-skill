@@ -1,0 +1,219 @@
+{
+  "client": "Codex CLI 0.171.0-alpha.13",
+  "model": "gpt-6.2-sol",
+  "reasoning_effort": "low",
+  "blender": "4.5.16 LTS",
+  "per_turn_max_seconds": 180,
+  "per_turn_max_tools": 8,
+  "turns_per_builder": 2,
+  "measurement": "CLI token totals are cumulative on same-thread resume. Per-turn fields use the difference; cached_input is included in input. Elapsed stops after final host inspection and excludes later blind review.",
+  "arms": {
+    "B1": {
+      "frozen_pack_sha256": "020475b9238c715cb282a379415b3282ab411d9245eca645556ad67a587a68fa",
+      "before": {
+        "tools": 4,
+        "cli_seconds": 93.542,
+        "tokens": {
+          "input_tokens": 96852,
+          "cached_input_tokens": 74368,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3579,
+          "reasoning_output_tokens": 475
+        },
+        "sanitized_png_sha256": "29ab6f79ac8b392331fdf1579b14913b6eff54bd63ef969966988ee16c149ba1",
+        "saved_blend_sha256": "797291814d90de1a73af5dbaaf0ca60bd5e03843cc3806d0181a91621e0697b9",
+        "builder_sha256": "5a3090565a97d19a83d48d01650dc864c6c4a4cf17ef8dae6ab8c01d0f3f9afc",
+        "host_seconds": {
+          "build": 0.351,
+          "reopen_render": 3.486,
+          "reopen_compare": 0.352
+        },
+        "inspection": {
+          "existing_objects_changed": [],
+          "added_objects": 19,
+          "min": [
+            -0.78,
+            -0.632,
+            0.375
+          ],
+          "max": [
+            0.78,
+            -0.286,
+            2.365
+          ],
+          "bounds_pass": true
+        }
+      },
+      "after": {
+        "tools": 2,
+        "cli_seconds": 23.641,
+        "tokens": {
+          "input_tokens": 76240,
+          "cached_input_tokens": 74240,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 439,
+          "reasoning_output_tokens": 90
+        },
+        "sanitized_png_sha256": "440fe1e58e25db8e68d14956783d9cb7784a5e7d819476b576f7c76835f8b641",
+        "saved_blend_sha256": "d0518d4c6db759967341adc2613c8a0bd51f3dbb710b431d91d9b933d7bf73b5",
+        "builder_sha256": "10e3b359b51c4de3d8f1af50612602344e754657e2670f8c8b31966ed4ec087f",
+        "host_seconds": {
+          "build": 0.345,
+          "reopen_render": 3.108,
+          "reopen_compare": 0.348
+        },
+        "inspection": {
+          "existing_objects_changed": [],
+          "added_objects": 19,
+          "min": [
+            -0.78,
+            -0.632,
+            0.375
+          ],
+          "max": [
+            0.78,
+            -0.286,
+            2.365
+          ],
+          "bounds_pass": true
+        }
+      },
+      "total_tokens": {
+        "input_tokens": 173092,
+        "cached_input_tokens": 148608,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4018,
+        "reasoning_output_tokens": 565
+      },
+      "elapsed_seconds": 190.292,
+      "cli_seconds": 117.183,
+      "host_seconds": 7.99,
+      "review_approval_and_queue_seconds": 65.119,
+      "first_to_final_image_delta": {
+        "whole_frame_MAE_8bit": 1.7711,
+        "pixel_fraction_with_any_channel_change_above_8": 0.04736
+      }
+    },
+    "B3": {
+      "frozen_pack_sha256": "bb5cd5c963b13694a8846ff27e6cf863c40327e60229cc65d475e8d4bec46704",
+      "before": {
+        "tools": 5,
+        "cli_seconds": 81.995,
+        "tokens": {
+          "input_tokens": 98646,
+          "cached_input_tokens": 61952,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3259,
+          "reasoning_output_tokens": 135
+        },
+        "sanitized_png_sha256": "cdab8d3a7a53db3d951a70e3c48314140df35e9f9906fcf7019de49cc488a7d1",
+        "saved_blend_sha256": "a29624b05505428ad42d1f97857856cd32bd5a9b7d245f702d529775f9cef1a2",
+        "builder_sha256": "c25932d79750e6fbcd87fb2a8aa2cc22052dca4a2c0ecd4ed555669e3c9d1c30",
+        "host_seconds": {
+          "build": 0.405,
+          "reopen_render": 3.475,
+          "reopen_compare": 0.348
+        },
+        "inspection": {
+          "existing_objects_changed": [],
+          "added_objects": 20,
+          "min": [
+            -0.78,
+            -0.608,
+            0.375
+          ],
+          "max": [
+            0.78,
+            -0.289,
+            2.365
+          ],
+          "bounds_pass": true
+        }
+      },
+      "after": {
+        "tools": 2,
+        "cli_seconds": 25.539,
+        "tokens": {
+          "input_tokens": 77538,
+          "cached_input_tokens": 57728,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 479,
+          "reasoning_output_tokens": 68
+        },
+        "sanitized_png_sha256": "65bdd97043171f67c25c3c942917c467f1cdd05b2e511226d4fcf68e640c8853",
+        "saved_blend_sha256": "f61060a9c239889d0e5230d50def4321a8b810859b7831b1fbd09ca503300baf",
+        "builder_sha256": "caa549df2854362ebc30f4880afff606c46af8757fd71483b84abe835a64907d",
+        "host_seconds": {
+          "build": 0.462,
+          "reopen_render": 3.01,
+          "reopen_compare": 0.347
+        },
+        "inspection": {
+          "existing_objects_changed": [],
+          "added_objects": 20,
+          "min": [
+            -0.78,
+            -0.608,
+            0.375
+          ],
+          "max": [
+            0.78,
+            -0.289,
+            2.365
+          ],
+          "bounds_pass": true
+        }
+      },
+      "total_tokens": {
+        "input_tokens": 176184,
+        "cached_input_tokens": 119680,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3738,
+        "reasoning_output_tokens": 203
+      },
+      "elapsed_seconds": 192.336,
+      "cli_seconds": 107.534,
+      "host_seconds": 8.047,
+      "review_approval_and_queue_seconds": 76.755,
+      "first_to_final_image_delta": {
+        "whole_frame_MAE_8bit": 0.5161,
+        "pixel_fraction_with_any_channel_change_above_8": 0.01456
+      }
+    }
+  },
+  "target_png_sha256": "940b41538b591452f5b47bd73369167d7e3aefd6135cb49a89c6ef4179d64e82",
+  "blank_png_sha256": "d4a093306fca9111be9ee30430daf69ef33519151ccf3fea44052fbb83528ff7",
+  "blind_review": {
+    "order": [
+      "insert_perimeter",
+      "three_bars",
+      "dial_index",
+      "seating_depth",
+      "finish_highlights"
+    ],
+    "score_each": "0 missing, 1 visible deviation, 2 meets target",
+    "reviewer": "One separate agent viewed only the anonymous final images, original sketch and blank render.",
+    "mapping_and_scores": {
+      "Quartz": {
+        "arm": "B1",
+        "scores": [
+          2,
+          2,
+          2,
+          2,
+          1
+        ]
+      },
+      "Harbor": {
+        "arm": "B3",
+        "scores": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      }
+    }
+  }
+}

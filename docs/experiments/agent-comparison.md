@@ -17,6 +17,8 @@ The unit is a fresh model session producing one additive exterior revision of a 
 | Wheel cap | Continuous perimeter lip, inset band and softly crowned center | Existing Tunguska exterior |
 | Ventilation cabinet | Rounded square bezel, circular surround and six shaped slats against a dark backing | New freestanding civilian display cabinet with a blank face, created independently for this study |
 
+A separate [two-builder instrument study](agent-feedback.md) gives each agent its own actual Blender render and one revision. It uses a different protocol and is reported separately.
+
 ## Observed results
 
 The supervised run ledger contains 36 primary sessions and 4 superseded pilots. Timing runs from builder launch through the terminal CLI event and process exit. It excludes offline host rendering and scoring. The hosted service exposed token counts, with no monetary amount or immutable model build ID. The [per-session ledger](agent-comparison/runs.csv) retains token components, elapsed seconds, tool calls, submission/candidate digests, correction counts, four blind grades and over-budget outcomes.
