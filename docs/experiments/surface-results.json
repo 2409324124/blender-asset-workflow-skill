@@ -1,0 +1,296 @@
+{
+  "blender": "4.5.16 LTS",
+  "data": {
+    "t90m": {
+      "candidate_blend_sha256": "2b9be594179899d4d5ea430bc560948a1d3d1bc36395af9c95732149035b7b71",
+      "candidate_glb_sha256": "340dfd51614273495750a8bfdeaf953b473abbcd2e1d4d750fe153cd1929af2b",
+      "input_sha256": "8f6be86baf3e975b6a447c4db371044381dde5501fd8b88daa99540266d0c36d",
+      "runs": {
+        "A0": {
+          "MAE_8bit": {
+            "front": 0.0,
+            "low": 0.0,
+            "nose": 0.0,
+            "side": 0.0,
+            "three-quarter": 0.0,
+            "top": 0.0,
+            "wheel": 0.0
+          },
+          "inputs": [
+            "A0"
+          ],
+          "wheel_png_sha256": "2ff250513d9992021fec621039e1395fd0357ee81579136ca5c05584a5b44ea6"
+        },
+        "A1": {
+          "MAE_8bit": {
+            "front": 0.0,
+            "low": 0.036,
+            "nose": 0.014,
+            "side": 0.002,
+            "three-quarter": 0.017,
+            "top": 0.0,
+            "wheel": 0.251
+          },
+          "inputs": [
+            "A1"
+          ],
+          "wheel_png_sha256": "d0ca329419876080626897f7d45b4fda1769a52f5e70e1eaea707fe6ea26e462"
+        },
+        "A2": {
+          "MAE_8bit": {
+            "front": 0.0,
+            "low": 0.0,
+            "nose": 0.0,
+            "side": 0.0,
+            "three-quarter": 0.0,
+            "top": 0.0,
+            "wheel": 0.0
+          },
+          "inputs": [
+            "A2"
+          ],
+          "wheel_png_sha256": "0579f7c21fcb3ebbf352b7b535736847334e97a28288e324cd5e31a1f509b601"
+        },
+        "A3": {
+          "MAE_8bit": {
+            "front": 0.001,
+            "low": 0.042,
+            "nose": 0.018,
+            "side": 0.037,
+            "three-quarter": 0.033,
+            "top": 0.016,
+            "wheel": 0.371
+          },
+          "inputs": [
+            "A3"
+          ],
+          "wheel_png_sha256": "1b55803b794dd9e3ed3655d534820509f42c1bd3cba0ede0e45943010d5943be"
+        },
+        "A4": {
+          "MAE_8bit": {
+            "front": 0.0,
+            "low": 0.028,
+            "nose": 0.016,
+            "side": 0.013,
+            "three-quarter": 0.026,
+            "top": 0.0,
+            "wheel": 0.17
+          },
+          "inputs": [
+            "A4"
+          ],
+          "wheel_png_sha256": "7c295c0a9053b85533e5f17a682aa435f3ef5c178441581d9b1f9515d38bdf24"
+        },
+        "A5": {
+          "MAE_8bit": {
+            "front": 0.057,
+            "low": 0.022,
+            "nose": 0.083,
+            "side": 0.011,
+            "three-quarter": 0.03,
+            "top": 0.031,
+            "wheel": 0.017
+          },
+          "inputs": [
+            "A5"
+          ],
+          "wheel_png_sha256": "ff702fedd16a424624aedd18cf869c7244c8d7f52157f06b50b7ac6852e6ec47"
+        },
+        "A6": {
+          "MAE_8bit": {
+            "front": 2.879,
+            "low": 0.486,
+            "nose": 4.676,
+            "side": 0.104,
+            "three-quarter": 0.952,
+            "top": 2.696,
+            "wheel": 0.148
+          },
+          "inputs": [
+            "A6"
+          ],
+          "wheel_png_sha256": "a2687742d35abba99eef9c0134ebdfe97a1b77451dca6439e3ac426bb3f6f6a0"
+        },
+        "A7": {
+          "MAE_8bit": {
+            "front": 0.001,
+            "low": 0.065,
+            "nose": 0.029,
+            "side": 0.037,
+            "three-quarter": 0.043,
+            "top": 0.016,
+            "wheel": 0.492
+          },
+          "inputs": [
+            "A3",
+            "A1"
+          ],
+          "wheel_png_sha256": "1f8b6a3a91b0cc148b059b5024ed61472aa25664cccf768d5fe5a74d4e6a3c6b"
+        }
+      }
+    },
+    "tunguska": {
+      "candidate_blend_sha256": "171a5918163eaea8b3038030d2be10832f4c6c0e07fb582281744e60db3aac1d",
+      "candidate_glb_sha256": "f2aa09d5745d9f3632da51e28e84ce39851762a2910b57f99a9ecec64fee350b",
+      "input_sha256": "0d69b666375417f5d11d7b59dd939f3ad6d0b73d6350516b70d7de9c6aa13d24",
+      "runs": {
+        "A0": {
+          "MAE_8bit": {
+            "front": 0.0,
+            "low": 0.0,
+            "nose": 0.0,
+            "side": 0.0,
+            "three-quarter": 0.0,
+            "top": 0.0,
+            "wheel": 0.0
+          },
+          "inputs": [
+            "A0"
+          ],
+          "wheel_png_sha256": "8b70d2846c6a7b7357d356dca9162f64dd50ba07b8c5325d73c873bd47b8a0d4"
+        },
+        "A1": {
+          "MAE_8bit": {
+            "front": 0.004,
+            "low": 0.213,
+            "nose": 0.247,
+            "side": 0.122,
+            "three-quarter": 0.195,
+            "top": 0.0,
+            "wheel": 0.934
+          },
+          "inputs": [
+            "A1"
+          ],
+          "wheel_png_sha256": "0e08a1ac07e0982fb997a3ab2176849396672e40dfa0c9c71629bced4b516466"
+        },
+        "A2": {
+          "MAE_8bit": {
+            "front": 0.0,
+            "low": 0.0,
+            "nose": 0.0,
+            "side": 0.0,
+            "three-quarter": 0.0,
+            "top": 0.0,
+            "wheel": 0.0
+          },
+          "inputs": [
+            "A2"
+          ],
+          "wheel_png_sha256": "535a3ad093ab83c246677d184aa3c497f34f151211844ca23b6e88a879e40e35"
+        },
+        "A3": {
+          "MAE_8bit": {
+            "front": 0.002,
+            "low": 0.055,
+            "nose": 0.053,
+            "side": 0.065,
+            "three-quarter": 0.039,
+            "top": 0.0,
+            "wheel": 0.301
+          },
+          "inputs": [
+            "A3"
+          ],
+          "wheel_png_sha256": "e9867a32f4ae28c4e474a8048e1ddae621469f4f4e0735babc4138e1659be10d"
+        },
+        "A4": {
+          "MAE_8bit": {
+            "front": 0.002,
+            "low": 0.197,
+            "nose": 0.164,
+            "side": 0.196,
+            "three-quarter": 0.142,
+            "top": 0.0,
+            "wheel": 1.401
+          },
+          "inputs": [
+            "A4"
+          ],
+          "wheel_png_sha256": "8c837809907d9c5c785278c54bb429dfa05bfc1a67cf7d093bc53947bf3c4aaf"
+        },
+        "A5": {
+          "MAE_8bit": {
+            "front": 0.084,
+            "low": 0.09,
+            "nose": 0.205,
+            "side": 0.07,
+            "three-quarter": 0.09,
+            "top": 0.118,
+            "wheel": 0.1
+          },
+          "inputs": [
+            "A5"
+          ],
+          "wheel_png_sha256": "b05bd1df5e58b8bc4837c1cd81f8cbc0de935b218386c78e9e3c3976adc98015"
+        },
+        "A6": {
+          "MAE_8bit": {
+            "front": 2.156,
+            "low": 1.002,
+            "nose": 4.907,
+            "side": 0.125,
+            "three-quarter": 1.22,
+            "top": 3.624,
+            "wheel": 0.223
+          },
+          "inputs": [
+            "A6"
+          ],
+          "wheel_png_sha256": "8ddc508f7f76728bf775526b57e94c2afd1e148c8ed92910a14ca7e340ce6f7d"
+        },
+        "A7": {
+          "MAE_8bit": {
+            "front": 0.004,
+            "low": 0.213,
+            "nose": 0.247,
+            "side": 0.122,
+            "three-quarter": 0.195,
+            "top": 0.0,
+            "wheel": 0.934
+          },
+          "inputs": [
+            "A1"
+          ],
+          "wheel_png_sha256": "867488b9dc0e3b6a3cc2c63ff01a1626d2d252b5fee51b9227e2d6b277ef108e"
+        }
+      }
+    }
+  },
+  "height": 420,
+  "native_export_MAE_8bit": {
+    "color": {
+      "nose": 4.201,
+      "three-quarter": 2.701,
+      "wheel": 1.275
+    },
+    "master": {
+      "nose": 0.083,
+      "three-quarter": 0.029,
+      "wheel": 0.044
+    },
+    "t90m": {
+      "nose": 0.008,
+      "three-quarter": 0.003,
+      "wheel": 0.024
+    },
+    "t90m-A7": {
+      "nose": 0.022,
+      "three-quarter": 0.019,
+      "wheel": 0.279
+    },
+    "tunguska-A7": {
+      "nose": 0.283,
+      "three-quarter": 0.161,
+      "wheel": 0.522
+    },
+    "white": {
+      "nose": 0.13,
+      "three-quarter": 0.078,
+      "wheel": 0.201
+    }
+  },
+  "renderer": "Cycles CPU",
+  "source_commit": "cf4ca2d45d2065d7b9427cd4d5164985e2be4221",
+  "width": 640
+}

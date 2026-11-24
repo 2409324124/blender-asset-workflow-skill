@@ -1,0 +1,52 @@
+{
+  "blender": "4.5.16 LTS",
+  "engine": "CYCLES",
+  "view_transform": "AgX",
+  "display": "sRGB",
+  "look": "None",
+  "exposure": -1.15,
+  "gamma": 1.0,
+  "resolution": [
+    480,
+    360
+  ],
+  "samples": 24,
+  "seed": 29,
+  "denoising": true,
+  "portable_glb": {
+    "nodes": 72,
+    "localized_wear_parts": 2,
+    "materials": 8,
+    "extensions": [
+      "KHR_materials_ior",
+      "KHR_materials_transmission"
+    ],
+    "image_textures": 0
+  },
+  "grain_glb": {
+    "nodes": 72,
+    "localized_wear_parts": 2,
+    "materials": 8,
+    "extensions": [
+      "KHR_materials_ior",
+      "KHR_materials_transmission"
+    ],
+    "image_textures": 0
+  },
+  "portable_vs_import": {
+    "mean_absolute_rgb_8bit": 0.0498,
+    "pixel_fraction_any_channel_over_8": 0.00018
+  },
+  "grain_vs_import": {
+    "mean_absolute_rgb_8bit": 0.8643,
+    "pixel_fraction_any_channel_over_8": 0.02325
+  },
+  "native_grain_effect": {
+    "mean_absolute_rgb_8bit": 0.8396,
+    "pixel_fraction_any_channel_over_8": 0.02306
+  },
+  "imported_grain_effect": {
+    "mean_absolute_rgb_8bit": 0.0,
+    "pixel_fraction_any_channel_over_8": 0.0
+  }
+}

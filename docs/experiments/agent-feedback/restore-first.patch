@@ -1,0 +1,18 @@
+--- B1.py
++++ B1.py
+@@ -82 +82 @@
+-    frame = material("Controls | satin nickel perimeter", (0.56, 0.61, 0.62), 0.32, 0.54)
++    frame = material("Controls | satin nickel perimeter", (0.36, 0.41, 0.42), 0.28, 0.80)
+@@ -87 +87 @@
+-    alloy = material("Controls | bright machined alloy", (0.67, 0.72, 0.72), 0.30, 0.55)
++    alloy = material("Controls | bright machined alloy", (0.55, 0.62, 0.62), 0.26, 0.76)
+--- B3.py
++++ B3.py
+@@ -110 +109,0 @@
+-    collar_metal = finish("Selector | Bright satin nickel", (0.65, 0.68, 0.69), 0.34, 0.58)
+@@ -146 +145 @@
+-        (-0.422, 1.143, 0.552, 0.059, 1),
++        (-0.422, 1.143, 0.552, 0.059, 0),
+@@ -169 +168 @@
+-    ], [collar_metal], ring=True)
++    ], [metal], ring=True)

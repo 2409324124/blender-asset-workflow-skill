@@ -1,0 +1,188 @@
+{
+  "scope": "Historical local check summaries, not independently rerun in this PR; overall appearance rejected after bounded passes",
+  "frozen_geometry_sha256": "0d69b666375417f5d11d7b59dd939f3ad6d0b73d6350516b70d7de9c6aa13d24",
+  "v03r1_sha256": "4a3012ca93245f5b8b6dd6d05bfae1a2892dc730114170a7aa67e9955ed8a484",
+  "v04_changed_meshes": [
+    "Twin_2A38M_L",
+    "Twin_2A38M_R"
+  ],
+  "v04_transforms_preserved": true,
+  "presentation_r1_checks": {
+    "source_sha256": "0d69b666375417f5d11d7b59dd939f3ad6d0b73d6350516b70d7de9c6aa13d24",
+    "native": {
+      "white": {
+        "exact_vehicle_geometry_parent_world_transforms_equal": true,
+        "meshes": 16,
+        "sha256": "fa6b344c0445c83ec60a28a9c538bda3d91633937d5255319a4104c280d3b6a2"
+      },
+      "color": {
+        "exact_vehicle_geometry_parent_world_transforms_equal": true,
+        "meshes": 16,
+        "sha256": "41cc65297a4d79fd1e9d5f578936dd5273feb491331f9809dcc95f829364b2a2"
+      }
+    },
+    "glb": {
+      "white": {
+        "mesh_count": 16,
+        "triangles": 62660,
+        "bounds_min": [
+          -3.9700000286102295,
+          -1.6200000047683716,
+          0.0
+        ],
+        "bounds_max": [
+          3.9679999351501465,
+          1.6200000047683716,
+          4.019999980926514
+        ],
+        "sha256": "4598686b7784c65516689cf44814ff59fcc28c914bcb6d453e8c661368988952",
+        "no_studio_geometry": true
+      },
+      "color": {
+        "mesh_count": 16,
+        "triangles": 62660,
+        "bounds_min": [
+          -3.9700000286102295,
+          -1.6200000047683716,
+          0.0
+        ],
+        "bounds_max": [
+          3.9679999351501465,
+          1.6200000047683716,
+          4.019999980926514
+        ],
+        "sha256": "2729159ad82a4d50c0c3e1bb7c821404ea4ebc2dbe13cdf936bffd86b8fa8101",
+        "no_studio_geometry": true
+      }
+    }
+  },
+  "images": {
+    "docs/showcase/tunguska/assembly-before-after.png": {
+      "sha256": "e763d5137b9405def35068957155cabe84286524d8e003532cfc1b41a2cfefbc",
+      "width": 2400,
+      "height": 850,
+      "content": "project model renders only; no real-photo pixels"
+    },
+    "docs/showcase/tunguska/material-study.jpg": {
+      "sha256": "05dde65e5bdcd6b4b7ae7ba57a8603d2ffc239aac7087b6a48110c3f97e44b6c",
+      "width": 1440,
+      "height": 1970,
+      "content": "project model renders only; no real-photo pixels"
+    },
+    "docs/showcase/tunguska/muzzle-before-after.png": {
+      "sha256": "6411a4a077f1d7cef5528f1ea9c8344bc9553a2b46dfba4b9031b90fa4cddbc2",
+      "width": 2400,
+      "height": 850,
+      "content": "project model renders only; no real-photo pixels"
+    },
+    "docs/showcase/tunguska/shape-diagnostics.jpg": {
+      "sha256": "4019305b6aa9d567f0d4eb3106f7937c7173cceb64ec64a5592710df49558937",
+      "width": 1440,
+      "height": 1970,
+      "content": "project model renders only; no real-photo pixels"
+    }
+  },
+  "surface_inventory": {
+    "inspected_blend_sha256": "41cc65297a4d79fd1e9d5f578936dd5273feb491331f9809dcc95f829364b2a2",
+    "meshes": {
+      "Hull_Armor": {
+        "polygons": 118,
+        "smooth_polygons": 0,
+        "custom_normals": false,
+        "modifiers": []
+      },
+      "Hull_Details": {
+        "polygons": 7830,
+        "smooth_polygons": 0,
+        "custom_normals": false,
+        "modifiers": []
+      },
+      "Quad_9M311_L": {
+        "polygons": 576,
+        "smooth_polygons": 0,
+        "custom_normals": false,
+        "modifiers": []
+      },
+      "Quad_9M311_R": {
+        "polygons": 576,
+        "smooth_polygons": 0,
+        "custom_normals": false,
+        "modifiers": []
+      },
+      "Running_Gear_L": {
+        "polygons": 7034,
+        "smooth_polygons": 0,
+        "custom_normals": false,
+        "modifiers": []
+      },
+      "Running_Gear_R": {
+        "polygons": 7034,
+        "smooth_polygons": 0,
+        "custom_normals": false,
+        "modifiers": []
+      },
+      "Search_Radar_Dish": {
+        "polygons": 534,
+        "smooth_polygons": 0,
+        "custom_normals": false,
+        "modifiers": []
+      },
+      "Search_Radar_Mast": {
+        "polygons": 44,
+        "smooth_polygons": 0,
+        "custom_normals": false,
+        "modifiers": []
+      },
+      "Track_L": {
+        "polygons": 716,
+        "smooth_polygons": 0,
+        "custom_normals": false,
+        "modifiers": []
+      },
+      "Track_R": {
+        "polygons": 716,
+        "smooth_polygons": 0,
+        "custom_normals": false,
+        "modifiers": []
+      },
+      "Tracking_Radar_Drum": {
+        "polygons": 204,
+        "smooth_polygons": 0,
+        "custom_normals": false,
+        "modifiers": []
+      },
+      "Turret_Armor": {
+        "polygons": 226,
+        "smooth_polygons": 0,
+        "custom_normals": false,
+        "modifiers": []
+      },
+      "Turret_Details": {
+        "polygons": 254,
+        "smooth_polygons": 0,
+        "custom_normals": false,
+        "modifiers": []
+      },
+      "Twin_2A38M_L": {
+        "polygons": 1974,
+        "smooth_polygons": 0,
+        "custom_normals": false,
+        "modifiers": []
+      },
+      "Twin_2A38M_R": {
+        "polygons": 1974,
+        "smooth_polygons": 0,
+        "custom_normals": false,
+        "modifiers": []
+      },
+      "Whip_Antennas": {
+        "polygons": 20,
+        "smooth_polygons": 0,
+        "custom_normals": false,
+        "modifiers": []
+      }
+    },
+    "scope": "Read-only inventory; all-flat shading is not proof of flipped normals or whole-vehicle visual acceptance.",
+    "glass_transmission_weight": 0.0
+  }
+}

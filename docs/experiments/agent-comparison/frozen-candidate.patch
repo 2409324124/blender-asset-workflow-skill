@@ -1,0 +1,63 @@
+--- a/scripts/section_loft.py
++++ b/scripts/section_loft.py
+@@ -4 +4 @@
+-from math import dist, isfinite, ulp
++from math import dist, isfinite
+@@ -103,13 +103,3 @@
+-        arc = (((phase + i / count) % 1.0) * total) % total
+-        edge = bisect_right(ends, arc)
+-        start = ends[edge - 1] if edge else 0.0
+-        stop = ends[edge]
+-        # A rational sample such as 12/94 may round just short of a corner.
+-        # Bound the snap by the current edge as well as the circuit precision.
+-        tolerance = min(4 * ulp(total), (stop - start) / 8)
+-        offset = arc - start
+-        if offset <= tolerance:
+-            offset = 0.0
+-        elif stop - arc <= tolerance:
+-            edge = (edge + 1) % len(points)
+-            offset = 0.0
++        arc = ((phase + i / count) % 1.0) * total
++        edge = bisect_right(ends, arc) % len(points)
++        offset = arc - (ends[edge - 1] if edge else 0.0)
+--- a/references/parametric-surfaces.md
++++ b/references/parametric-surfaces.md
+@@ -10 +9,0 @@
+-import bpy
+@@ -26 +25 @@
+-The validated station tuple drives the preview contours, both end caps and the side triangles. View the SVG along the station axis, then inspect a side view as well. The overlay collapses axial distances. Check corner-to-corner rails for twists and inspect the diagonal selected on each nonplanar side. For a faceted casting with planar cheeks, preserve the direction of each corresponding bevel edge as the width changes. Independently scaling a section in X and Y can introduce a diagonal lighting break. Input validation checks ring shape and station order. The caller owns correspondence, intersections between stations and stored/exported precision. Reopen the saved mesh and measure the named section against the contract.
++The validated station tuple drives the preview contours, both end caps and the side triangles. View the SVG along the station axis, then inspect a side view as well. The overlay collapses axial distances. Check corner-to-corner rails for twists and inspect the diagonal selected on each nonplanar side. Input validation checks ring shape and station order. The caller owns correspondence, intersections between stations and stored/exported precision. Reopen the saved mesh and measure the named section against the contract.
+@@ -30 +29 @@
+-`perimeter_samples(contour, count, phase)` returns `((x, y), (tx, ty))` pairs spaced by distance along a closed 2D polyline. Use this for repeated latches, stitch marks or clips along a nonuniformly segmented rim. Phase is a fraction of the full circuit. The sampler omits the duplicate terminal arc distance. A self-crossing path can revisit a position. At a corner the tangent follows the outgoing edge. Use `atan2(ty, tx)` to rotate an object's local +X axis onto the tangent. Offset a clip in the outward direction `(ty, -tx)` only for counterclockwise contours. Check clip width and clearance around sharp corners. Equal travel distances can give different straight-line gaps across a corner.
++`perimeter_samples(contour, count, phase)` returns `((x, y), (tx, ty))` pairs spaced by distance along a closed 2D polyline. Use this for repeated latches, stitch marks or clips along a nonuniformly segmented rim. Phase is a fraction of the full circuit. The first and last instances occupy distinct locations. At a corner the tangent follows the outgoing edge. Use `atan2(ty, tx)` to rotate an object's local +X axis onto the tangent. Offset a clip in the outward direction `(ty, -tx)` only for counterclockwise contours. Check clip width and clearance around sharp corners. Equal travel distances can give different straight-line gaps across a corner.
+--- a/scripts/surface_studio.py
++++ b/scripts/surface_studio.py
+@@ -4 +3,0 @@
+-import os
+@@ -6 +4,0 @@
+-from tempfile import TemporaryDirectory
+@@ -176 +174 @@
+-    path = Path(path).absolute()
++    path = Path(path).resolve()
+@@ -179 +177 @@
+-    if path.exists() or path.is_symlink():
++    if path.exists():
+@@ -191,7 +189,3 @@
+-        with TemporaryDirectory(prefix=".surface-", dir=path.parent) as directory:
+-            candidate = Path(directory) / "render.png"
+-            scene.render.filepath = str(candidate)
+-            bpy.ops.render.render(scene=scene.name, write_still=True)
+-            clean_file(candidate)
+-            # Same-filesystem no-clobber publication, including competing writers.
+-            os.link(candidate, path)
++        scene.render.filepath = str(path)
++        bpy.ops.render.render(scene=scene.name, write_still=True)
++        clean_file(path)
+--- a/references/surface-presentation.md
++++ b/references/surface-presentation.md
+@@ -36 +36 @@
+-The stage uses a broad key and fill, a rear strip, a neutral environment and a floor scaled to the asset. The camera is orthographic and the frame fits the asset's evaluated mesh bounds. Inspect the actual image for clearance on every edge, floor contact and highlights that describe curved parts. When a bezel disappears, move a reflecting softbox or adjust its shape before altering the bezel finish. Match overall exposure to the reference once, then lock it. Cycles CPU, sRGB display, AgX, look None, gamma 1 and fixed seed 29 keep the pass conditions explicit. Preview uses 480 × 360 at 24 samples and final uses 1200 × 900 at 96 samples. Both use denoising and the same aspect ratio. The output directory must exist and support hard links. The helper renders to a temporary file, strips identifying PNG metadata and publishes only to a fresh name. [Blender color management](https://docs.blender.org/manual/en/4.4/render/color_management.html)
++The stage uses a broad key and fill, a rear strip, a neutral environment and a floor scaled to the asset. The camera is orthographic and the frame fits the asset's evaluated mesh bounds. Inspect the actual image for clearance on every edge, floor contact and highlights that describe curved parts. When a bezel disappears, move a reflecting softbox or adjust its shape before altering the bezel finish. Match overall exposure to the reference once, then lock it. Cycles CPU, sRGB display, AgX, look None, gamma 1 and fixed seed 29 keep the pass conditions explicit. Preview uses 480 × 360 at 24 samples and final uses 1200 × 900 at 96 samples. Both use denoising and the same aspect ratio. [Blender color management](https://docs.blender.org/manual/en/4.4/render/color_management.html)
+@@ -46 +46 @@
+-In the repository checkout, `docs/experiments/presentation-transfer.md` records the fixed-stage round trip, the lost procedural detail and both quality levels.
++The original [bench-gauge experiment](../../../docs/experiments/presentation-transfer.md) records the fixed-stage round trip, the lost procedural detail and both quality levels.

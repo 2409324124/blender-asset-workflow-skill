@@ -1,0 +1,56 @@
+{
+  "model_selector": "gpt-6.2-sol",
+  "reasoning_effort": "low",
+  "cli": "0.171.0-alpha.13",
+  "blender": "4.5.16 LTS",
+  "budget_requested_total_input_plus_output": 120000,
+  "maximum_wall_seconds_per_builder": 180,
+  "maximum_tool_requests": 8,
+  "maximum_local_validation_corrections": 1,
+  "candidate_count_per_session": 1,
+  "pack_hash_algorithm": "sha256 of sorted UTF-8 lines: <file sha256><two spaces><relative path><newline>",
+  "snapshot_digest": {
+    "B0": "4f3b503fa1d7b154959eebf22b67677afd399c9db6af6aef6e228fa158d42cdf",
+    "B1": "020475b9238c715cb282a379415b3282ab411d9245eca645556ad67a587a68fa",
+    "B2": "292ca0575405f8a004b6719699661153bc03a157fedc190fc21196d34be1cba7",
+    "B3": "bb5cd5c963b13694a8846ff27e6cf863c40327e60229cc65d475e8d4bec46704"
+  },
+  "common_prompt_sha256": "964126ad6581772a0efe7bab5e532336f75436fb111c61f511368a15eaefbbf2",
+  "task_suffix": {
+    "skirt": "Revise the middle section of the plain T-90M exterior side skirt into the three broad matte protective-looking cover panels in the sketch. Show distinct narrow joints, shaped lower corners and a restrained top edge. The edit is a scale-model cosmetic study. The patch is approximately six times as wide as it is tall. Use shallow relief relative to the panel height.",
+    "hub": "Refine the visible Tunguska outer wheel hub cap with a restrained pressed-cover appearance. The sketch calls for a continuous circular perimeter lip, a darker inset band and a softly crowned center. Preserve the tire. The patch is square and its full depth allowance is about one sixth its width.",
+    "vent": "Refine the blank front face of a freestanding civil industrial ventilation display cabinet. Match the sketch\u2019s softened square bezel, circular inner surround, and six shaped horizontal slats over a darker backing. The patch is square; the full outward allowance is about one tenth its width."
+  },
+  "image_order": [
+    "frozen front crop",
+    "original front-view sketch"
+  ],
+  "images_by_task": {
+    "skirt": {
+      "baseline_sha256": "f0b7ec53af2bafe45c2a39c916fb241af0f39468c8118daa1054d9795f0355b3",
+      "original_sketch_sha256": "5482bcfaf1e7c8850c16e5be00264115f419ef8136adc1fe227be71bbbaa112b",
+      "earlier_png_sha256": "3e4c2e804201385ffdbc2e5f9d2be57d8ea1b20afa5ff54ece789d6d6fab886f",
+      "decoded_rgb_sha256": "80e309a6ed8cc364aa678ac8d383fb546a848672c21ea3281c8742d7546218e5"
+    },
+    "hub": {
+      "baseline_sha256": "fabd8653d2893443eb5e59115546711673dbd504017e4cd0ac97bce4bb651670",
+      "original_sketch_sha256": "b1c947e3be5225ddc7910bbcb553b3cdfceddbd24b50dd03ee6922fc2cabd9cd",
+      "earlier_png_sha256": "fa355704a422211707babc136c4a31cabdb0ce8e18f85a0fe2d7f07e34067093",
+      "decoded_rgb_sha256": "676c7b332e8c05197cfe4f778ffe38b69379cf9e2aec3c7716f3fb99f4bae710"
+    },
+    "vent": {
+      "baseline_sha256": "e3aefdc4a638a4990e47fa19867f3021ee5042fa7268b9799299d2655e3c62d7",
+      "original_sketch_sha256": "486213422ebee80a4ffc2e484345e4fec593011077685d5fd37270095de513df",
+      "earlier_png_sha256": "100c8e7024d6bb54ee95b837cc6801d35981d3fd64f20438370967795fbd7250",
+      "decoded_rgb_sha256": "e85e02a80fbc9cefdc2b39c3fec0528e285d00ba4b7adff7c2a33de37169d529"
+    }
+  },
+  "snapshot_notes": "B2/B3 append routing immediately before the default execution contract. Candidate files reflect their frozen versions. Use file digests to distinguish subsequent repository changes.",
+  "pilot_pack_sha256": "803b852a81b8ba3691807b4382900fa3f407386326dbea1f5bde5fa27845ca3c",
+  "exact_prompt_sha256": {
+    "skirt": "8a6b4ab530c000ebf01d1751c30407b32438d5827e8793e54f1428e582963db1",
+    "hub": "11450d649a38f011a9b7fecfb2eaed1cd245840a087751378b0fc3e531d89eb4",
+    "vent": "1008170184ece67ef8981a55f5c93e061d4d8ec7b58ed0cec4b5f2e0789d70d5"
+  },
+  "task_suffix_scope": "The civilian and hub suffixes are exact. The public side-skirt suffix gives approximate relative proportions. Its full precision original and matching camera anchors remain in the restricted local record."
+}
