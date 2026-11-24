@@ -1,5 +1,13 @@
 # Recorded validation
 
+## Armored vehicle documentation — 2026-11-24
+
+- Linux / Blender 4.3.2; explicit `BLENDER` executable selected. Ran `python3 -m unittest discover -s tests -p 'test_*.py' -v`: **30 tests passed in 6.127 seconds, no skips**. Existing real-Blender fixture/roundtrip/preview tests ran; this is not an end-to-end rerun or visual acceptance of the historical Tunguska model.
+- Three added documentation checks resolve local skill/case links, verify bundled image SHA-256 values and PNG dimensions, and reject machine-local paths in the extracted case evidence. They do not prove resemblance, normals or shader correctness.
+- Case author inspected the model-only before/after images, both material iterations and the low-front/side diagnostic images. Independent project diagnosis is summarized with its limits in the [case note](../docs/cases/tunguska-refinement.md). Historical checks and proposed repairs are explicitly separated.
+- No Blender helper/runtime code changed. No third-party photo, model binary or project-specific executable builder is distributed in this change.
+
+
 ## Current platform status — 2026-11-04
 
 This status distinguishes recorded evidence from maintainer-reported testing. It does **not** imply that every agent, Blender version, execution backend or QA mode works on every platform.

@@ -10,6 +10,7 @@ Create reviewable geometry before spending on presentation. **Independent QA and
 - **Windows with DSH:** for host installation, Web/headless selection, credentials, skill discovery or an isolated compatibility test, read [Windows DSH](references/windows-dsh.md). Verify the chosen surface actually loads this skill and can call the model; a working Web login does not prove headless authentication.
 - **New asset or scene:** write a short design contract: style, known scale (or explicitly relative scale), axes, footprint, silhouette landmarks, semantic parts, and requested deliverables. Original procedural work does not require traced drawings or SVG.
 - **Revision:** identify the exact baseline file and hash, requested variant, changed region, and approved regions to preserve. Read [revisions and references](references/revisions.md).
+- **Armored vehicle exterior:** read [armored vehicle refinement](references/armored-vehicles.md) for reference identity, armor planes, running gear, local repairs and separate geometry/material acceptance.
 - **Assembly or moving parts:** read [scene assembly](references/assembly.md) for hierarchy, units, pivots, and ownership.
 
 ## Default execution contract

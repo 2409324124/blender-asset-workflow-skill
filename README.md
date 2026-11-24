@@ -39,6 +39,10 @@ See the [detailed roadmap](docs/ROADMAP.md) and [recorded test evidence](tests/R
 - **Artifact verification:** reopen saved BLEND files and, when requested, reimport actual GLB exports, checking geometry, dimensions and structure.
 - **Numeric traps:** hashes, polygon counts, AABB hints and successful reimports are evidence—not guarantees of resemblance or correct geometry.
 
+## Armored vehicle refinement
+
+See the [modeling and refinement guide](skills/blender-asset-workflow/references/armored-vehicles.md) for reference planning, armor planes, semantic parts, local repairs and surface diagnostics. The [Tunguska iteration case](docs/cases/tunguska-refinement.md) records bounded improvements **and a later whole-vehicle visual rejection**; it is not a realism benchmark or a functional vehicle model. Case images are historical evidence, not required skill inputs.
+
 ## Designed for AI agent workflows
 
 Built around Blender's native Python API and headless CLI, without requiring Blender MCP or external modeling plugins.
@@ -118,7 +122,7 @@ Outputs: BLEND, GLB, white overview, roof-off top view, furniture close-up and v
 
 ## Validation
 
-Current release: **v0.1.1**. Older v0.4 labels in the evidence are historical development-candidate records. Local regression suite: **27 tests** (Blender integration tests are skipped when Blender is absent). Independent example review: **45 meshes / 540 triangles**, matching native/GLB bounds, all three preview images inspected. These are specific local checks, not hosted CI or a universal quality certificate.
+Current release: **v0.1.1**. Older v0.4 labels in the evidence are historical development-candidate records. Local regression suite: **30 tests** (Blender integration tests are skipped when Blender is absent). Independent example review: **45 meshes / 540 triangles**, matching native/GLB bounds, all three preview images inspected. These are specific local checks, not hosted CI or a universal quality certificate.
 
 ```sh
 python3 -m unittest discover -s tests -p 'test_*.py' -v
